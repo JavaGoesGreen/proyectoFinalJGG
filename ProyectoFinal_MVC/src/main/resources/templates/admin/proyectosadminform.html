@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<!-- Static content -->
+<!-- Fijate que ahora no uso los recursos de Thymeleaf para el css -->
+<!-- Echa un vistazo al .properties -->
+<link rel="stylesheet" href="/resources/static/css_admin/estilos.css">
+
+<title> Gestion admin proyectos </title>
+</head>
+<body>
+	<div id="contenedor">
+		<h2>
+			Gestion admin proyectos<br />
+		</h2>
+		 <h2>FORMULARIO DE PROYECTOS(add/edit)</h2>
+        <form method="post"
+        	  th:action="@{/save}"
+        	  th:object="${proyecto}">
+        	<input id="id" th:field="*{idproyecto}" />
+            <table>
+                <tr>
+                    <td><label for="proyecto">proyecto :</label></td>
+                    <td><input type="text" th:field="*{proyecto}"/></td>
+                </tr>
+                <tr>
+                    <td><label for="fechafin">fechafin:</label></td>
+                    <td><input type="text" th:field="*{fechafin}"/></td>
+                </tr>
+                <tr>
+                    <td><label for="resumen">resumen:</label></td>
+                    <td><input type="text" th:field="*{resumen}"/> </td>
+                </tr>
+                <tr>
+                    <td><label for="descripcion">descripcion:</label></td>
+                    <td><input type="text" th:field="*{descripcion}"/> </td>
+                </tr>
+                
+                <tr>
+                    <td><label for="imagen">imagen:</label></td>
+                    <td><input type="text" th:field="*{imagen}"/> </td>
+                </tr>
+                <tr>
+                    <td><label for="empresa">empresa:</label></td>
+                    <td><input type="text" th:field="*{empresa}"/> </td>
+                </tr>
+            </table>
+            <input type="submit" value="Salvar Registro">
+
+        </form>
+	</div>
+</body>
+</html>

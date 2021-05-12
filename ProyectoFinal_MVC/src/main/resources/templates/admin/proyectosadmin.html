@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<!-- Static content -->
+<!-- Fijate que ahora no uso los recursos de Thymeleaf para el css -->
+<!-- Echa un vistazo al .properties -->
+<link rel="stylesheet" href="/resources/static/css_admin/estilos.css">
+
+<title>"Administracion proyectos"</title>
+</head>
+<body>
+
+	<div id="contenedor">
+		<h2>Administracion proyectos<br />
+		</h2>
+	<thead>
+				<tr>
+					<th>Nº</th>
+					<th>Número de proyecto</th>
+					<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Nombre de proyecto</th>
+					<th>&nbsp;&nbsp;&nbsp;	Fecha de finalización</th>
+					<th>Resumen</th>
+					<th>Descripción</th>
+					<th>Imagen</th>
+					<th>Número empresa</th>
+					<th>Acciones</th>
+				</tr>
+			</thead>
+			<table>
+				<tr th:each="proyecto: ${proyectoslista}">
+					<td th:text="${proyecto.idproyecto}" />
+					<td th:text="${proyecto.proyecto}" />
+					<td th:text="${proyecto.fechafin}" />
+					<td th:text="${proyecto.resumen}" />
+					<td th:text="${proyecto.descripcion}" />
+					<td th:text="${proyecto.imagen}" />
+					<td th:text="${proyecto.empresa}" />
+					<td><a th:href="@{})}">Modificar</a> | <a
+						th:href="@{})}">Eliminar</a></td>
+			
+				</table>
+              
+				
+			<br />
+			<p>
+			<a href="">Clic para añadir nuevo plato</a>
+			
+	</div>
+</body>
+</html>
