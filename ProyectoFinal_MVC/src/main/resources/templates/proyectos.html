@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es">
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
   <!-- Required meta tags -->
@@ -19,11 +19,11 @@
   <link href="../static/assets/fontawesome-5.15.2/css/all.min.css" rel="stylesheet">
   <!--load all styles -->
 
-  <link rel="stylesheet" href="../static/css/estilos_2.css">
-  <link rel="stylesheet" href="../static/css/cover.css">
+  <link rel="stylesheet" th:href="@{/css/estilos_2.css}">
+  <link rel="stylesheet" th:href="@{/css/cover.css}">
 
   <title>Java Goes Green</title>
-  <link rel="icon" href="../static/Iconos/logo.ico">
+  <link rel="icon" th:href="@{/Iconos/logo.ico}">
 
   <!-- Fuentes -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -40,7 +40,7 @@
   <header id="top">
     <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
 
-      <a class="navbar-brand" href="#"><img src="../static/Imagenes/logo_trans.png"></img> Java Goes Green</a>
+      <a class="navbar-brand" href="#"><img th:src="@{/Imagenes/logo.png}"/> Java Goes Green</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -49,26 +49,26 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="/templates/index.html">Inicio<span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="/index">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/templates/proyectos.html">Proyectos</a>
+              <a class="nav-link" href="/proyectos">Proyectos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/templates/equipo.html">Equipo</a>
+              <a class="nav-link" href="/equipo">Equipo<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/templates/contacto.html">Contacto</a>
+              <a class="nav-link" href="/contacto">Contacto</a>
             </li>
             
           <li class="nav-item">
-            <a class="nav-link" href="/templates/index.html#servicios">Servicios</a>
+            <a class="nav-link" href="/index#servicios">Servicios</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/templates/index.html#clientes">Clientes</a>
+            <a class="nav-link" href="/index#clientes">Clientes</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/templates/index.html#empresas">Empresas</a>
+            <a class="nav-link" href="/index#empresas">Empresas</a>
           </li>
           </ul>
       </div>
@@ -82,11 +82,17 @@
     <!-- ----------------------- Sección: Proyectos ----------------------------- -->
     <section id="proyectos">
       <h2>PROYECTOS</h2>
+   	  <table>
+				<tr th:each="proyecto : ${proyectoslista}">
+					<td th:text="${proyecto.proyecto}" />
+					<td th:text="${proyecto.resumen}" />
+				</table>
+              
       <div class="row">
 
-        <div class="col-lg-6">
+        <div class="col-lg-6" th:each="proyecto : ${proyectoslista}">
           <div class="jumbotron" id="movieflix">
-            <h2 class="display-3">MoviFlix</h2>
+            <h2 class="display-3" th:text="${proyecto.proyecto}"> </h2>
             <p class="lead">Disfruta de tus peliculas de manera eco-friendly</p>
             <hr class="my-2">
             <p>Trabajamos para la empresa MovieFlix en software de gesión de películas en streaming</p>
@@ -137,18 +143,18 @@
         <div class="col-xs-6 col-md-3">
           <h6>Apartados</h6>
           <ul class="footer-links">
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#proyectos">Proyectos</a></li>
-            <li><a href="#empresas">Empresas</a></li>
-            <li><a href="#clientes">Clientes</a></li>
-            <li><a href="#precios">Precios</a></li>
-            <li><a href="#equipo">Equipo</a></li>
-            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="/inicio">Inicio</a></li>
+            <li><a href="/proyectos">Proyectos</a></li>
+            <li><a href="/equipo">Equipo</a></li>
+            <li><a href="/contacto">Contacto</a></li>
+            <li><a href="/inicio#servicios">Servicios</a></li>
+            <li><a href="/inicio#clientes">Clientes</a></li>
+            <li><a href="/inicio#empresas">Empresas</a></li>
           </ul>
         </div>
       </div>
       <div class="row" id="footer_logo">
-      <img id="logo_pie" src="../static/imagenes/logo_trans.png"></img>
+      <img id="logo_pie" th:src="@{/Imagenes/logo_trans.png}"></img>
     </div>
       <hr>
     </div>

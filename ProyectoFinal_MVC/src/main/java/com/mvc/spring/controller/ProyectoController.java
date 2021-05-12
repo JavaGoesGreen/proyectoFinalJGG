@@ -14,9 +14,29 @@ public class ProyectoController {
 	ProyectosServiceImpl proyectosServiceImpl;
 	
 	@GetMapping("/proyectos")
-	public String listUser(Model m) {
+	public String listaProyectos(Model m) {
 		m.addAttribute("proyectoslista", proyectosServiceImpl.getProyectos());
 		return "proyectos";
 	}
+	
+	
+	
+	//referencias a otras paginas
+	@GetMapping("/contacto")
+	public String contacto() {
 
+		return "contacto";
+	}
+	
+	@GetMapping("/equipo")
+	public String equipo() {
+
+		return "equipo";
+	}
+	
+	@GetMapping("/index")
+	public String index() {
+
+		return "index";
+	}
 }
