@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!-- link rel="stylesheet" th:href="@{/css/bootstrap.css}"-->
+<!-- link rel="stylesheet" th:href="@{/css/custom.css}" -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Data. Formulario</title>
+</head>
+
+<body>
+    <div class="container" id="contenedor">
+        <h1>Spring Data. Formulario</h1>
+
+        <h2>FORMULARIO DE PROYECTOS (add/edit)</h2>
+        <form method="post" th:action="@{/proyectos/admin/post}"
+        	th:object="${proyecto}">
+            <table>
+                <tr>
+                    <td><label for="proyecto">Nombre del proyecto:</label></td>
+                    <td><input type="text" th:field="*{proyecto}"></td>
+                </tr>
+                <tr>
+                    <td><label for="fechafin">Fecha final:</label></td>
+                    <td><input type="text" th:field="*{fechafin}"></td>
+                </tr>
+                <tr>
+                    <td><label for="resumen">Resumen:</label></td>
+                    <td><input type="text" th:field="*{resumen}"></td>
+                </tr>
+                <tr>
+                    <td><label for="descripcion">Descripción:</label></td>
+                    <td><input type="text" th:field="*{descripcion}"></td>
+                </tr>
+                <tr>
+                    <td><label for="imagen">URL de la imagen:</label></td>
+                    <td><input type="text" th:field="*{imagen}"></td>
+                </tr>
+                <tr>
+                    <td><label for="empresa">Nombre del proyecto:</label></td>
+                    <td><input type="number" th:field="*{empresa}"></td>
+                </tr>
+            </table>
+            <input type="submit" value="Salvar Registro">
+
+        </form>
+    </div>
+</body>
+
+</html>

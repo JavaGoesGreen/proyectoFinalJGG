@@ -8,4 +8,6 @@ import com.rest.spring.model.Proyecto;
 public interface ProyectosService {
 
 	public List<Proyecto> getProyectos();
+	
+	public Proyecto addProyectos(Proyecto proyecto);
 }
