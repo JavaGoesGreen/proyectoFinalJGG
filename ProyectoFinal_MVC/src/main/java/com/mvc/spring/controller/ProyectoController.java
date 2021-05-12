@@ -24,6 +24,12 @@ public class ProyectoController {
 		return "proyectos";
 	}
 	
+	@GetMapping("/proyectos/admin/list")
+	public String listaProyectosAdmin(Model m) {
+		m.addAttribute("proyectoslista", service.getProyectos());
+		return "admin/proyectosadmin";
+	}
+	
 	//nuevo usuario
 	@GetMapping("proyectos/admin/add")
 	public String newUser(Proyecto proyecto) {

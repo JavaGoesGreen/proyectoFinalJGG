@@ -25,7 +25,7 @@ public class Rest_Controller {
 		return service.getProyectos();	
 	}
 	
-	@PostMapping("/proyectos/add") //(value = "/proyectos/add", consumes = "application/json", produces = "application/json)
+	@PostMapping("/proyectos/admin/post") //(value = "/proyectos/add", consumes = "application/json", produces = "application/json)
 	public Proyecto addProyecto(@RequestBody Proyecto proyecto) {
 		return service.addProyectos(proyecto);
 	}	

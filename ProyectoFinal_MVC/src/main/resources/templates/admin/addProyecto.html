@@ -15,7 +15,8 @@
         <h1>Spring Data. Formulario</h1>
 
         <h2>FORMULARIO DE PROYECTOS (add/edit)</h2>
-        <form method="post" th:action="@{/proyectos/admin/post}" th:object="${proyecto}">
+        <form method="post" th:action="@{/proyectos/admin/post}"
+        	th:object="${proyecto}">
             <table>
                 <tr>
                     <td><label for="proyecto">Nombre del proyecto:</label></td>
@@ -36,6 +37,10 @@
                 <tr>
                     <td><label for="imagen">URL de la imagen:</label></td>
                     <td><input type="text" th:field="*{imagen}"></td>
+                </tr>
+                <tr>
+                    <td><label for="empresa">Nombre del proyecto:</label></td>
+                    <td><input type="number" th:field="*{empresa}"></td>
                 </tr>
             </table>
             <input type="submit" value="Salvar Registro">

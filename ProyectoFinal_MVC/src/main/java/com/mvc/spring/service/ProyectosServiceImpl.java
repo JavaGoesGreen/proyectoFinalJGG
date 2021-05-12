@@ -22,6 +22,6 @@ public class ProyectosServiceImpl implements ProyectosService{
 	@Override
 	public void addProyectos(Proyecto proyecto) {
 		RestTemplate restTemplate = new RestTemplate();
-		restTemplate.postForObject("http://localhost:5000/proyectos", proyecto, Proyecto[].class);
+		restTemplate.postForObject("http://localhost:5000/proyectos/admin/post", proyecto, Proyecto[].class);
 	}
 }
