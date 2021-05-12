@@ -82,21 +82,16 @@
     <!-- ----------------------- Sección: Proyectos ----------------------------- -->
     <section id="proyectos">
       <h2>PROYECTOS</h2>
-   	  <table>
-				<tr th:each="proyecto : ${proyectoslista}">
-					<td th:text="${proyecto.proyecto}" />
-					<td th:text="${proyecto.resumen}" />
-				</table>
+   	 
               
       <div class="row">
 
         <div class="col-lg-6" th:each="proyecto : ${proyectoslista}">
           <div class="jumbotron" id="movieflix">
             <h2 class="display-3" th:text="${proyecto.proyecto}"> </h2>
-            <p class="lead">Disfruta de tus peliculas de manera eco-friendly</p>
+            <p class="lead" th:text="${proyecto.resumen}"></p>
             <hr class="my-2">
-            <p>Trabajamos para la empresa MovieFlix en software de gesión de películas en streaming</p>
-            <p class="lead">
+         
               <a class="btn btn-primary btn-lg" href="#!" role="button">Descúbrelo</a>
             </p>
           </div>
@@ -104,12 +99,11 @@
 
         <div class="col-lg-6">
           <div class="jumbotron" id="spring">
-            <h2 class="display-3">Proyecto Spring</h2>
-            <p class="lead">Aquí se pondrá el proyecto que haremos algun dia sobre Spring</p>
+            <h2 class="display-3" th:text="${proyecto.proyecto}"></h2>
+            <p class="lead" th:text="${proyecto.resumen}"></p>
             <hr class="my-2">
-            <p>En serio, que ya lo pondremos cuando lo sepamos...</p>
-            <p class="lead">
-              <a class="btn btn-primary btn-lg" href="#!" role="button">Próximamente</a>
+          
+              <a class="btn btn-primary btn-lg" href="#!" role="button"></a>
             </p>
           </div>
         </div>

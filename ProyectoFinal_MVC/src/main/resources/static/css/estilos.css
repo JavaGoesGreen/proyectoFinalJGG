@@ -5,20 +5,23 @@
     padding: 0;
     box-sizing: border-box;
 }
+.empresa {
+  font-family: 'Roboto', sans-serif;
+}
 p {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Fjalla One', sans-serif;
 }
 h1,h2,h3,h4,h5,h6 {
 
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Fjalla One', sans-serif;
   margin-bottom: 30px;
 }
 h1 {
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Fjalla One', sans-serif;
   font-size: 100px;
 }
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 /*----------------------- Sección: Encabezado -----------------------------*/
@@ -507,11 +510,11 @@ section .section-title {
 /*----------------------- Sección: Footer       -----------------------------*/
 .site-footer
 {
-  background-color:#26272b;
+  background-color:#b9cebd;
   padding:45px 0 20px;
   font-size:15px;
-  line-height:24px;
-  color:#737373;
+ 
+  color:#b9cebd;
 }
 .site-footer hr
 {
