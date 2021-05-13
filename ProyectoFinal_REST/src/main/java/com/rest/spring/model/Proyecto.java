@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -38,8 +40,11 @@ public class Proyecto {
 		this.resumen = resumen;
 		this.descripcion = descripcion;
 		this.imagen = imagen;
-		this.empresa = empresa;
 	}
+	
+	@ManyToOne
+	@JoinColumn(name="empresa")
+	private Cliente cliente;
 
 	// getters and setters
 	public int getIdproyecto() {
