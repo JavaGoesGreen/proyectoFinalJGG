@@ -24,7 +24,6 @@ public class Cliente {
 	private String logo;
 	
 	@OneToMany
-	@JoinColumn(name="idproyecto")
 	private List<Proyecto> proyectos;
 
 	// constructors
