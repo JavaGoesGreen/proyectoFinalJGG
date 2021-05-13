@@ -43,6 +43,10 @@ public class Proyecto {
 		this.descripcion = descripcion;
 		this.imagen = imagen;
 	}
+	
+	@ManyToOne
+	@JoinColumn(name="empresa")
+	private Cliente cliente;
 
 	// getters and setters
 	public int getIdproyecto() {
