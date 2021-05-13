@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -20,7 +22,10 @@ public class Proyecto {
 	private String resumen;
 	private String descripcion;
 	private String imagen;
-	private int empresa;
+	
+	@ManyToOne
+	@JoinColumn(name = "empresa")
+	private Cliente cliente;
 
 	
 
@@ -29,8 +34,7 @@ public class Proyecto {
 		super();
 	}
 
-	public Proyecto(int idproyecto, String proyecto, String fechafin, String resumen, String descripcion, String imagen,
-			int empresa) {
+	public Proyecto(int idproyecto, String proyecto, String fechafin, String resumen, String descripcion, String imagen) {
 		super();
 		this.idproyecto = idproyecto;
 		this.proyecto = proyecto;
@@ -38,7 +42,6 @@ public class Proyecto {
 		this.resumen = resumen;
 		this.descripcion = descripcion;
 		this.imagen = imagen;
-		this.empresa = empresa;
 	}
 
 	// getters and setters
@@ -89,19 +92,20 @@ public class Proyecto {
 	public void setImagen(String imagen) {
 		this.imagen = imagen;
 	}
+	
 
-	public int getEmpresa() {
-		return empresa;
+	public Cliente getCliente() {
+		return cliente;
 	}
 
-	public void setEmpresa(int empresa) {
-		this.empresa = empresa;
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
 
 	// toString
 	public String toString() {
 		return "Proyecto [idproyecto=" + idproyecto + ", proyecto=" + proyecto + ", fechafin=" + fechafin + ", resumen="
-				+ resumen + ", descripcion=" + descripcion + ", imagen=" + imagen + ", empresa=" + empresa + "]";
+				+ resumen + ", descripcion=" + descripcion + ", imagen=" + imagen  + "]";
 	}
 
 }

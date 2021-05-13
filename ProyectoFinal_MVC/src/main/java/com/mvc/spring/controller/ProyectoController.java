@@ -27,17 +27,20 @@ import com.mvc.spring.service.ProyectosServiceImpl;
 public class ProyectoController {
 
 	@Autowired
-	ProyectosServiceImpl service;
+	ProyectosServiceImpl serviceProyecto;
+	
+	/*@Autowired
+	ClienteServiceImpl serviceCliente;*/
 
 	@GetMapping("/proyectos")
 	public String listaProyectos(Model m) {
-		m.addAttribute("proyectoslista", service.getProyectos());
+		m.addAttribute("proyectoslista", serviceProyecto.getProyectos());
 		return "proyectos";
 	}
 
 	@GetMapping("/proyectos/admin/list")
 	public String listaProyectosAdmin(Model m) {
-		m.addAttribute("proyectoslista", service.getProyectos());
+		m.addAttribute("proyectoslista", serviceProyecto.getProyectos());
 		return "admin/proyectosadmin";
 	}
 
@@ -46,11 +49,18 @@ public class ProyectoController {
 	public String newUser(Proyecto proyecto) {
 		return "/admin/addProyecto";
 	}
+	
+	/*@GetMapping("proyectos/admin/add")
+	public String newUser(Model m) {
+		
+		m.addAttribute("cliente", serviceCliente.getCliente() )
+		return "/admin/addProyecto";
+	}*/
 
 	@PostMapping("proyectos/admin/post")
 	public ModelAndView addProyecto(Proyecto proyecto) {
-		service.addProyectos(proyecto);
-		return new ModelAndView("redirect:/");
+		serviceProyecto.addProyectos(proyecto);
+		return new ModelAndView("proyectos/admin/add");
 	}
 
 	// referencias a otras paginas
