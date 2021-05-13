@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.rest.spring.controller.Rest_Controller;
+import com.rest.spring.controller.ProyectosController;
 import com.rest.spring.dao.ProyectosDao;
 import com.rest.spring.model.Proyecto;
 import com.rest.spring.service.ProyectosService;
@@ -30,7 +30,7 @@ public class ProyectoFinal_REST_Test01 {
 	
 	
 	@Autowired
-	private Rest_Controller controller;
+	private ProyectosController controller;
 	
 	@Autowired
 	private ProyectosDao dao1;

@@ -43,11 +43,6 @@ public class Proyecto {
 		this.descripcion = descripcion;
 		this.imagen = imagen;
 	}
-	
-	@ManyToOne
-	@JoinColumn(name="empresa")
-	private Cliente cliente;
-
 	// getters and setters
 	public int getIdproyecto() {
 		return idproyecto;
@@ -109,7 +104,7 @@ public class Proyecto {
 	// toString
 	public String toString() {
 		return "Proyecto [idproyecto=" + idproyecto + ", proyecto=" + proyecto + ", fechafin=" + fechafin + ", resumen="
-				+ resumen + ", descripcion=" + descripcion + ", imagen=" + imagen  + "]";
+				+ resumen + ", descripcion=" + descripcion + ", imagen=" + imagen  + ", cliente=" + cliente + "]";
 	}
 
 }

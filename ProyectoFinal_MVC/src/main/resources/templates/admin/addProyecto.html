@@ -39,22 +39,11 @@
                     <td><input type="text" th:field="*{imagen}"></td>
                 </tr>
                 <tr>
-                    <td><label for="cliente">Nombre del proyecto:</label></td>
-                    <td><input type="" th:field="*{cliente}"></td>
-                </tr>
-                <tr>
-					<!--<td><label for="cargo">Cargo:</label></td>
-                    <td><input type="text" th:field="*{cargo}" /></td>-->
-
-					<<td><label for="nombre">Cliente:</label></td>
-
-					
-
+					<td><label for="nombre">Cliente:</label></td>
 					<td>
 						<select name="cliente">
 							<!-- <option value=""> Seleccione </option> -->
 							<option th:each="cliente:${cliente}" th:value="${cliente.idcliente}" th:text="${cliente.nombre}">
-								
 							</option>
 						</select>
 				</tr>

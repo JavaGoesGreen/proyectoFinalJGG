@@ -13,7 +13,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "cargos")
-public class Cargos {
+public class Cargo {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,11 +25,11 @@ public class Cargos {
 	private List<Equipo> equipo;
 
 	// Contructors
-	public Cargos() {
+	public Cargo() {
 		super();
 	}
 
-	public Cargos(int idcargo, String cargo, List<Equipo> equipo) {
+	public Cargo(int idcargo, String cargo, List<Equipo> equipo) {
 		super();
 		this.idcargo = idcargo;
 		this.cargo = cargo;
