@@ -5,7 +5,7 @@
 <!-- Static content -->
 <!-- Fijate que ahora no uso los recursos de Thymeleaf para el css -->
 <!-- Echa un vistazo al .properties -->
-<link rel="stylesheet" href="/resources/static/css_admin/estilos.css">
+<link rel="stylesheet" href="/css_admin/estilos.css">
 
 <title>"Administracion proyectos"</title>
 </head>
@@ -17,7 +17,6 @@
 	<thead>
 				<tr>
 					<th>Nº</th>
-					<th>Número de proyecto</th>
 					<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Nombre de proyecto</th>
 					<th>&nbsp;&nbsp;&nbsp;	Fecha de finalización</th>
 					<th>Resumen</th>
@@ -36,15 +35,13 @@
 					<td th:text="${proyecto.descripcion}" />
 					<td th:text="${proyecto.imagen}" />
 					<td th:text="${proyecto.empresa}" />
-					<td><a th:href="@{})}">Modificar</a> | <a
-						th:href="@{})}">Eliminar</a></td>
 			
 				</table>
               
 				
 			<br />
 			<p>
-			<a href="">Clic para añadir nuevo plato</a>
+			<a href="">Clic para añadir nuevo proyecto</a>
 			
 	</div>
 </body>
