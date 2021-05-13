@@ -39,9 +39,14 @@
                     <td><input type="text" th:field="*{imagen}"></td>
                 </tr>
                 <tr>
-                    <td><label for="empresa">Nombre del proyecto:</label></td>
-                    <td><input type="number" th:field="*{empresa}"></td>
-                </tr>
+					<td><label for="nombre">Cliente:</label></td>
+					<td>
+						<select name="cliente">
+							<!-- <option value=""> Seleccione </option> -->
+							<option th:each="cliente:${cliente}" th:value="${cliente.idcliente}" th:text="${cliente.nombre}">
+							</option>
+						</select>
+				</tr>
             </table>
             <input type="submit" value="Salvar Registro">
 
