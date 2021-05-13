@@ -10,11 +10,11 @@ public class Proyecto {
 	private String resumen;
 	private String descripcion;
 	private String imagen;
-	private int empresa;
+	private Cliente empresa;
 	
 	//Constructores 
 	public Proyecto(int idproyecto, String proyecto, String fechafin, String resumen, String descripcion, String imagen,
-			int empresa) {
+			Cliente empresa) {
 		super();
 		this.idproyecto = idproyecto;
 		this.proyecto = proyecto;
@@ -66,10 +66,10 @@ public class Proyecto {
 	public void setImagen(String imagen) {
 		this.imagen = imagen;
 	}
-	public int getEmpresa() {
+	public Cliente getEmpresa() {
 		return empresa;
 	}
-	public void setEmpresa(int empresa) {
+	public void setEmpresa(Cliente empresa) {
 		this.empresa = empresa;
 	}
 	

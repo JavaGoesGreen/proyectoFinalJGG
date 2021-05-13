@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 //import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.mvc.spring.model.Cliente;
 import com.mvc.spring.model.Proyecto;
+import com.mvc.spring.service.ClientesServiceImpl;
 import com.mvc.spring.service.ProyectosServiceImpl;
 /**
  * <p><b> Nombre </b> ProyectoController</p>
@@ -23,34 +25,40 @@ import com.mvc.spring.service.ProyectosServiceImpl;
  */
 
 @Controller
-/* @RequestMapping("/admin/proyectos") */
 public class ProyectoController {
 
 	@Autowired
-	ProyectosServiceImpl service;
+	ProyectosServiceImpl serviceProyecto;
+	
+	@Autowired
+	ClientesServiceImpl serviceCliente;
 
 	@GetMapping("/proyectos")
 	public String listaProyectos(Model m) {
-		m.addAttribute("proyectoslista", service.getProyectos());
+		m.addAttribute("proyectoslista", serviceProyecto.getProyectos());
 		return "proyectos";
 	}
 
 	@GetMapping("/proyectos/admin/list")
 	public String listaProyectosAdmin(Model m) {
-		m.addAttribute("proyectoslista", service.getProyectos());
+		//m.addAttribute("cliente", proyecto.getEmpresa().getIdcliente());
+		m.addAttribute("proyectoslista", serviceProyecto.getProyectos());
 		return "admin/proyectosadmin";
 	}
-
-	// nuevo usuario
+	
 	@GetMapping("proyectos/admin/add")
-	public String newUser(Proyecto proyecto) {
+	public String newUser(Model m, Proyecto proyecto) {
+		m.addAttribute("proyecto", proyecto);
+		m.addAttribute("cliente", serviceCliente.getClientes());
 		return "/admin/addProyecto";
 	}
 
 	@PostMapping("proyectos/admin/post")
 	public ModelAndView addProyecto(Proyecto proyecto) {
-		service.addProyectos(proyecto);
-		return new ModelAndView("redirect:/");
+		System.out.println("IMPRIMIENDO PROYECTO-------" + proyecto);
+		serviceProyecto.addProyectos(proyecto);
+		System.out.println("IMPRIMIENDO PROYECTO1000-------" + proyecto);
+		return new ModelAndView("redirect:/proyectos/admin/list");
 	}
 
 	// referencias a otras paginas

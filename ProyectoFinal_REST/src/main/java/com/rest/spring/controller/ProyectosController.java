@@ -12,9 +12,9 @@ import com.rest.spring.model.Proyecto;
 import com.rest.spring.service.ProyectosServiceImpl;
 
 @RestController
-public class Rest_Controller {
+public class ProyectosController {
 	
-	  private final Logger log = LoggerFactory.getLogger(Rest_Controller.class);
+	  private final Logger log = LoggerFactory.getLogger(ProyectosController.class);
 	
 	@Autowired
 	ProyectosServiceImpl service;
@@ -27,7 +27,10 @@ public class Rest_Controller {
 	
 	@PostMapping("/proyectos/admin/post") //(value = "/proyectos/add", consumes = "application/json", produces = "application/json)
 	public Proyecto addProyecto(@RequestBody Proyecto proyecto) {
-		return service.addProyectos(proyecto);
+		System.out.println("POSTCONTROLLER EN REST------------------------------");
+		Proyecto p = service.addProyectos(proyecto);
+		System.out.println(p);
+		return p;
 	}	
 	
 }
