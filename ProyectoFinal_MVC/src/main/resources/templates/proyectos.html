@@ -1,5 +1,5 @@
 <!doctype html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
 
 <head>
   <!-- Required meta tags -->
@@ -40,7 +40,7 @@
   <header id="top">
     <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
 
-      <a class="navbar-brand" href="#"><img th:src="@{/Imagenes/logo.png}"/> Java Goes Green</a>
+      <a class="navbar-brand" href="#"><img alt="logo" th:src="@{/Imagenes/logo.png}"/> Java Goes Green</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -74,8 +74,8 @@
       </div>
     </nav>
 
-    <a href="#top"><button id="arriba" type="button" class="btn btn-success" a href="#top">
-        &#9757;</button></a>
+    <button id="arriba" type="button" class="btn btn-success" onclick="window.location.href='#top'">
+        &#9757;</button>
 
   </header>
   <main>
@@ -91,9 +91,7 @@
             <h2 class="display-3" th:text="${proyecto.proyecto}"> </h2>
             <p class="lead" th:text="${proyecto.resumen}"></p>
             <hr class="my-2">
-         
-              <a class="btn btn-primary btn-lg" href="#!" role="button">Descúbrelo</a>
-            </p>
+            <a class="btn btn-primary btn-lg" href="#!" role="button">Descúbrelo</a>
           </div>
         </div>
 
@@ -102,9 +100,7 @@
             <h2 class="display-3">Titulo</h2>
             <p class="lead">Parrafo</p>
             <hr class="my-2">
-          
-              <a class="btn btn-primary btn-lg" href="#!" role="button"></a>
-            </p>
+            <a class="btn btn-primary btn-lg" href="#!" role="button"></a>
           </div>
         </div>
       </div>
@@ -148,7 +144,7 @@
         </div>
       </div>
       <div class="row" id="footer_logo">
-      <img id="logo_pie" th:src="@{/Imagenes/logo_trans.png}"></img>
+      <img alt="logo" id="logo_pie" th:src="@{/Imagenes/logo_trans.png}" />
     </div>
       <hr>
     </div>
