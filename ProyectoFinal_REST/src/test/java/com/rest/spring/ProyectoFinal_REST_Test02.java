@@ -30,11 +30,11 @@ public class ProyectoFinal_REST_Test02 {
 		private ProyectosServiceImpl service;
 		
 		//comprobando que método en controller te devuelve un objeto service (en este caso service.getProyectos())
-		@Test
+	/*	@Test
 		void returnController1() {
-			 assertThat(restTemplate.getForObject("http://localhost:" + port + "/", ProyectosServiceImpl.class)).isEqualTo(service);
+			 assertThat(restTemplate.getForObject("http://localhost:" + port + "/", ProyectosServiceImpl.class)).;
 		
-		
+		*/
 					 
 		
 			
@@ -42,4 +42,4 @@ public class ProyectoFinal_REST_Test02 {
 			
 		}
 
-}
+

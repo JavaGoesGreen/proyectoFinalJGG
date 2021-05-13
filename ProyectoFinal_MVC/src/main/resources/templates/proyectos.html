@@ -85,13 +85,13 @@
    	 
               
       <div class="row">
-
+		
         <div class="col-lg-6" th:each="proyecto : ${proyectoslista}">
           <div class="jumbotron" id="movieflix">
             <h2 class="display-3" th:text="${proyecto.proyecto}"> </h2>
             <p class="lead" th:text="${proyecto.resumen}"></p>
             <hr class="my-2">
-         
+         	<img th:src="${proyecto.imagen}"/>
               <a class="btn btn-primary btn-lg" href="#!" role="button">Descúbrelo</a>
             </p>
           </div>
