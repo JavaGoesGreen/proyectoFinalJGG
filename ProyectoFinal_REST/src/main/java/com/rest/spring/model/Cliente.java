@@ -22,10 +22,10 @@ public class Cliente {
 	private String nombre;
 	private String descripcion;
 	private String logo;
-	
-	@OneToMany
+	/*
+	@OneToMany (targetEntity = Proyecto.class)
 	private List<Proyecto> proyectos;
-
+	 */
 	// constructors
 	public Cliente() {
 		super();

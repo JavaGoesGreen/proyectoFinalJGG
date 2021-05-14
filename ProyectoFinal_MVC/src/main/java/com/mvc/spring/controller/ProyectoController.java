@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 //import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -47,19 +48,28 @@ public class ProyectoController {
 	}
 	
 	@GetMapping("proyectos/admin/add")
-	public String newUser(Model m, Proyecto proyecto) {
+	public String addProyecto(Model m, Proyecto proyecto) {
 		m.addAttribute("proyecto", proyecto);
-		m.addAttribute("cliente", serviceCliente.getClientes());
+		m.addAttribute("listaclientes", serviceCliente.getClientes());
 		return "/admin/addProyecto";
 	}
 
 	@PostMapping("proyectos/admin/post")
-	public ModelAndView addProyecto(Proyecto proyecto) {
+	public ModelAndView postProyecto(@ModelAttribute Proyecto proyecto, Cliente cliente) {
+		System.out.println("IMPRIMIENDO PROYECTO antes de empresa-------" + proyecto);
+		System.out.println("IMPRIMIENDO PROYECTO antes de empresa-------" + cliente);
+		proyecto.setEmpresa(cliente);
 		System.out.println("IMPRIMIENDO PROYECTO-------" + proyecto);
 		serviceProyecto.addProyectos(proyecto);
 		System.out.println("IMPRIMIENDO PROYECTO1000-------" + proyecto);
 		return new ModelAndView("redirect:/proyectos/admin/list");
 	}
+	 	
+/* Version Oscar
+	@PostMapping("proyectos/admin/post")
+	public ModelAndView postProyecto(Proyecto proyecto) {
+		serviceProyecto.addProyectos(proyecto);
+		return new ModelAndView("redirect:/proyectos/admin/list");}*/
 
 	// referencias a otras paginas
 	@GetMapping("/contacto")

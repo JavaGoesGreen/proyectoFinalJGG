@@ -24,10 +24,8 @@ public class Proyecto {
 	private String imagen;
 	
 	@ManyToOne
-	@JoinColumn(name = "empresa")
+	@JoinColumn(name = "empresa", insertable=false, updatable=false)
 	private Cliente cliente;
-
-	
 
 	// constructors
 	public Proyecto() {
