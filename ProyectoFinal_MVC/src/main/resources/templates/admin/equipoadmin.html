@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="/css_admin/estilos.css">
+	<title>"List equipo"</title>
+</head>
+<body>
+	<div id="contenedor">
+		<h2>Administracion equipo<br /></h2>
+		<table>
+			<thead>
+				<tr>
+					<th>Nº</th>
+					<th>Nombre</th>
+					<th>Apellidos</th>
+					<th>Resumen</th>
+					<th>Foto</th>
+					<th>Cargo</th>
+					<th>Acciones</th>
+				</tr>
+			</thead>
+			<tr th:each="equipo: ${equipoLista}">
+				<td th:text="${equipo.idpersona}" />
+				<td th:text="${equipo.nombre}" />
+				<td th:text="${equipo.apellidos}" />
+				<td th:text="${equipo.resumen}" />
+				<td th:text="${equipo.foto}" />
+				<td th:text="${equipo.cargo!=null}?${equipo.cargo.cargo}:'Cargo no asignado todavía'" />
+				<!-- td>
+					<a th:href="@{/proyectos/admin/update(id=${{proyecto.idproyecto})}">Modificar</a> |
+					<a th:href="@{/proyectos/admin/delete(id=${{proyecto.idproyecto})}">Eliminar</a>
+				</td -->
+			</tr>
+		</table>
+		<br />
+		<p>
+		<a href="">Clic para añadir nuevo miembro del equipo</a>	
+	</div>
+</body>
+</html>

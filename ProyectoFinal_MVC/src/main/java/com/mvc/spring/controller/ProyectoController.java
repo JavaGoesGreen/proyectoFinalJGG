@@ -10,10 +10,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 //import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.mvc.spring.model.Cliente;
 import com.mvc.spring.model.Proyecto;
 import com.mvc.spring.service.ClientesServiceImpl;
 import com.mvc.spring.service.ProyectosServiceImpl;
@@ -75,15 +76,21 @@ public class ProyectoController {
 	@GetMapping("proyectos/admin/select/{id}")
 	public ModelAndView selectProyecto(@PathVariable Integer id) {
 		System.out.println("--------------------------------------ProyectoControllerMVC" + id);
-		ModelAndView m = new ModelAndView("/admin/addProyecto");
+		ModelAndView m = new ModelAndView("/admin/updateProyecto");
 		m.addObject("proyecto", serviceProyecto.selectProyecto(id));
 		m.addObject("listaClientes", serviceCliente.getClientes());
 		return m;
 	}
 	
+	@PutMapping("proyectos/admin/update")
+	public ModelAndView updateProyecto(@RequestParam Proyecto proyecto) {
+		System.out.println("IMPRIMIENDO PROYECTO-------" + proyecto);
+		serviceProyecto.updateProyectos(proyecto);
+		return new ModelAndView("redirect:/proyectos/admin/list");
+	}
 	
 
-	// referencias a otras paginas
+	/* referencias a otras paginas
 	@GetMapping("/contacto")
 	public String contacto() {
 
@@ -100,5 +107,5 @@ public class ProyectoController {
 	public String index() {
 
 		return "index";
-	}
+	}*/
 }
