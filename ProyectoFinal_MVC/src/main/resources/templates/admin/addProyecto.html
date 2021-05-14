@@ -41,9 +41,9 @@
                 <tr>
 					<td><label for="cliente">Cliente:</label></td>
 					<td>
-						<select name="cliente" th:field="*{cliente}">
+						<select name="cliente" th:field="*{cliente.idcliente}">
 							<!-- <option value=""> Seleccione </option> -->
-							<option th:each="cliente:${listaClientes}"  th:value="*{cliente}" th:text="${cliente.nombre}">
+							<option th:each="cliente:${listaClientes}"  th:value="*{cliente.idcliente}" th:text="${cliente.nombre}">
 							</option>
 						</select>
 				</tr>
