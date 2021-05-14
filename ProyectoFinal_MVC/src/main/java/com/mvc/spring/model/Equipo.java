@@ -1,30 +1,12 @@
-package com.rest.spring.model;
+package com.mvc.spring.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "equipo")
 public class Equipo {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idpersona")
 	private int idpersona;
 	private String nombre;
 	private String apellidos;
 	private String resumen;
 	private String foto;
-
-	
-	@ManyToOne
-	@JoinColumn(name="cargo")
 	private Cargo cargo;
 
 	// Constructor
@@ -32,13 +14,14 @@ public class Equipo {
 		super();
 	}
 
-	public Equipo(int idpersona, String nombre, String apellidos, String resumen, String foto) {
+	public Equipo(int idpersona, String nombre, String apellidos, String resumen, String foto, Cargo cargo) {
 		super();
 		this.idpersona = idpersona;
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.resumen = resumen;
 		this.foto = foto;
+		this.cargo = cargo;
 	}
 
 	// Getters and setters

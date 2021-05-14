@@ -1,19 +1,9 @@
-package com.rest.spring.model;
+package com.mvc.spring.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import java.util.List;
 
-@Entity
-@Table(name = "cargos")
 public class Cargo {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idcargo")
 	private int idcargo;
 	private String cargo;
 
@@ -22,7 +12,7 @@ public class Cargo {
 		super();
 	}
 
-	public Cargo(int idcargo, String cargo) {
+	public Cargo(int idcargo, String cargo, List<Equipo> equipo) {
 		super();
 		this.idcargo = idcargo;
 		this.cargo = cargo;
