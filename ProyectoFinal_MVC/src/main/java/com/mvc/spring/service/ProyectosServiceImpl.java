@@ -1,6 +1,7 @@
 package com.mvc.spring.service;
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -12,10 +13,11 @@ import com.mvc.spring.model.Proyecto;
 public class ProyectosServiceImpl implements ProyectosService{
 	
 	@Override
-	public List<Proyecto> getProyectos() {
+	public Collection<Proyecto> getProyectos() {
 		 RestTemplate restTemplate = new RestTemplate();
 		    Proyecto[] proyectos = restTemplate.getForObject("http://localhost:5000/proyectos", Proyecto[].class);
 		    List<Proyecto> listaProyectos = Arrays.asList(proyectos);
+		    System.out.println(listaProyectos);
 		    return listaProyectos;
 	}
 	

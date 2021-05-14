@@ -25,7 +25,7 @@ public class Proyecto {
 	
 	@ManyToOne
 	@JoinColumn(name = "empresa")
-	private Cliente cliente;
+	private Cliente empresa;
 
 	
 
@@ -94,17 +94,17 @@ public class Proyecto {
 	
 
 	public Cliente getCliente() {
-		return cliente;
+		return empresa;
 	}
 
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
+	public void setCliente(Cliente empresa) {
+		this.empresa = empresa;
 	}
 
 	// toString
 	public String toString() {
 		return "Proyecto [idproyecto=" + idproyecto + ", proyecto=" + proyecto + ", fechafin=" + fechafin + ", resumen="
-				+ resumen + ", descripcion=" + descripcion + ", imagen=" + imagen  + ", cliente=" + cliente + "]";
+				+ resumen + ", descripcion=" + descripcion + ", imagen=" + imagen  + ", cliente=" + empresa + "]";
 	}
 
 }
