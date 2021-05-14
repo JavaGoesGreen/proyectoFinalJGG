@@ -10,4 +10,8 @@ public interface ProyectosService {
 	public List<Proyecto> getProyectos();
 	
 	public Proyecto addProyectos(Proyecto proyecto);
+	
+	public Proyecto selectProyecto(Integer id);
+	
+	public Proyecto getProyectoById(Integer id);
 }

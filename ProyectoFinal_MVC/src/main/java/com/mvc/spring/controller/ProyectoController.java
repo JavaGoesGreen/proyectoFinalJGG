@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 //import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -70,23 +71,17 @@ public class ProyectoController {
 		serviceProyecto.addProyectos(proyecto);
 		return new ModelAndView("redirect:/proyectos/admin/list");
 	}
-	// Alta proyecto
-	/*	@GetMapping("backoffice/proyectos/new")
-		public ModelAndView newProject() {
-			ModelAndView model = new ModelAndView("ProjectForm");
-			model.addObject("project", new Project());
-			model.addObject("clients", clientService.findAll());
-			return model;
-		}
-*/
-	// salvar proyecto
-	/*	@PostMapping("backoffice/proyectos/save")
-		public ModelAndView saveProject(Project project) {
-			log.info("----- Inside saveProject");
-			log.info("----- objeto Project" + project);
-			projectService.save(project);
-			return new ModelAndView("redirect:/backoffice/proyectos/");
-		}*/
+	
+	@GetMapping("proyectos/admin/select/{id}")
+	public ModelAndView selectProyecto(@PathVariable Integer id) {
+		System.out.println("--------------------------------------ProyectoControllerMVC" + id);
+		ModelAndView m = new ModelAndView("/admin/addProyecto");
+		m.addObject("proyecto", serviceProyecto.selectProyecto(id));
+		m.addObject("listaClientes", serviceCliente.getClientes());
+		return m;
+	}
+	
+	
 
 	// referencias a otras paginas
 	@GetMapping("/contacto")
