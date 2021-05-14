@@ -19,8 +19,8 @@
 				<thead>
 				<tr>
 					<th>Nº</th>
-					<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Nombre de proyecto</th>
-					<th>&nbsp;&nbsp;&nbsp;	Fecha de finalización</th>
+					<th>Nombre de proyecto</th>
+					<th>Fecha de finalización</th>
 					<th>Resumen</th>
 					<th>Descripción</th>
 					<th>Imagen</th>
@@ -35,8 +35,9 @@
 					<td th:text="${proyecto.resumen}" />
 					<td th:text="${proyecto.descripcion}" />
 					<td th:text="${proyecto.imagen}" />
-					<td th:text="${proyecto.cliente!=null}?${proyecto.cliente.nombre}:''"/>
-			
+					<td th:text="${proyecto.cliente!=null}?${proyecto.cliente.nombre}:'Cliente no asignado todavía'"/>
+					<td><a th:href="@{/proyectos/admin/update(id=${{proyecto.idproyecto})}">Modificar</a> | <a
+						th:href="@{/proyectos/admin/delete(id=${{proyecto.idproyecto})}">Eliminar</a></td>
 
 				</table>
               

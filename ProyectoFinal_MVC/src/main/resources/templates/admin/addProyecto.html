@@ -35,11 +35,11 @@
                 </tr>
                 <tr>
                     <td><label for="resumen">Resumen:</label></td>
-                    <td><input type="text" th:field="*{resumen}"></td>
+                    <td><textarea type="text" th:field="*{resumen}"> </textarea></td>
                 </tr>
                 <tr>
                     <td><label for="descripcion">Descripción:</label></td>
-                    <td><input type="text" th:field="*{descripcion}"></td>
+                    <td><textarea type="text" th:field="*{descripcion}"></textarea></td>
                 </tr>
                 <tr>
                     <td><label for="imagen">URL de la imagen:</label></td>
@@ -49,9 +49,11 @@
 					<td><label for="cliente">Cliente:</label></td>
 					<td>
 						<select name="cliente" th:field="*{cliente.idcliente}">
+
 							<option th:each="cliente:${listaClientes}"
 									th:value="${cliente.idcliente}"
 									th:text="${cliente.nombre}">
+
 							</option>
 						</select>
 					</td>

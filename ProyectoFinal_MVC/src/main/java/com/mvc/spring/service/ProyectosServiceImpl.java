@@ -14,6 +14,7 @@ public class ProyectosServiceImpl implements ProyectosService{
 	
 	@Override
 	public Collection<Proyecto> getProyectos() {
+		System.out.println("------------------------------Rest Template getProyectos");
 		 RestTemplate restTemplate = new RestTemplate();
 		    Proyecto[] proyectos = restTemplate.getForObject("http://localhost:5000/proyectos", Proyecto[].class);
 		    List<Proyecto> listaProyectos = Arrays.asList(proyectos);
@@ -23,8 +24,17 @@ public class ProyectosServiceImpl implements ProyectosService{
 	
 	@Override
 	public void addProyectos(Proyecto proyecto) {
-		System.out.println("ENTRANDO EN RESTTEMPLATE------------------------------");
+		System.out.println("------------------------------Rest Template addProyectos");
 		RestTemplate restTemplate = new RestTemplate();
 		restTemplate.postForObject("http://localhost:5000/proyectos/admin/post", proyecto, Proyecto.class);
+	}
+	
+	@Override
+	public Proyecto selectProyecto(Integer id) {
+		System.out.println("------------------------------Rest Template selectProyecto" + id);
+		RestTemplate restTemplate = new RestTemplate();
+	    Proyecto proyecto = restTemplate.getForObject("http://localhost:5000/proyectos/admin/select/"+id, Proyecto.class);
+	    System.out.println(proyecto);
+	    return proyecto;
 	}
 }
