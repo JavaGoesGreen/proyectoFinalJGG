@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -12,10 +14,12 @@ import com.mvc.spring.model.Proyecto;
 @Service
 public class ProyectosServiceImpl implements ProyectosService{
 	
+	private final Logger log = LoggerFactory.getLogger(ProyectosServiceImpl.class);
+	
 	@Override
 	public Collection<Proyecto> getProyectos() {
-		System.out.println("------------------------------Rest Template getProyectos");
-		 RestTemplate restTemplate = new RestTemplate();
+		log.info("------------------------------Rest Template getProyectos");
+		RestTemplate restTemplate = new RestTemplate();
 		    Proyecto[] proyectos = restTemplate.getForObject("http://localhost:5000/proyectos", Proyecto[].class);
 		    List<Proyecto> listaProyectos = Arrays.asList(proyectos);
 		    System.out.println(listaProyectos);
@@ -24,17 +28,24 @@ public class ProyectosServiceImpl implements ProyectosService{
 	
 	@Override
 	public void addProyectos(Proyecto proyecto) {
-		System.out.println("------------------------------Rest Template addProyectos");
+		log.info("------------------------------Rest Template addProyectos");
 		RestTemplate restTemplate = new RestTemplate();
 		restTemplate.postForObject("http://localhost:5000/proyectos/admin/post", proyecto, Proyecto.class);
 	}
 	
 	@Override
 	public Proyecto selectProyecto(Integer id) {
-		System.out.println("------------------------------Rest Template selectProyecto" + id);
+		log.info("------------------------------Rest Template selectProyecto" + id);
 		RestTemplate restTemplate = new RestTemplate();
 	    Proyecto proyecto = restTemplate.getForObject("http://localhost:5000/proyectos/admin/select/"+id, Proyecto.class);
-	    System.out.println(proyecto);
+	    log.info(""+proyecto);
 	    return proyecto;
+	}
+	
+	@Override
+	public void updateProyectos(Proyecto proyecto) {
+		log.info("------------------------------Rest Template updateProyectos");
+		RestTemplate restTemplate = new RestTemplate();
+		restTemplate.postForObject("http://localhost:5000/proyectos/admin/update/"+proyecto.getIdproyecto(), proyecto, Proyecto.class);
 	}
 }

@@ -1,9 +1,7 @@
 package com.rest.spring.service;
 
 import java.util.List;
-
 import com.rest.spring.model.Proyecto;
-
 
 public interface ProyectosService {
 
@@ -11,7 +9,8 @@ public interface ProyectosService {
 	
 	public Proyecto addProyectos(Proyecto proyecto);
 	
-	public Proyecto selectProyecto(Integer id);
+	public Proyecto updateProyectos(Proyecto proyecto);
 	
 	public Proyecto getProyectoById(Integer id);
+	
 }

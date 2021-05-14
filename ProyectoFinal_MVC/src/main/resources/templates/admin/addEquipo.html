@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Equipo</title>
+</head>
+
+<body>
+    <div class="container" id="contenedor">
+        <h1>Spring Data. Formulario</h1>
+        <h2>FORMULARIO DE EQUIPO (add)</h2>
+        <form method="post" th:action="@{/equipo/admin/post}" th:object="${equipo}">
+            <table>
+                <tr>
+                    <td><label for="nombre">Nombre:</label></td>
+                    <td><input type="text" th:field="*{nombre}"></td>
+                </tr>
+                <tr>
+                    <td><label for="apellidos">Apellidos:</label></td>
+                    <td><input type="text" th:field="*{apellidos}"></td>
+                </tr>
+                <tr>
+                    <td><label for="resumen">Resumen:</label></td>
+                    <td><textarea type="text" th:field="*{resumen}"> </textarea></td>
+                </tr>
+                <tr>
+                    <td><label for="foto">URL de la foto:</label></td>
+                    <td><input type="text" th:field="*{foto}"></td>
+                </tr>
+                <tr>
+					<td><label for="cargo">Cargo:</label></td>
+					<td>
+						<select name="cargo" th:field="*{cargo.idcargo}">
+
+							<option th:each="cargo:${listaCargos}"
+									th:value="${cargo.idcargo}"
+									th:text="${cargo.cargo}">
+
+							</option>
+						</select>
+					</td>
+				</tr>
+            </table>
+            <input type="submit" value="Salvar Registro">
+        </form>
+    </div>
+</body>
+
+</html>
