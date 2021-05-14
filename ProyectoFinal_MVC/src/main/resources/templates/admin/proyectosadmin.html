@@ -14,7 +14,9 @@
 	<div id="contenedor">
 		<h2>Administracion proyectos<br />
 		</h2>
-	<thead>
+	
+			<table>
+				<thead>
 				<tr>
 					<th>Nº</th>
 					<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Nombre de proyecto</th>
@@ -26,7 +28,6 @@
 					<th>Acciones</th>
 				</tr>
 			</thead>
-			<table>
 				<tr th:each="proyecto: ${proyectoslista}">
 					<td th:text="${proyecto.idproyecto}" />
 					<td th:text="${proyecto.proyecto}" />
@@ -34,9 +35,9 @@
 					<td th:text="${proyecto.resumen}" />
 					<td th:text="${proyecto.descripcion}" />
 					<td th:text="${proyecto.imagen}" />
-					<td th:text="${proyecto.empresa}" />
-					
+					<td th:text="${proyecto.cliente!=null}?${proyecto.cliente.nombre}:''"/>
 			
+
 				</table>
               
 				
