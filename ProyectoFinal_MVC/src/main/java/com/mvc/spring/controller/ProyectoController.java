@@ -61,10 +61,15 @@ public class ProyectoController {
 		ModelAndView m = new ModelAndView("/admin/addProyecto");
 		m.addObject("proyecto", new Proyecto());
 		m.addObject("listaClientes", serviceCliente.getClientes());
-		
 		return m;
 	}
-	
+
+	@PostMapping("proyectos/admin/post")
+	public ModelAndView addProyecto(@ModelAttribute Proyecto proyecto) {
+		System.out.println("IMPRIMIENDO PROYECTO-------" + proyecto);
+		serviceProyecto.addProyectos(proyecto);
+		return new ModelAndView("redirect:/proyectos/admin/list");
+	}
 	// Alta proyecto
 	/*	@GetMapping("backoffice/proyectos/new")
 		public ModelAndView newProject() {
@@ -74,15 +79,6 @@ public class ProyectoController {
 			return model;
 		}
 */
-	
-	
-
-	@PostMapping("proyectos/admin/post")
-	public ModelAndView addProyecto(@ModelAttribute Proyecto proyecto) {
-		System.out.println("IMPRIMIENDO PROYECTO-------" + proyecto);
-		serviceProyecto.addProyectos(proyecto);
-		return new ModelAndView("redirect:/proyectos/admin/list");
-	}
 	// salvar proyecto
 	/*	@PostMapping("backoffice/proyectos/save")
 		public ModelAndView saveProject(Project project) {
@@ -91,7 +87,6 @@ public class ProyectoController {
 			projectService.save(project);
 			return new ModelAndView("redirect:/backoffice/proyectos/");
 		}*/
-
 
 	// referencias a otras paginas
 	@GetMapping("/contacto")

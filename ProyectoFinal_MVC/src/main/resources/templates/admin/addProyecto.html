@@ -13,10 +13,17 @@
 <body>
     <div class="container" id="contenedor">
         <h1>Spring Data. Formulario</h1>
-
+<!-- 
+			<h2>FORMULARIO DE ALTA NUEVO EMPLEADO (add / "edit todavia no esta")</h2>
+		<form method="post" th:action="@{/guardarEmpleado}" th:object="${empleado}">
+			<input id="id" th:field="*{id}" hidden />
+			<table class="table table-striped">
+	<tr>
+-->
         <h2>FORMULARIO DE PROYECTOS (add/edit)</h2>
-        <form method="post" th:action="@{/proyectos/admin/post}"
-        	th:object="${proyecto}">
+        <form method="post" th:action="@{/proyectos/admin/post}" th:object="${proyecto}">
+        	<!-- div th:object="${cliente}" -->
+        	<!-- input id="idcliente" th:field="*{idcliente}" hidden /-->
             <table>
                 <tr>
                     <td><label for="proyecto">Nombre del proyecto:</label></td>
@@ -41,15 +48,16 @@
                 <tr>
 					<td><label for="cliente">Cliente:</label></td>
 					<td>
-						<select name="cliente" th:field="*{cliente}">
-							<!-- <option value=""> Seleccione </option> -->
-							<option th:each="cliente:${listaClientes}"  th:value="*{cliente}" th:text="${cliente.nombre}">
+						<select name="cliente" th:field="*{cliente.idcliente}">
+							<option th:each="cliente:${listaClientes}"
+									th:value="${cliente.idcliente}"
+									th:text="${cliente.nombre}">
 							</option>
 						</select>
+					</td>
 				</tr>
             </table>
             <input type="submit" value="Salvar Registro">
-
         </form>
     </div>
 </body>
