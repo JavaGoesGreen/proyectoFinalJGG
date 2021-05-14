@@ -1,33 +1,33 @@
 #########DATOS CLIENTES################
-INSERT INTO clientes (nombre, descripcion, logo) values ("", "", "");
-INSERT INTO clientes (nombre, descripcion, logo) values ("", "", "");
-INSERT INTO clientes (nombre, descripcion, logo) values ("", "", "");
-INSERT INTO clientes (nombre, descripcion, logo) values ("", "", "");
-INSERT INTO clientes (nombre, descripcion, logo) values ("", "", "");
-INSERT INTO clientes (nombre, descripcion, logo) values ("", "", "");
-INSERT INTO clientes (nombre, descripcion, logo) values ("", "", "");
+INSERT INTO clientes (nombre, descripcion, logo) values ("Mira Auditor Techs", "Empresa dedicada a la elaboración de plataformas de contenido multimedia", "https://vinti7.com/wp-content/uploads/2016/04/logos-de-fotografos-28.jpg");
+INSERT INTO clientes (nombre, descripcion, logo) values ("FrozaVa", "Sociedad encargada de la planificación de la construcción de parques solares eficientes", "https://www.epse.com.ar/uploads/proyectos_energias/imagen_logo_4.png");
+INSERT INTO clientes (nombre, descripcion, logo) values ("Lenter Sorgo", "Plataforma de intercambio de conocimiento científico", "https://etc.g2xchange.com/wp-content/uploads/2019/07/82119595_s-1-1-480x270.jpg");
+INSERT INTO clientes (nombre, descripcion, logo) values ("minoKIDE", "Consultoría con notable impacto en el asesoramiento legal", "https://www.regtechsolutions.es/images/blog/Informacion-no-financiera-y-diversidad-RegTech.jpg");
+INSERT INTO clientes (nombre, descripcion, logo) values ("Daderiel", "Jóven consultora especializada en servicios de gestion y comunicación organizacional  ", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6VEQ0WveyzbNM0hJzd2SDGpf8yYyju0jQfQ&usqp=CAU");
+INSERT INTO clientes (nombre, descripcion, logo) values ("nano Games", "Multinacional enfocada al desarrollo de videojuegos web y móviles ", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQytnIEqiI9DolCxTtTslD2ywHCRwZc1740xQ&usqp=CAU");
+INSERT INTO clientes (nombre, descripcion, logo) values ("DEVife", "Centro de innovación tecnológica centrado en la investigación del IA en ámbito médico ", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMZVw87xxZ8tiKkfpFGUI_akr5MGaTVlMT3A&usqp=CAU");
 ##########DATOS PROYECTOS#############
-INSERT INTO proyectos (proyecto, fechafin, resumen, descripcion, imagen, empresa) values ("", "", "", "", "", "");
-INSERT INTO proyectos (proyecto, fechafin, resumen, descripcion, imagen, empresa) values ("", "", "", "", "", "");
-INSERT INTO proyectos (proyecto, fechafin, resumen, descripcion, imagen, empresa) values ("", "", "", "", "", "");
-INSERT INTO proyectos (proyecto, fechafin, resumen, descripcion, imagen, empresa) values ("", "", "", "", "", "");
-INSERT INTO proyectos (proyecto, fechafin, resumen, descripcion, imagen, empresa) values ("", "", "", "", "", "");
-INSERT INTO proyectos (proyecto, fechafin, resumen, descripcion, imagen, empresa) values ("", "", "", "", "", "");
-INSERT INTO proyectos (proyecto, fechafin, resumen, descripcion, imagen, empresa) values ("", "", "", "", "", "");
-INSERT INTO proyectos (proyecto, fechafin, resumen, descripcion, imagen, empresa) values ("", "", "", "", "", "");
-INSERT INTO proyectos (proyecto, fechafin, resumen, descripcion, imagen, empresa) values ("", "", "", "", "", "");
-INSERT INTO proyectos (proyecto, fechafin, resumen, descripcion, imagen, empresa) values ("", "", "", "", "", "");
+INSERT INTO proyectos (proyecto, fechafin, resumen, descripcion, imagen, empresa) values ("MovieFlix", "22/03/2021", "Aplicación de gestión de un repositorio de películas", "Aplicación  BackOffice CRUD de gestión de un repositorio de películas con Java con I/O de archivos CSV", "https://cdn.wallpapersafari.com/3/36/XByEoF.jpeg", "1");
+INSERT INTO proyectos (proyecto, fechafin, resumen, descripcion, imagen, empresa) values ("JavaGoesQuiz", "16/04/2021", "Quiz de conocimiento general y tema ECO", "Juego de preguntas sobre temas general y ECO desarrollado con JavaScript, HTML y CSS", "https://canopylab.com/wp-content/uploads/2020/05/Working-with-adaptive-quizzes-A-beginners-guide.jpg", "6");
+INSERT INTO proyectos (proyecto, fechafin, resumen, descripcion, imagen, empresa) values ("Royal Together", "29/05/2021", "La globalización ha llegado a la mano de los más poderosos", "Software de videollamadas con conexiones ultraseguras entre distintas sedes nacional", "https://ichef.bbci.co.uk/news/976/cpsprodpb/9C1C/production/_112246993_hi061441627.jpg", "5");
+INSERT INTO proyectos (proyecto, fechafin, resumen, descripcion, imagen, empresa) values ("Sun Templates", "17/05/2021", "Seguimiento de parámetros en el funcionamiento de parques solares", "Instalación de equipo técnicno para el trackeo de información de parques solares y desarrollo de app para su visualización", "https://static.vecteezy.com/system/resources/previews/000/585/087/non_2x/sun-logo-vector-templates.jpg", "2");
+INSERT INTO proyectos (proyecto, fechafin, resumen, descripcion, imagen, empresa) values ("PistacheMode", "09/04/2021", "Si te gusta el verde, es tu plugin", "Extensión de Google Chrome que permite modificar el fondo de todas las páginas a verde pistachito ", "https://i.pinimg.com/474x/6a/56/73/6a567354cd817c2c6bf1c1890340c501.jpg", "4");
+INSERT INTO proyectos (proyecto, fechafin, resumen, descripcion, imagen, empresa) values ("MonkeyView", "12/03/2021", "¿Te quedaste a 0? Contacta sin problema con tu dealer de confianza", "App de comunicación codificada de extremo a extremo para preservar tu intimidad", "https://images-na.ssl-images-amazon.com/images/I/713Ce-ijdNL._AC_SX425_.jpg", "5");
+INSERT INTO proyectos (proyecto, fechafin, resumen, descripcion, imagen, empresa) values ("Green Drones", "07/07/2020", "Necesitas un software para automizar tu dron y que no se choque con el primer arbol y lo sabes", "Software con IA implementado para reconocer los obstaculos y estimulos externos que aparezcan durante el viaje programado en tu dron", "https://image.freepik.com/vector-gratis/drone-logo-design-drone-icon-set_18099-99.jpg", "6");
+INSERT INTO proyectos (proyecto, fechafin, resumen, descripcion, imagen, empresa) values ("Frog Piyamas", "19/10/2020", "Diseña tu pijama ideal , easypeassy", "A partir de los preferencias introducidas por el usuario, te recomendará el pijama perfecto", "https://images-na.ssl-images-amazon.com/images/I/718%2B6zGiLNL._AC_UY445_.jpg", "7");
+INSERT INTO proyectos (proyecto, fechafin, resumen, descripcion, imagen, empresa) values ("Soft Machine", "01/01/2021", "El chatbot de voz perfecto para entrenar tus softskills", "Afianza tu elevatorpitch practicando entrevistas con el chatbot más inteligente", "https://interactivadigital.com/uploads/2018/12/chatbot-120115.jpg", "5");
+INSERT INTO proyectos (proyecto, fechafin, resumen, descripcion, imagen, empresa) values ("Silent Spine", "02/02/2021", "Indica la zona de la espalda que te duele y TOMA CONSEJO ", "App enfocada a aconsejar ejercicios determinados en función de las dolencias indicadas", "https://image.freepik.com/vector-gratis/mujer-ropa-ejercicio-sintiendo-dolor-espalda_185694-165.jpg", "7");
 #########DATOS CARGOS################
-INSERT INTO cargos (cargo) VALUES ("");
-INSERT INTO cargos (cargo) VALUES ("");
-INSERT INTO cargos (cargo) VALUES ("");
-INSERT INTO cargos (cargo) VALUES ("");
-INSERT INTO cargos (cargo) VALUES ("");
-INSERT INTO cargos (cargo) VALUES ("");
+INSERT INTO cargos (cargo) VALUES ("Frontend Developer");
+INSERT INTO cargos (cargo) VALUES ("Backend Developer");
+INSERT INTO cargos (cargo) VALUES ("CEO");
+INSERT INTO cargos (cargo) VALUES ("Industrial Engineer and Renewable Energies Expert");
+INSERT INTO cargos (cargo) VALUES ("QA tester");
+INSERT INTO cargos (cargo) VALUES ("Security administrator");
 ########DATOS EQUIPO#################
-INSERT INTO equipo (nombre, apellidos, resumen, foto, cargo) VALUES ("", "", "", "", "");
-INSERT INTO equipo (nombre, apellidos, resumen, foto, cargo) VALUES ("", "", "", "", "");
-INSERT INTO equipo (nombre, apellidos, resumen, foto, cargo) VALUES ("", "", "", "", "");
-INSERT INTO equipo (nombre, apellidos, resumen, foto, cargo) VALUES ("", "", "", "", "");
+INSERT INTO equipo (nombre, apellidos, resumen, foto, cargo) VALUES ("Toni", "Blanché", "Java es mi esposa, mis hijos son microservicos 1 y 2", "/Imagenes/toni.jpg", "2");
+INSERT INTO equipo (nombre, apellidos, resumen, foto, cargo) VALUES ("Yelder", "Da Silva", "Experto en UI y diestro con librería React  ", "/Imagenes/yelder.jpg", "1");
+INSERT INTO equipo (nombre, apellidos, resumen, foto, cargo) VALUES ("Antonia", "Hidalgo", "Ingeniera defensora del cuidado del planeta y el diseño gráfico", "/Imagenes/antonia.jpg", "4");
+INSERT INTO equipo (nombre, apellidos, resumen, foto, cargo) VALUES ("Darío", "Denche", "Apasionado del análisis de datos y el Bussines Intelligence", "/Imagenes/dario.png", "3");
 #######DATO PRUEBA MENSAJES##########
-INSERT INTO mensajes (desde, fecha, asunto, mensaje, respuesta) VALUES ("", "", "", "", "");
+#INSERT INTO mensajes (mensajes.from, fecha, mensajes.subject, mensaje, respuesta) VALUES ("Juan Jumbotron", "02-01-2021", "Inicio contacto", "Hola buenos días, somos la empresa Jumbotrón S.L. y estamos interesados en que desarrollen un proyecto con nosotros, adjunto mi número de telefono para posteriores contactos; Tlf 679690996", "¡Hola Juan! Perfecto, remito el correo a dirección para ponernos en contacto contigo.");
