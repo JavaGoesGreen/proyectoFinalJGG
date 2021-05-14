@@ -1,5 +1,8 @@
 package com.mvc.spring.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -43,33 +46,50 @@ public class ProyectoController {
 	@GetMapping("/proyectos/admin/list")
 	public String listaProyectosAdmin(Model m) {
 		//m.addAttribute("cliente", proyecto.getEmpresa().getIdcliente());
-		m.addAttribute("proyectoslista", serviceProyecto.getProyectos());
+		/*m.addAttribute("proyectoslista", serviceProyecto.getProyectos());
+		System.out.println(serviceProyecto.getProyectos());
+		return "admin/proyectosadmin";*/
+		List<Proyecto> proyectos = new ArrayList<>();
+		proyectos.addAll(serviceProyecto.getProyectos());
+		m.addAttribute("proyectoslista" ,proyectos);
+		
 		return "admin/proyectosadmin";
 	}
 	
 	@GetMapping("proyectos/admin/add")
-	public String addProyecto(Model m, Proyecto proyecto) {
-		m.addAttribute("proyecto", proyecto);
-		m.addAttribute("listaclientes", serviceCliente.getClientes());
-		return "/admin/addProyecto";
+	public ModelAndView newProyecto() {
+		ModelAndView m = new ModelAndView("/admin/addProyecto");
+		m.addObject("proyecto", new Proyecto());
+		m.addObject("listaClientes", serviceCliente.getClientes());
+		return m;
 	}
+	
+	// Alta proyecto
+	/*	@GetMapping("backoffice/proyectos/new")
+		public ModelAndView newProject() {
+			ModelAndView model = new ModelAndView("ProjectForm");
+			model.addObject("project", new Project());
+			model.addObject("clients", clientService.findAll());
+			return model;
+		}
+*/
+	
+	
 
 	@PostMapping("proyectos/admin/post")
-	public ModelAndView postProyecto(@ModelAttribute Proyecto proyecto, Cliente cliente) {
-		System.out.println("IMPRIMIENDO PROYECTO antes de empresa-------" + proyecto);
-		System.out.println("IMPRIMIENDO PROYECTO antes de empresa-------" + cliente);
-		proyecto.setEmpresa(cliente);
+	public ModelAndView addProyecto(@ModelAttribute Proyecto proyecto) {
 		System.out.println("IMPRIMIENDO PROYECTO-------" + proyecto);
 		serviceProyecto.addProyectos(proyecto);
-		System.out.println("IMPRIMIENDO PROYECTO1000-------" + proyecto);
 		return new ModelAndView("redirect:/proyectos/admin/list");
 	}
-	 	
-/* Version Oscar
-	@PostMapping("proyectos/admin/post")
-	public ModelAndView postProyecto(Proyecto proyecto) {
-		serviceProyecto.addProyectos(proyecto);
-		return new ModelAndView("redirect:/proyectos/admin/list");}*/
+	// salvar proyecto
+	/*	@PostMapping("backoffice/proyectos/save")
+		public ModelAndView saveProject(Project project) {
+			log.info("----- Inside saveProject");
+			log.info("----- objeto Project" + project);
+			projectService.save(project);
+			return new ModelAndView("redirect:/backoffice/proyectos/");
+		}*/
 
 	// referencias a otras paginas
 	@GetMapping("/contacto")

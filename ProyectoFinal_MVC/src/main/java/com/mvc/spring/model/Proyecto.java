@@ -10,11 +10,10 @@ public class Proyecto {
 	private String resumen;
 	private String descripcion;
 	private String imagen;
-	private Cliente empresa;
+	private Cliente cliente;
 	
 	//Constructores 
-	public Proyecto(int idproyecto, String proyecto, String fechafin, String resumen, String descripcion, String imagen,
-			Cliente empresa) {
+	public Proyecto(int idproyecto, String proyecto, String fechafin, String resumen, String descripcion, String imagen, Cliente cliente) {
 		super();
 		this.idproyecto = idproyecto;
 		this.proyecto = proyecto;
@@ -22,7 +21,7 @@ public class Proyecto {
 		this.resumen = resumen;
 		this.descripcion = descripcion;
 		this.imagen = imagen;
-		this.empresa = empresa;
+		this.cliente = cliente;
 	}
 	
 	public Proyecto() {
@@ -66,18 +65,18 @@ public class Proyecto {
 	public void setImagen(String imagen) {
 		this.imagen = imagen;
 	}
-	public Cliente getEmpresa() {
-		return empresa;
+	public Cliente getCliente() {
+		return cliente;
 	}
-	public void setEmpresa(Cliente empresa) {
-		this.empresa = empresa;
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
 	
 	//ToString
 	@Override
 	public String toString() {
 		return "Proyecto [idproyecto=" + idproyecto + ", proyecto=" + proyecto + ", fechafin=" + fechafin + ", resumen="
-				+ resumen + ", descripcion=" + descripcion + ", imagen=" + imagen + ", empresa=" + empresa + "]";
+				+ resumen + ", descripcion=" + descripcion + ", imagen=" + imagen + ", cliente=" + cliente + "]";
 	}	
 	
 	
