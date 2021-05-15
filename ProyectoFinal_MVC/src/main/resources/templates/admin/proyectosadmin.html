@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="/css_admin/estilos.css">
-	<title>"List proyectos"</title>
+	<title>Gestión de Proyectos</title>
 </head>
 <body>
 	<div id="contenedor">
@@ -26,20 +26,20 @@
 	
 				<tr th:each="proyecto: ${proyectoslista}">
 					<td th:text="${proyecto.idproyecto}" />
-					<td th:text="${proyecto.proyecto}" />
+					<td class="td-name" th:text="${proyecto.proyecto}" />
 					<td th:text="${proyecto.fechafin}" />
 					<td th:text="${proyecto.resumen}" />
 					<td th:text="${proyecto.descripcion}" />
-					<td th:text="${proyecto.imagen}" />
+					<td class="td-img"><img th:src="${proyecto.imagen}" th:title=${proyecto.imagen} onclick="window.open(this.src)"></img></td>
 					<td th:text="${proyecto.cliente!=null}?${proyecto.cliente.nombre}:'Cliente no asignado todavía'"/>
-					<td>
-					        <i class="material-icons button edit">Editar</i>
+					<td class="td-actions">
+					        <a th:href="@{/proyectos/admin/select/(${proyecto.idproyecto})}" class="btn btn-primary"><i class="material-icons button edit">Editar</i></a>
 					        <i class="material-icons button delete">Borrar</i>
      				 </td>
 					<!-- td>
 						<a th:href="@{/proyectos/admin/update(id=${{proyecto.idproyecto})}">Modificar</a> |
 						<a th:href="@{/proyectos/admin/delete(id=${{proyecto.idproyecto})}">Eliminar </a>
-					</td -->	
+					</td -->
 				</tr>
 			</tbody>
 	</table>		
