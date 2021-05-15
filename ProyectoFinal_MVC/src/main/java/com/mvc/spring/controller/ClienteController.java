@@ -24,7 +24,7 @@ public class ClienteController {
 	@Autowired
 	ClientesServiceImpl serviceC;
 
-	@GetMapping("/clientes")
+	@GetMapping("/listaclientes")
 	public String listaClientes(Model m) {
 		m.addAttribute("clienteslista", serviceC.getClientes());
 		return "clientes";

@@ -88,24 +88,4 @@ public class ProyectoController {
 		serviceProyecto.updateProyectos(proyecto);
 		return new ModelAndView("redirect:/proyectos/admin/list");
 	}
-	
-
-	/* referencias a otras paginas
-	@GetMapping("/contacto")
-	public String contacto() {
-
-		return "contacto";
-	}
-
-	@GetMapping("/equipo")
-	public String equipo() {
-
-		return "equipo";
-	}
-
-	@GetMapping("/index")
-	public String index() {
-
-		return "index";
-	}*/
 }

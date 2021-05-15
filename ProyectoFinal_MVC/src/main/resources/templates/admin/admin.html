@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="/css_admin/estilos.css">
+	<title>Panel de Gestión</title>
+</head>
+<body>
+	<div id="contenedor">
+		<h1><span>Panel de Gestión</span></h1>
+	</div>
+	<div id="add">
+		<button class="add"><a th:href="@{/proyectos/admin/list}">Gestion de Proyectos</a></button>
+	</div>
+	<div id="add">
+		<button class="add"><a th:href="@{/equipo/admin/list}">Gestion de Equipo</a></button>
+	</div>
+
+</body>
+</html>
