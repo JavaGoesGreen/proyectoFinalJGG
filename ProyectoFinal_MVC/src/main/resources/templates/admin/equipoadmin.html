@@ -7,8 +7,9 @@
 </head>
 <body>
 	<div id="contenedor">
-		<h2>Administracion equipo<br /></h2>
-		<table>
+		<h1><span>Gestión de equipo</span></h1>
+		
+		<table  class="container">
 			<thead>
 				<tr>
 					<th>Nº</th>
@@ -20,6 +21,7 @@
 					<th>Acciones</th>
 				</tr>
 			</thead>
+			<tbody>
 			<tr th:each="equipo: ${equipoLista}">
 				<td th:text="${equipo.idpersona}" />
 				<td th:text="${equipo.nombre}" />
@@ -27,15 +29,22 @@
 				<td th:text="${equipo.resumen}" />
 				<td th:text="${equipo.foto}" />
 				<td th:text="${equipo.cargo!=null}?${equipo.cargo.cargo}:'Cargo no asignado todavía'" />
+				<td>
+					 <i class="material-icons button edit">Editar</i>
+					 <i class="material-icons button delete">Borrar</i>
+     			</td>						
 				<!-- td>
 					<a th:href="@{/proyectos/admin/update(id=${{proyecto.idproyecto})}">Modificar</a> |
 					<a th:href="@{/proyectos/admin/delete(id=${{proyecto.idproyecto})}">Eliminar</a>
 				</td -->
 			</tr>
+			</tbody>
 		</table>
-		<br />
-		<p>
-		<a href="">Clic para añadir nuevo miembro del equipo</a>	
+		</div>
+		<div id="add">
+		<button class="add"><a th:href="@{/equipo/admin/add}">Añadir nuevo teammate</a></button>
+
 	</div>
+
 </body>
 </html>

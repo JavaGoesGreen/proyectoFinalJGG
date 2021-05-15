@@ -7,38 +7,46 @@
 </head>
 <body>
 	<div id="contenedor">
-		<h2>Administracion proyectos<br /></h2>
-		<table>
-			<thead>
-				<tr>
-					<th>Nº</th>
-					<th>Nombre de proyecto</th>
-					<th>Fecha de finalización</th>
-					<th>Resumen</th>
-					<th>Descripción</th>
-					<th>Imagen</th>
-					<th>Empresa</th>
-					<th>Acciones</th>
-				</tr>
-			</thead>
-
-			<tr th:each="proyecto: ${proyectoslista}">
-				<td th:text="${proyecto.idproyecto}" />
-				<td th:text="${proyecto.proyecto}" />
-				<td th:text="${proyecto.fechafin}" />
-				<td th:text="${proyecto.resumen}" />
-				<td th:text="${proyecto.descripcion}" />
-				<td th:text="${proyecto.imagen}" />
-				<td th:text="${proyecto.cliente!=null}?${proyecto.cliente.nombre}:'Cliente no asignado todavía'"/>
-				<!-- td>
-					<a th:href="@{/proyectos/admin/update(id=${{proyecto.idproyecto})}">Modificar</a> |
-					<a th:href="@{/proyectos/admin/delete(id=${{proyecto.idproyecto})}">Eliminar </a>
-				</td -->	
+	<h1><span>Gestión de Proyectos</span></h1>
+	
+	<table class="container">
+		<thead>
+			<tr>
+				<th><h1>Nº</h1></th>
+				<th><h1>Nombre de proyecto</h1></th>
+				<th><h1>Fecha de finalización</h1></th>
+				<th><h1>Resumen</h1></th>
+				<th><h1>Descripción</h1></th>
+				<th><h1>Imagen</h1></th>
+				<th><h1>Empresa</h1></th>
+				<th><h1>Acciones</h1></th>
 			</tr>
-		</table>		
-		<br />
-		<p>
-		<a href="">Clic para añadir nuevo proyecto</a>
+		</thead>
+			<tbody>
+	
+				<tr th:each="proyecto: ${proyectoslista}">
+					<td th:text="${proyecto.idproyecto}" />
+					<td th:text="${proyecto.proyecto}" />
+					<td th:text="${proyecto.fechafin}" />
+					<td th:text="${proyecto.resumen}" />
+					<td th:text="${proyecto.descripcion}" />
+					<td th:text="${proyecto.imagen}" />
+					<td th:text="${proyecto.cliente!=null}?${proyecto.cliente.nombre}:'Cliente no asignado todavía'"/>
+					<td>
+					        <i class="material-icons button edit">Editar</i>
+					        <i class="material-icons button delete">Borrar</i>
+     				 </td>
+					<!-- td>
+						<a th:href="@{/proyectos/admin/update(id=${{proyecto.idproyecto})}">Modificar</a> |
+						<a th:href="@{/proyectos/admin/delete(id=${{proyecto.idproyecto})}">Eliminar </a>
+					</td -->	
+				</tr>
+			</tbody>
+	</table>		
+	</div>
+	
+	<div id="add">
+		<button class="add"><a th:href="@{/proyectos/admin/add}">Añadir nuevo proyecto</a></button>
 
 	</div>
 </body>
