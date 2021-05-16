@@ -75,31 +75,20 @@
   <main>
     <!-- ----------------------- Sección: Proyectos ----------------------------- -->
     <section id="proyectos">
-      <h2>PROYECTOS</h2>
-   	 
-              
+      <h1>PROYECTOS</h1>
+ 
       <div class="row">
 		
-        <div class="col-lg-6" th:each="proyecto : ${proyectoslista}">
-          <div class="jumbotron" id="movieflix">
-            <h2 class="display-3" th:text="${proyecto.proyecto}"> </h2>
-            <p class="lead" th:text="${proyecto.resumen}"></p>
-            <hr class="my-2">
-
-         	<img th:src="${proyecto.imagen}"/>
-              <a class="btn btn-primary btn-lg" href="#!" role="button">Descúbrelo</a>
-
+        <div class="col-lg-4" th:each="proyecto : ${proyectoslista}">
+          <div class="jumbotron proyecto" th:style="'background-image: url('+${proyecto.imagen}+');'">
+          <div class="testfondoproyecto">
+            <h2 class="display-3 proyectotitulo" th:text="${proyecto.proyecto}"> </h2>
+            <p class="lead proyectotexto" th:text="${proyecto.resumen}"></p><br>
+            <a class="btn btn-primary btn-lg" th:href="@{/proyectos/detalle/(id=${proyecto.idproyecto})}" role="button">Descúbrelo</a>
+          </div>
           </div>
         </div>
 
-        <div class="col-lg-6">
-          <div class="jumbotron" id="spring">
-            <h2 class="display-3">Titulo</h2>
-            <p class="lead">Parrafo</p>
-            <hr class="my-2">
-            <a class="btn btn-primary btn-lg" href="#!" role="button"></a>
-          </div>
-        </div>
       </div>
     </section>
   </main>

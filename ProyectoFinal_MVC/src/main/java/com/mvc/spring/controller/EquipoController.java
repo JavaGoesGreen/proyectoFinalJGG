@@ -64,11 +64,11 @@ public class EquipoController {
 		return new ModelAndView("redirect:/equipo/admin/list");
 	}
 	
-	@GetMapping("equipo/admin/select/{id}")
-	public ModelAndView selectEquipo(@PathVariable Integer id) {
+	@GetMapping("equipo/admin/select")
+	public ModelAndView selectEquipo(@RequestParam Integer id) {
 		System.out.println("--------------------------------------EquipoControllerMVC" + id);
-		ModelAndView m = new ModelAndView("/admin/updateProyecto");
-		m.addObject("proyecto", serviceEquipo.selectEquipo(id));
+		ModelAndView m = new ModelAndView("/admin/updateEquipo");
+		m.addObject("equipo", serviceEquipo.selectEquipo(id));
 		m.addObject("listaCargos", serviceCargo.getCargos());
 		return m;
 	}
