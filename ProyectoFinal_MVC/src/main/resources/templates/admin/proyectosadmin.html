@@ -33,8 +33,9 @@
 					<td class="td-img"><img th:src="${proyecto.imagen}" th:title=${proyecto.imagen} onclick="window.open(this.src)"></img></td>
 					<td th:text="${proyecto.cliente!=null}?${proyecto.cliente.nombre}:'Cliente no asignado todavía'"/>
 					<td class="td-actions">
-					        <a th:href="@{/proyectos/admin/select/(${proyecto.idproyecto})}" class="btn btn-primary"><i class="material-icons button edit">Editar</i></a>
+					        <a th:href="@{/proyectos/admin/select/} + ${proyecto.idproyecto}" class="btn btn-primary"><i class="material-icons button edit">Editar</i></a>
 					        <i class="material-icons button delete">Borrar</i>
+						   
      				 </td>
 					<!-- td>
 						<a th:href="@{/proyectos/admin/update(id=${{proyecto.idproyecto})}">Modificar</a> |
