@@ -39,13 +39,13 @@ public class ProyectoController {
 	@Autowired
 	ClientesServiceImpl serviceCliente;
 
-	@GetMapping("/proyectos")
+	@GetMapping("proyectos")
 	public String listaProyectos(Model m) {
 		m.addAttribute("proyectoslista", serviceProyecto.getProyectos());
 		return "proyectos";
 	}
 
-	@GetMapping("/proyectos/admin/list")
+	@GetMapping("proyectos/admin/list")
 	public String listaProyectosAdmin(Model m) {
 		//m.addAttribute("cliente", proyecto.getEmpresa().getIdcliente());
 		/*m.addAttribute("proyectoslista", serviceProyecto.getProyectos());
@@ -73,10 +73,19 @@ public class ProyectoController {
 		return new ModelAndView("redirect:/proyectos/admin/list");
 	}
 	
-	@GetMapping("proyectos/admin/select/{id}")
-	public ModelAndView selectProyecto(@PathVariable Integer id) {
+	@GetMapping("proyectos/admin/select")
+	public ModelAndView selectProyecto(@RequestParam Integer id) {
 		System.out.println("--------------------------------------ProyectoControllerMVC" + id);
 		ModelAndView m = new ModelAndView("/admin/updateProyecto");
+		m.addObject("proyecto", serviceProyecto.selectProyecto(id));
+		m.addObject("listaClientes", serviceCliente.getClientes());
+		return m;
+	}
+	
+	@GetMapping("proyectos/detalle")
+	public ModelAndView selectProyectoDetalle(@RequestParam Integer id) {
+		System.out.println("--------------------------------------ProyectoControllerMVC" + id);
+		ModelAndView m = new ModelAndView("/proyectodetalle");
 		m.addObject("proyecto", serviceProyecto.selectProyecto(id));
 		m.addObject("listaClientes", serviceCliente.getClientes());
 		return m;
