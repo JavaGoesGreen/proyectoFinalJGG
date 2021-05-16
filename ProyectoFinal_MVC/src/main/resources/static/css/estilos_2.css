@@ -76,6 +76,11 @@ header a {
     background-image: url("https://cdn.wallpapersafari.com/3/36/XByEoF.jpeg");
     background-size: cover;
 }
+
+#imagenproyecto {
+	max-width: 100px;
+	max-height: 100px;
+}
 #spring {
     background-image: url("https://image.freepik.com/free-vector/abstract-technology-background-hacker-concept-programming-coding-binary-computer-code-matrix-background-style_87788-179.jpg");
     background-size: cover;
