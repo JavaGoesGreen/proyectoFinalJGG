@@ -41,13 +41,13 @@
   <header id="top">
     <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
 
-      <a class="navbar-brand" href="#"><img th:src="@{/Imagenes/logo_trans.png}" alt="logo" /> Java Goes Green</a>
+      <a class="navbar-brand" href="#"><img alt="logo" th:src="@{/Imagenes/logo.png}"/> Java Goes Green</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
               <a class="nav-link" href="/">Inicio</a>
@@ -73,66 +73,20 @@
 
   </header>
   <main>
-    <!-- ----------------------- Sección: Equipo   ----------------------------- -->
-    <section id="team" class="pb-5">
-      <div class="container">
-        <h1 id="teamtitle">NUESTRO EQUIPO</h1>
-        <div class="row">
-          <!-- Team member -->
-          <div class="col-xs-12 col-sm-6 col-md-4" th:each="equipo:${equipolista}">
-            <div class="image-flip">
-              <div class="mainflip flip-0">
-                <div class="frontside">
-                  <div class="card">
-                    <div class="card-body text-center">
-                      <p><img class=" img-fluid" th:src="${equipo.foto}" alt="card image" /></p>
-                      <h4 class="card-title" th:text="${equipo.nombre}+' '+${equipo.apellidos}"></h4>
-                      <p class="card-text" th:text="${equipo.cargo.cargo}"></p>
-                      <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i
-                          class="fa fa-plus"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="backside">
-                  <div class="card">
-                    <div class="card-body text-center mt-4">
-                      <h4 class="card-title" th:text="${equipo.nombre}+' '+${equipo.apellidos}"></h4>
-                      <p class="card-text" th:text="${equipo.resumen}"></p>
-                      <ul class="list-inline">
-                        <li class="list-inline-item">
-                          <a class="social-icon text-xs-center" target="_blank"
-                            href="https://www.fiverr.com/share/qb8D02">
-                            <i class="fa fa-facebook"></i>
-                          </a>
-                        </li>
-                        <li class="list-inline-item">
-                          <a class="social-icon text-xs-center" target="_blank"
-                            href="https://www.fiverr.com/share/qb8D02">
-                            <i class="fa fa-twitter"></i>
-                          </a>
-                        </li>
-                        <li class="list-inline-item">
-                          <a class="social-icon text-xs-center" target="_blank"
-                            href="https://www.fiverr.com/share/qb8D02">
-                            <i class="fa fa-skype"></i>
-                          </a>
-                        </li>
-                        <li class="list-inline-item">
-                          <a class="social-icon text-xs-center" target="_blank"
-                            href="https://www.fiverr.com/share/qb8D02">
-                            <i class="fa fa-google"></i>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- ./Team member -->
+    <!-- ----------------------- Sección: Proyectos ----------------------------- -->
+    <section id="proyectos">
+        <div th:object="${proyecto}">
+			<h1 th:text="${proyecto.proyecto}"></h1>
+			<img th:src="${proyecto.imagen}" class="imagendetalle" /><br><br>
+			<p class="textosdetalle"> Resumen del proyecto: </p>
+	            <p class="lead proyectotexto" th:text="${proyecto.resumen}"></p><br>
+	        <p class="textosdetalle"> Fecha de finalización: </p>
+	        	<p class="lead proyectotexto" th:text="${proyecto.fechafin}"></p><br>
+	        <p class="textosdetalle"> Descripción del proyecto: </p>
+	        	<p class="lead proyectotexto" th:text="${proyecto.descripcion}"></p><br>
+	        <p class="textosdetalle"> Empresa cliente: </p>
+	        	<p class="lead proyectotexto" th:text="${proyecto.cliente!=null}?${proyecto.cliente.nombre}:'Cliente no asignado todavía'"></p>
         </div>
-      </div>
     </section>
   </main>
   <!-- ----------------------- Sección: Footer ----------------------------- -->
@@ -162,18 +116,18 @@
         <div class="col-xs-6 col-md-3">
           <h6>Apartados</h6>
           <ul class="footer-links">
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#proyectos">Proyectos</a></li>
-            <li><a href="#empresas">Empresas</a></li>
-            <li><a href="#clientes">Clientes</a></li>
-            <li><a href="#precios">Precios</a></li>
-            <li><a href="#equipo">Equipo</a></li>
-            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="/inicio">Inicio</a></li>
+            <li><a href="/proyectos">Proyectos</a></li>
+            <li><a href="/equipo">Equipo</a></li>
+            <li><a href="/contacto">Contacto</a></li>
+            <li><a href="/inicio#servicios">Servicios</a></li>
+            <li><a href="/inicio#clientes">Clientes</a></li>
+            <li><a href="/inicio#empresas">Empresas</a></li>
           </ul>
         </div>
       </div>
       <div class="row" id="footer_logo">
-      <img id="logo_pie" th:src="@{/imagenes/logo_trans.png}" alt="logo" />
+      <img alt="logo" id="logo_pie" th:src="@{/Imagenes/logo_trans.png}" />
     </div>
       <hr>
     </div>

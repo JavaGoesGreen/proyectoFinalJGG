@@ -15,6 +15,7 @@ h1 {
   line-height:1em;
   text-align: center;
   color:white;
+  padding: 50px;
 }
 
 
@@ -169,10 +170,10 @@ td:hover > .edit, td:hover > .delete {
 	background-color: white;
 }
 .td-name {
-	min-width: 100px;
+	min-width: 150px;
 }
 .td-actions {
-	max-width: 60px;
+	max-width: 100px;
 }
 .td-img {
 	padding-left: 0!important;

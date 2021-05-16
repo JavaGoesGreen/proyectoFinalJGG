@@ -8,11 +8,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-//import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import com.mvc.spring.model.Equipo;
 import com.mvc.spring.service.CargosServiceImpl;
@@ -64,11 +62,11 @@ public class EquipoController {
 		return new ModelAndView("redirect:/equipo/admin/list");
 	}
 	
-	@GetMapping("equipo/admin/select/{id}")
-	public ModelAndView selectEquipo(@PathVariable Integer id) {
+	@GetMapping("equipo/admin/select")
+	public ModelAndView selectEquipo(@RequestParam Integer id) {
 		System.out.println("--------------------------------------EquipoControllerMVC" + id);
-		ModelAndView m = new ModelAndView("/admin/updateProyecto");
-		m.addObject("proyecto", serviceEquipo.selectEquipo(id));
+		ModelAndView m = new ModelAndView("/admin/updateEquipo");
+		m.addObject("equipo", serviceEquipo.selectEquipo(id));
 		m.addObject("listaCargos", serviceCargo.getCargos());
 		return m;
 	}
