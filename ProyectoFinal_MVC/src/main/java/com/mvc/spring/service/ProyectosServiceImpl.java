@@ -6,6 +6,8 @@ import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -45,7 +47,12 @@ public class ProyectosServiceImpl implements ProyectosService{
 	@Override
 	public void updateProyectos(Proyecto proyecto) {
 		log.info("------------------------------Rest Template updateProyectos");
+		 //String url="http://localhost:5000/proyectos/admin/update/"+proyecto.getIdproyecto();
 		RestTemplate restTemplate = new RestTemplate();
-		restTemplate.postForObject("http://localhost:5000/proyectos/admin/update/"+proyecto.getIdproyecto(), proyecto, Proyecto.class);
+		restTemplate.put("http://localhost:5000/proyectos/admin/update/"+proyecto.getIdproyecto(), proyecto, Proyecto.class);
+	   //HttpEntity<Proyecto> requestEntity = new HttpEntity<Proyecto>(proyecto);
+		//HttpEntity<Proyecto> response = restTemplate.exchange(url, HttpMethod.PUT, requestEntity,Proyecto.class, proyecto);
+
+		
 	}
 }

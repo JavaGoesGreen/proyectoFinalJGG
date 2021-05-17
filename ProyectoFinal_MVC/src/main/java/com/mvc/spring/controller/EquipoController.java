@@ -2,14 +2,12 @@ package com.mvc.spring.controller;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import com.mvc.spring.model.Equipo;
@@ -34,7 +32,16 @@ public class EquipoController {
 
 	@GetMapping("/equipo")
 	public String listaEquipo(Model m) {
+		
+		/*List<Equipo> fakes = new ArrayList<>();
+		for (int i = 0; i<=16;i++) {
+			
+			fakes.add(serviceEquipo.newFakeMember());
+		}
+		m.addAttribute("equipolist", fakes);*/
 		m.addAttribute("equipolista", serviceEquipo.getEquipo());
+	
+	
 		return "equipo";
 	}
 
@@ -71,30 +78,13 @@ public class EquipoController {
 		return m;
 	}
 	
-	@PutMapping("equipo/admin/update")
-	public ModelAndView updateEquipo(@RequestParam Equipo equipo) {
+	@PostMapping("equipo/admin/update")
+	public ModelAndView updateEquipo(@ModelAttribute Equipo equipo) {
 		System.out.println("IMPRIMIENDO EQUIPO-------" + equipo);
 		serviceEquipo.updateEquipo(equipo);
 		return new ModelAndView("redirect:/equipo/admin/list");
 	}
 	
 
-	/* referencias a otras paginas
-	@GetMapping("/contacto")
-	public String contacto() {
-
-		return "contacto";
-	}
-
-	@GetMapping("/equipo")
-	public String equipo() {
-
-		return "equipo";
-	}
-
-	@GetMapping("/index")
-	public String index() {
-
-		return "index";
-	}*/
+	
 }

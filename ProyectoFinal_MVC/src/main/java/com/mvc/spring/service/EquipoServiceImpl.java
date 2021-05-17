@@ -9,7 +9,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import com.github.javafaker.Faker;
+import com.mvc.spring.model.Cargo;
 import com.mvc.spring.model.Equipo;
+
 
 @Service
 public class EquipoServiceImpl implements EquipoService{
@@ -46,6 +49,28 @@ public class EquipoServiceImpl implements EquipoService{
 	public void updateEquipo(Equipo equipo) {
 		log.info("------------------------------Rest Template updateEquipo");
 		RestTemplate restTemplate = new RestTemplate();
-		restTemplate.postForObject("http://localhost:5000/equipo/admin/update/"+equipo.getIdpersona(), equipo, Equipo.class);
+		restTemplate.put("http://localhost:5000/equipo/admin/update/"+equipo.getIdpersona(), equipo, Equipo.class);
 	}
+	
+	
+	/*public Equipo newFakeMember () {
+		Equipo e = new Equipo();
+		Cargo c = new Cargo();
+		c.setCargo("Lechon Fake Developer");
+		Faker faker = new Faker();
+		String name= faker.name().firstName();
+		String lastname = faker.name().lastName();
+		String foto = faker.avatar().image();
+		String resumen = faker.name().title();
+		e.setNombre(name);
+		e.setApellidos(lastname);
+		e.setFoto(foto);;
+		e.setResumen(resumen);
+		e.setCargo(c);
+		
+		return e;
+	}*/
+	
+	
+	
 }

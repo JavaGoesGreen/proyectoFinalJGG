@@ -8,10 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.rest.spring.model.Equipo;
+import com.rest.spring.model.Proyecto;
 import com.rest.spring.service.EquipoServiceImpl;
 
 @RestController
@@ -39,5 +41,11 @@ public class EquipoController {
 		public Equipo selectProyecto(@PathVariable Integer id) {
 			log.info("---- Entrando en método seleccionar proyecto "+id+" REST -------");
 			return service.getEquipoById(id);
+		}
+		
+		@PutMapping("/equipo/admin/update/{equipo.getIdpersona()}")
+		public Equipo updateEquipo(@RequestBody Equipo equipo) {
+			log.info("---- Entrando en método modificar equipo REST ------- "+equipo.getIdpersona()+" -------");
+			return service.updateEquipos(equipo);
 		}
 }

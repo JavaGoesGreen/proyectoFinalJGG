@@ -18,8 +18,9 @@
         <br>
         <h2>Editar proyecto</h2>
         <br>
-        <form method="post" th:object="${proyecto}" th:action="@{/proyectos/admin/update}">
-        <!-- input name="_method" type="hidden" value="PUT" /-->
+        <form method="post" th:object="${proyecto}"  th:action="@{/proyectos/admin/update}">
+
+         <input type="hidden" class="form-control" th:field="*{idproyecto}">
         	<div class="form-group">
             	<label for="proyecto">Nombre del proyecto:</label>
                 <input type="text" class="form-control" th:field="*{proyecto}">
