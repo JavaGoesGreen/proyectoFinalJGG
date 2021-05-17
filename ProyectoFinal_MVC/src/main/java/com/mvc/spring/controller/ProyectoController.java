@@ -43,44 +43,15 @@ public class ProyectoController {
 	@Autowired
 	ClientesServiceImpl serviceCliente;
 
+	// --------------------------------------------------------------------
+	// FRONT OFFICE
+	
 	@GetMapping("proyectos")
 	public String listaProyectos(Model m) {
 		m.addAttribute("proyectoslista", serviceProyecto.getProyectos());
 		m.addAttribute("listaClientes", serviceCliente.getClientes());
 		m.addAttribute("cliente", new Cliente());
 		return "proyectos";
-	}
-
-	@GetMapping("proyectos/admin/list")
-	public String listaProyectosAdmin(Model m) {
-		List<Proyecto> proyectos = new ArrayList<>();
-		proyectos.addAll(serviceProyecto.getProyectos());
-		m.addAttribute("proyectoslista", proyectos);
-		return "admin/proyectosadmin";
-	}
-	
-	@GetMapping("proyectos/admin/add")
-	public ModelAndView newProyecto() {
-		ModelAndView m = new ModelAndView("/admin/addProyecto");
-		m.addObject("proyecto", new Proyecto());
-		m.addObject("listaClientes", serviceCliente.getClientes());
-		return m;
-	}
-
-	@PostMapping("proyectos/admin/post")
-	public ModelAndView addProyecto(@ModelAttribute Proyecto proyecto) {
-		log.info("IMPRIMIENDO PROYECTO-------" + proyecto);
-		serviceProyecto.addProyectos(proyecto);
-		return new ModelAndView("redirect:/proyectos/admin/list");
-	}
-	
-	@GetMapping("proyectos/admin/select")
-	public ModelAndView selectProyecto(@RequestParam Integer id) {
-		log.info("--------------------------------------ProyectoControllerMVC" + id);
-		ModelAndView m = new ModelAndView("/admin/updateProyecto");
-		m.addObject("proyecto", serviceProyecto.selectProyecto(id));
-		m.addObject("listaClientes", serviceCliente.getClientes());
-		return m;
 	}
 	
 	@GetMapping("proyectos/detalle")
@@ -110,19 +81,53 @@ public class ProyectoController {
 		m.addAttribute("cliente", new Cliente());
 		return "proyectos";
 	}
+
+	// --------------------------------------------------------------------
+	// BACK OFFICE
 	
-	@RequestMapping(value="proyectos/admin/update", method = { RequestMethod.PUT})
+	@GetMapping("admin/proyectos/list")
+	public String listaProyectosAdmin(Model m) {
+		List<Proyecto> proyectos = new ArrayList<>();
+		proyectos.addAll(serviceProyecto.getProyectos());
+		m.addAttribute("proyectoslista", proyectos);
+		return "admin/proyectosadmin";
+	}
+	
+	@GetMapping("admin/proyectos/add")
+	public ModelAndView newProyecto() {
+		ModelAndView m = new ModelAndView("/admin/addProyecto");
+		m.addObject("proyecto", new Proyecto());
+		m.addObject("listaClientes", serviceCliente.getClientes());
+		return m;
+	}
+
+	@PostMapping("admin/proyectos/post")
+	public ModelAndView addProyecto(@ModelAttribute Proyecto proyecto) {
+		log.info("IMPRIMIENDO PROYECTO-------" + proyecto);
+		serviceProyecto.addProyectos(proyecto);
+		return new ModelAndView("redirect:/admin/proyectos/list");
+	}
+	
+	@GetMapping("admin/proyectos/select")
+	public ModelAndView selectProyecto(@RequestParam Integer id) {
+		log.info("--------------------------------------ProyectoControllerMVC" + id);
+		ModelAndView m = new ModelAndView("/admin/updateProyecto");
+		m.addObject("proyecto", serviceProyecto.selectProyecto(id));
+		m.addObject("listaClientes", serviceCliente.getClientes());
+		return m;
+	}
+	
+	@RequestMapping(value="admin/proyectos/update", method = { RequestMethod.POST})
 	public ModelAndView updateProyecto(@ModelAttribute Proyecto proyecto) {
 		log.info("IMPRIMIENDO PROYECTO-------" + proyecto);
 		serviceProyecto.updateProyectos(proyecto);
-		return new ModelAndView("redirect:/proyectos/admin/list");
+		return new ModelAndView("redirect:/admin/proyectos/list");
 	}
 	
-	@GetMapping(value="/proyectos/admin/delete")
+	@GetMapping(value="/admin/proyectos/delete")
 	public ModelAndView deleteProyecto(@RequestParam Integer id) {
 		log.info("ELIMINANDO PROYECTO-------ID:" + id);
 		serviceProyecto.deleteProyecto(id);
-		
-		return new ModelAndView("redirect:/proyectos/admin/list");
+		return new ModelAndView("redirect:/admin/proyectos/list");
 	}
 }

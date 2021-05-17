@@ -35,14 +35,9 @@ public class MensajeController {
 	
 	@Autowired
 	MensajesServiceImpl service;
-
-	@GetMapping("mensajes/admin/list")
-	public String listaProyectosAdmin(Model m) {
-		List<Mensaje> mensajes = new ArrayList<>();
-		mensajes.addAll(service.getMensajes());
-		m.addAttribute("mensajeslista", mensajes);
-		return "admin/mensajesadmin";
-	}
+	
+	// --------------------------------------------------------------------
+	// FRONT OFFICE
 	
 	@GetMapping("contacto")
 	public ModelAndView newContacto() {
@@ -51,13 +46,6 @@ public class MensajeController {
 		return m;
 	}
 	
-	@GetMapping("mensajes/admin/add")
-	public ModelAndView newMensaje() {
-		ModelAndView m = new ModelAndView("/admin/addMensaje");
-		m.addObject("mensaje", new Mensaje());
-		return m;
-	}
-
 	@PostMapping("mensajes/post")
 	public ModelAndView addmensaje(@ModelAttribute Mensaje mensaje) {
 		LocalDate l = LocalDate.now();
@@ -65,6 +53,17 @@ public class MensajeController {
 		log.info("IMPRIMIENDO MENSAJE-------" + mensaje);
 		service.addMensajes(mensaje);
 		return new ModelAndView("redirect:/contacto");
+	}
+	
+	// --------------------------------------------------------------------
+	// BACK OFFICE
+	
+	@GetMapping("admin/mensajes/list")
+	public String listaProyectosAdmin(Model m) {
+		List<Mensaje> mensajes = new ArrayList<>();
+		mensajes.addAll(service.getMensajes());
+		m.addAttribute("mensajeslista", mensajes);
+		return "admin/mensajesadmin";
 	}
 
 }

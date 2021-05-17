@@ -3,6 +3,9 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="/css_admin/estilos.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" >
+    <style>body {background-color:yellowgreen}</style>
 	<title>Panel de Gestión</title>
 </head>
 <body>
@@ -10,13 +13,16 @@
 		<h1><span>Panel de Gestión</span></h1>
 	</div>
 	<div id="add">
-		<button class="add"><a th:href="@{/proyectos/admin/list}">Gestion de Proyectos</a></button>
+		<a class="btn btn-success" th:href="@{/admin/proyectos/list}">💻 Gestión de Proyectos</a>
 	</div>
 	<div id="add">
-		<button class="add"><a th:href="@{/equipo/admin/list}">Gestion de Equipo</a></button>
+		<a class="btn btn-success" th:href="@{/admin/equipo/list}">👥 Gestión de Equipo</a>
 	</div>
-		<div id="add">
-		<button class="add"><a th:href="@{/mensajes/admin/list}">Gestion de Mensajes</a></button>
+	<div id="add">
+		<a class="btn btn-success" th:href="@{/admin/mensajes/list}">💬 Gestión de Mensajes</a>
+	</div>
+	<div id="add">
+		<a class="btn btn-success" th:href="@{/}">👈 Volver a la pagina</a>
 	</div>
 
 </body>
