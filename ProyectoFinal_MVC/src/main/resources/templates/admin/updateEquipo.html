@@ -19,7 +19,8 @@
         <h2>Añadir nuevo integrante del equipo</h2>
         <br>
 		<form method="post" th:action="@{/equipo/admin/update}" th:object="${equipo}">
-		<!-- input name="_method" type="hidden" value="PUT" /-->
+		
+		<input type="hidden" class="form-control" th:field="*{idpersona}">
 	        <div class="form-group">
 	            <label for="nombre">Nombre:</label>
 	            <input type="text" class="form-control" th:field="*{nombre}">
