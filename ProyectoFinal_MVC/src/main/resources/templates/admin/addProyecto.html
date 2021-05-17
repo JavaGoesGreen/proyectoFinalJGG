@@ -18,7 +18,7 @@
         <br>
         <h2>Añadir nuevo proyecto</h2>
         <br>
-        <form method="post" th:action="@{/proyectos/admin/post}" th:object="${proyecto}">
+        <form method="post" th:action="@{/admin/proyectos/post}" th:object="${proyecto}">
         	<div class="form-group">
             	<label for="proyecto">Nombre del proyecto:</label>
                 <input type="text" class="form-control" th:field="*{proyecto}">
