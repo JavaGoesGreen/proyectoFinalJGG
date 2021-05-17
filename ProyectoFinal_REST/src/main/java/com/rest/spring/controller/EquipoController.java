@@ -5,6 +5,7 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -47,5 +48,11 @@ public class EquipoController {
 		public Equipo updateEquipo(@RequestBody Equipo equipo) {
 			log.info("---- Entrando en método modificar equipo REST ------- "+equipo.getIdpersona()+" -------");
 			return service.updateEquipos(equipo);
+		}
+		
+		@DeleteMapping("/equipo/admin/delete/{id}")
+		public void deleteEquipo(@PathVariable Integer id) {
+			
+			service.deleteEquipo(id);
 		}
 }

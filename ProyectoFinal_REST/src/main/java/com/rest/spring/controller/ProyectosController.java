@@ -4,6 +4,7 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -45,6 +46,13 @@ public class ProyectosController {
 	public Proyecto updateProyecto(@RequestBody Proyecto proyecto) {
 		log.info("---- Entrando en método modificar proyecto REST ------- "+proyecto.getIdproyecto()+" -------");
 		return service.updateProyectos(proyecto);
+	}
+	
+	
+	@DeleteMapping("/proyectos/admin/delete/{id}")
+	public void deleteProyecto(@PathVariable Integer id) {
+		
+		service.deleteProyecto(id);
 	}
 	
 	

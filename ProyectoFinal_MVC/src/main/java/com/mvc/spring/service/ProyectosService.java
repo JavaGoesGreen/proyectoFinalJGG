@@ -13,4 +13,6 @@ public interface ProyectosService {
 	public Proyecto selectProyecto(Integer id);
 	
 	public void updateProyectos(Proyecto proyecto);
+	
+	public void deleteProyecto(Integer id);
 }
