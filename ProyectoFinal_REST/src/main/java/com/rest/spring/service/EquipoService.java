@@ -12,4 +12,6 @@ public interface EquipoService {
 	public Equipo updateEquipos(Equipo equipo);
 	
 	public Equipo getEquipoById(Integer id);
+	
+	public void deleteEquipo(Integer id);
 }

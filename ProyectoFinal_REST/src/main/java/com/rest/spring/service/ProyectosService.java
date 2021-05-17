@@ -13,4 +13,6 @@ public interface ProyectosService {
 	
 	public Proyecto getProyectoById(Integer id);
 	
+	public void deleteProyecto(Integer id);
+	
 }

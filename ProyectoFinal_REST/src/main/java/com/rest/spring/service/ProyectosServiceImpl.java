@@ -27,18 +27,6 @@ public class ProyectosServiceImpl implements ProyectosService {
 		return proyectoDao.save(proyecto);
 	}
 	
-	/* Ejemplo de un ejercicio de David (sin BBDD)
-	@Override
-	public Optional<Proyecto> update(Proyecto proyecto) {
-		List<Proyecto> listaProyectos = this.getProyectos();
-		Proyecto aux = listaProyectos.get(proyecto.getIdproyecto());
-		if(aux != null) {
-			listaProyectos.put(proyecto.getIdproyecto(), proyecto);
-			aux = listaProyectos.get(proyecto.getIdproyecto());
-		}
-		return  Optional.ofNullable(aux);
-	}
-	*/
 	
 	@Override
 	public Proyecto getProyectoById(Integer id) {
@@ -48,5 +36,12 @@ public class ProyectosServiceImpl implements ProyectosService {
 				return p;
 			}
 		} return null;
+	}
+
+	@Override
+	public void deleteProyecto(Integer id) {
+		
+		proyectoDao.deleteById(id);
+		
 	}
 }

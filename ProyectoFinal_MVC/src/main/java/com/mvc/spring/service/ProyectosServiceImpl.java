@@ -55,4 +55,12 @@ public class ProyectosServiceImpl implements ProyectosService{
 
 		
 	}
+
+	@Override
+	public void deleteProyecto(Integer id) {
+		log.info("------------------------------Rest Template deleteProyectos");
+		RestTemplate restTemplate = new RestTemplate();
+		restTemplate.delete("http://localhost:5000/proyectos/admin/delete/"+id, Proyecto.class);
+		
+	}
 }

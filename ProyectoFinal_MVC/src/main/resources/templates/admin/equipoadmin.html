@@ -34,7 +34,7 @@
 				<td th:text="${equipo.cargo!=null}?${equipo.cargo.cargo}:'Cargo no asignado todavía'" />
 				<td class="td-actions">
 					<a class="btn btn-outline-primary" th:href="@{/equipo/admin/select/(id=${equipo.idpersona})}" role="button">Editar</a>
-					<a class="btn btn-outline-danger" th:href="@{/equipo/admin/select/(id=${equipo.idpersona})}" role="button">Eliminar</a>		 
+					<a class="btn btn-outline-danger" th:href="@{/equipo/admin/delete/(id=${equipo.idpersona})}" role="button">Eliminar</a>		 
      			</td>						
 			</tr>
 			</tbody>

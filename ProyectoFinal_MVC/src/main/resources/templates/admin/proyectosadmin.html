@@ -37,7 +37,8 @@
 					<td th:text="${proyecto.cliente!=null}?${proyecto.cliente.nombre}:'Cliente no asignado todavía'"/>
 					<td class="td-actions">
 							<a class="btn btn-outline-primary" th:href="@{/proyectos/admin/select/(id=${proyecto.idproyecto})}" role="button">Editar</a>
-							<a class="btn btn-outline-danger" th:href="@{/proyectos/admin/select/(id=${proyecto.idproyecto})}" role="button">Eliminar</a>
+							<a class="btn btn-outline-danger"  th:href="@{/proyectos/admin/delete/(id=${proyecto.idproyecto})}" role="button">Eliminar</a>
+							
      				</td>
 
 				</tr>

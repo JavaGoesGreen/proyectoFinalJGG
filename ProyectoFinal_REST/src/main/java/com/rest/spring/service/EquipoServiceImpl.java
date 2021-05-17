@@ -39,4 +39,12 @@ public class EquipoServiceImpl implements EquipoService {
 		} return null;
 	}
 
+	@Override
+	public void deleteEquipo(Integer id) {
+			
+		equipoDao.deleteById(id);
+		
+		
+	}
+
 }

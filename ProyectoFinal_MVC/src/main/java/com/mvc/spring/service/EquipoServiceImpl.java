@@ -14,6 +14,7 @@ import com.mvc.spring.model.Cargo;
 import com.mvc.spring.model.Equipo;
 
 
+
 @Service
 public class EquipoServiceImpl implements EquipoService{
 	
@@ -52,24 +53,28 @@ public class EquipoServiceImpl implements EquipoService{
 		restTemplate.put("http://localhost:5000/equipo/admin/update/"+equipo.getIdpersona(), equipo, Equipo.class);
 	}
 	
+	@Override
+	public void deleteEquipo(Integer id) {
+		log.info("------------------------------Rest Template deleteEquipo");
+		RestTemplate restTemplate = new RestTemplate();
+		restTemplate.delete("http://localhost:5000/equipo/admin/delete/"+id, Equipo.class);
+		
+	}
 	
-	/*public Equipo newFakeMember () {
+	
+	public Equipo newFakeMember () {
 		Equipo e = new Equipo();
 		Cargo c = new Cargo();
-		c.setCargo("Lechon Fake Developer");
 		Faker faker = new Faker();
-		String name= faker.name().firstName();
-		String lastname = faker.name().lastName();
-		String foto = faker.avatar().image();
-		String resumen = faker.name().title();
-		e.setNombre(name);
-		e.setApellidos(lastname);
-		e.setFoto(foto);;
-		e.setResumen(resumen);
+		c.setCargo(faker.name().title());
+		e.setNombre(faker.name().firstName());
+		e.setApellidos(faker.name().lastName());
+		e.setFoto("https://100k-faces.glitch.me/random-image");
+		e.setResumen(faker.hobbit().quote());
 		e.setCargo(c);
 		
 		return e;
-	}*/
+	}
 	
 	
 	
