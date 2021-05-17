@@ -62,14 +62,15 @@ public class EquipoServiceImpl implements EquipoService{
 	}
 	
 	
-	public Equipo newFakeMember () {
+	public Equipo newFakeMember (int id) {
 		Equipo e = new Equipo();
 		Cargo c = new Cargo();
 		Faker faker = new Faker();
 		c.setCargo(faker.name().title());
 		e.setNombre(faker.name().firstName());
 		e.setApellidos(faker.name().lastName());
-		e.setFoto("https://100k-faces.glitch.me/random-image");
+		e.setFoto("https://ozgrozer.github.io/100k-faces/0/1/001"+id+".jpg");
+
 		e.setResumen(faker.hobbit().quote());
 		e.setCargo(c);
 		
