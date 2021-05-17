@@ -23,10 +23,10 @@ public class StaticController {
 		return "index";
 	}
 
-	@GetMapping("/contacto")
+	/*@GetMapping("/contacto")
 	public String contacto() {
 		return "contacto";
-	}
+	}*/
 
 	@GetMapping("/admin")
 	public String admin() {

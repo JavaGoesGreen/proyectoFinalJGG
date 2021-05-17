@@ -39,8 +39,10 @@ public class EquipoController {
 	public String listaEquipo(Model m) {
 		List<Equipo> equipos = new ArrayList<>();
 		equipos.addAll(serviceEquipo.getEquipo());
+		Integer id=(int)((Math.random()*400)+100);
 		for(int i=0; i<=15;i++) {
-			equipos.add(serviceEquipo.newFakeMember());
+			equipos.add(serviceEquipo.newFakeMember(id));
+			id++;
 		}
 	
 		m.addAttribute("equipolista", equipos);
