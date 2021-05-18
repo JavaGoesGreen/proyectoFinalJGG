@@ -8,13 +8,15 @@
 
 .lead {
 
-  font-family: "HelveticaNeue-Light", sans-serif;
+  HelveticaNeue-Thin;
   font-size: 23px;
   color: #eceeef;
 }
 
 .empresa {
-  font-family: 'Roboto', sans-serif;
+  font-family: HelveticaNeue-Thin;
+
+
 
 }
 
@@ -23,15 +25,17 @@ p {
   font-size: 18px;
   padding: 10px;
   color: #737373;
-  
+
 
 }
+
 .subtitulos {
-  font-size:x-large;
+  font-size: x-large;
   font-family: "HelveticaNeue-Light", sans-serif;
 
-  
+
 }
+
 h1,
 h2,
 h3,
@@ -39,11 +43,11 @@ h4,
 h5,
 h6 {
 
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: HelveticaNeue-Thin;
   margin-bottom: 30px;
   color: #ffffff;
-  padding:30px;
-  
+  padding: 30px;
+
 }
 
 h1 {
@@ -51,8 +55,8 @@ h1 {
 }
 
 .cover-heading {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 70px;
+  font-family: HelveticaNeue-Thin;
+  font-size: 60px;
 }
 
 html {
@@ -91,7 +95,7 @@ header img {
   font-size: 18px;
   border: none;
   outline: none;
-  background-color: rgb(131, 180, 131);
+  /* background-color: rgb(131, 180, 131); */
   color: white;
   cursor: pointer;
 
@@ -105,14 +109,13 @@ header a {
 
 /*----------------------- Sección: Servicios -----------------------------*/
 #servicios {
-  background-color: #b9cebd;
+  background-color: #ffffff;
   padding: 50px;
   color: black;
 }
-.border-success {
-  
-  
 }
+
+.border-success {}
 
 /*----------------------- Sección: Proyectos -----------------------------*/
 #proyectos {
@@ -139,13 +142,13 @@ header a {
 
 #empresas {
   padding: 50px;
-  background-color: #b9cebd;
+  background-color: #ffffff;
 
 
 }
 
 #empresas h2 {
-  color: black;
+  color: #427314;
 }
 
 #empresas img {
@@ -157,6 +160,7 @@ header a {
 
 #clientes {
   padding: 50px;
+  height: 600px;
 }
 
 #clientes h2 {
@@ -419,7 +423,7 @@ header a {
 
 /*----------------------- Sección: Pricing      -----------------------------*/
 #precios {
-  background-color: #b9cebd;
+  background-color: #ffffff;
   padding: 50px;
   color: black;
 }
@@ -464,14 +468,16 @@ header a {
 .btn-primary {
   color: #fff;
   background-color: #b9cebd;
-  border-color:#b9cebd
+  border-color: #b9cebd
 }
-.bg-success {
+
+/* .bg-success {
   background-color: #78927c !important;
-}
-.border-success {
-  border:#9dd3af !important;
-}
+} */
+
+/* .border-success {
+  border: #9dd3af !important;
+} */
 
 
 
@@ -592,6 +598,8 @@ section .section-title {
   border-radius: 50%;
 }
 
+.card-body {}
+
 /*----------------------- Sección: Contacto     -----------------------------*/
 #contacto {
   background-color: yellowgreen;
@@ -604,22 +612,23 @@ section .section-title {
 }
 
 .card-header {
-  background-color: #bddda2ce;
+  background-color: #90a080;
+
 }
 
 /*----------------------- Sección: Footer       -----------------------------*/
 
 .site-footer {
-  background-color: #b9cebd;
-  padding: 45px 0 20px;
-  font-size: 15px;
+  background-color: #90a080;
+  width: 100% !important;
+  height: 500px;
 
-  color: #737373;
 }
 
 .site-footer hr {
   border-top-color: #bbb;
-  opacity: 0.5
+  opacity: 0.5;
+
 }
 
 .site-footer hr.small {
@@ -645,7 +654,7 @@ section .section-title {
 
 .footer-links {
   font-family: "HelveticaNeue-Light", sans-serif;
-  ;
+  color: #ffffffbb;
   padding-left: 0;
   list-style: none
 }
@@ -684,15 +693,14 @@ section .section-title {
 }
 
 .copyright-text {
-  margin: 0
+  font-size: 15px;
+  padding: 5px;
+  margin: 0;
+
+
 }
 
-@media (max-width:991px) {
-  .site-footer [class^=col-] {
-    margin-bottom: 30px
 
-  }
-}
 
 @media (max-width:767px) {
   .site-footer {
@@ -701,6 +709,8 @@ section .section-title {
 
   .site-footer .copyright-text,
   .site-footer .social-icons {
+
+
     text-align: center
   }
 }
@@ -779,11 +789,17 @@ section .section-title {
 }
 
 #logo_pie {
-  margin-top: 20px;
-  width: 100px;
+  margin-top: 10px;
+  width: 50px;
+
 }
 
 #footer_logo {
   display: flex;
   justify-content: center;
+
+}
+
+.text-justify {
+  color: #ffffffbb;
 }
