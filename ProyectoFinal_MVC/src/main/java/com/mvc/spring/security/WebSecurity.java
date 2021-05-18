@@ -15,7 +15,12 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
     public void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
             .antMatchers("/admin/**").hasRole("ADMIN")
-            .and().formLogin();
+            .and().formLogin()
+            .loginPage("/login")
+			.permitAll()
+			.and()
+		.logout()
+			.permitAll();
     }
 	
 	@Override
@@ -24,7 +29,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
                 .withUser("Dario").password("dario").roles("ADMIN")
                 .and().withUser("Yelder").password("yelder").roles("ADMIN")
                 .and().withUser("Antonia").password("antonia").roles("ADMIN")
-                .and().withUser("Toni").password("oni").roles("ADMIN");
+                .and().withUser("Toni").password("toni").roles("ADMIN");
     }
 
     @Bean
