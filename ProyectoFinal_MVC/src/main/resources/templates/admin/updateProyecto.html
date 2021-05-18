@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
     integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <style>body {background-color:yellowgreen}</style>
-    <title>Nuevo Proyecto</title>
+    <title>Editar Proyecto</title>
 </head>
 
 <body>
@@ -16,9 +16,11 @@
     	<br>
         <h1>FORMULARIO DE PROYECTOS</h1>
         <br>
-        <h2>Añadir nuevo proyecto</h2>
+        <h2>Editar proyecto</h2>
         <br>
-        <form method="post" th:action="@{/proyectos/admin/post}" th:object="${proyecto}">
+        <form method="post" th:object="${proyecto}"  th:action="@{/proyectos/admin/update}">
+
+         <input type="hidden" class="form-control" th:field="*{idproyecto}">
         	<div class="form-group">
             	<label for="proyecto">Nombre del proyecto:</label>
                 <input type="text" class="form-control" th:field="*{proyecto}">

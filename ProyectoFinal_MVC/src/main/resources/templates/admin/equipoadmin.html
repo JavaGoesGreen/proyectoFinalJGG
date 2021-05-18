@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="/css_admin/estilos.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" >
+    <style>body {background-color:yellowgreen; color: white;}</style>
+	<title>Gestión de equipo</title>
+</head>
+<body>
+	<div id="contenedor">
+		<h1><span>Gestión de equipo</span></h1>
+		
+		<table  class="container">
+			<thead>
+				<tr>
+					<th>Nº</th>
+					<th>Nombre</th>
+					<th>Apellidos</th>
+					<th>Resumen</th>
+					<th>Foto</th>
+					<th>Cargo</th>
+					<th>Acciones</th>
+				</tr>
+			</thead>
+			<tbody>
+			<tr th:each="equipo: ${equipoLista}">
+				<td th:text="${equipo.idpersona}" />
+				<td th:text="${equipo.nombre}" />
+				<td th:text="${equipo.apellidos}" />
+				<td th:text="${equipo.resumen}" />
+				<td class="td-img"><img th:src="${equipo.foto}" th:title=${equipo.foto}></img></td>
+				<td th:text="${equipo.cargo!=null}?${equipo.cargo.cargo}:'Cargo no asignado todavía'" />
+				<td class="td-actions">
+					<a class="btn btn-outline-primary" th:href="@{/equipo/admin/select/(id=${equipo.idpersona})}" role="button">Editar</a>
+					<a class="btn btn-outline-danger" th:href="@{/equipo/admin/delete/(id=${equipo.idpersona})}" role="button">Eliminar</a>		 
+     			</td>						
+			</tr>
+			</tbody>
+		</table>
+	</div>
+	<div id="add">
+		<a class="btn btn-success" th:href="@{/equipo/admin/add}" role="button">Añadir nuevo teammate</a>
+	</div>
+</body>
+</html>

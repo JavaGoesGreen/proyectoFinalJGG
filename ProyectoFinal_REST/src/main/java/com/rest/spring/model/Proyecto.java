@@ -27,8 +27,6 @@ public class Proyecto {
 	@JoinColumn(name = "empresa")
 	private Cliente cliente;
 
-	
-
 	// constructors
 	public Proyecto() {
 		super();
@@ -97,8 +95,8 @@ public class Proyecto {
 		return cliente;
 	}
 
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
+	public void setCliente(Cliente empresa) {
+		this.cliente = empresa;
 	}
 
 	// toString

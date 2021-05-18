@@ -1,5 +1,6 @@
-<!doctype html>
-<html lang="es">
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="es">
 
 <head>
   <!-- Required meta tags -->
@@ -15,15 +16,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500&display=swap" rel="stylesheet">
 
 
-  <!-- Font awesome -->
-  <link href="../static/assets/fontawesome-5.15.2/css/all.min.css" rel="stylesheet">
-  <!--load all styles -->
+ <!-- Font awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!--load all styles -->
 
-  <link rel="stylesheet" href="../static/css/estilos_2.css">
-  <link rel="stylesheet" href="../static/css/cover.css">
+  <link rel="stylesheet" th:href="@{/css/estilos_2.css}">
+  <link rel="stylesheet" th:href="@{/css/cover.css}">
 
   <title>Java Goes Green</title>
-  <link rel="icon" href="../static/Iconos/logo.ico">
+  <link rel="icon" th:href="@{/Iconos/logo.ico}">
 
   <!-- Fuentes -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -40,36 +41,29 @@
   <header id="top">
     <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
 
-      <a class="navbar-brand" href="#"><img src="../static/Imagenes/logo_trans.png" alt="logo" /> Java Goes Green</a>
+      <a class="navbar-brand" href="#"><img th:src="@{/Imagenes/logo_trans.png}" alt="logo" /> Java Goes Green</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="/templates/index.html">Inicio<span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="/">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/templates/proyectos.html">Proyectos</a>
+              <a class="nav-link" href="/proyectos">Proyectos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/templates/equipo.html">Equipo</a>
+              <a class="nav-link" href="/equipo">Equipo<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/templates/contacto.html">Contacto</a>
+              <a class="nav-link" href="/contacto">Contacto</a>
             </li>
-            
-          <li class="nav-item">
-            <a class="nav-link" href="/templates/index.html#servicios">Servicios</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/templates/index.html#clientes">Clientes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/templates/index.html#empresas">Empresas</a>
-          </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/admin">Admin</a>
+            </li>            
           </ul>
       </div>
     </nav>
@@ -82,18 +76,18 @@
     <!-- ----------------------- Sección: Equipo   ----------------------------- -->
     <section id="team" class="pb-5">
       <div class="container">
-        <h5 class="section-title h1">NUESTRO EQUIPO</h5>
+        <h1 id="teamtitle">NUESTRO EQUIPO</h1>
         <div class="row">
           <!-- Team member -->
-          <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="col-xs-12 col-sm-6 col-md-4" th:each="equipo:${equipolista}">
             <div class="image-flip">
               <div class="mainflip flip-0">
                 <div class="frontside">
                   <div class="card">
                     <div class="card-body text-center">
-                      <p><img class=" img-fluid" src="../static/Imagenes/Gintare.jpg" alt="card image"></p>
-                      <h4 class="card-title">Gintare</h4>
-                      <p class="card-text">Marketing Director</p>
+                      <p><img class=" img-fluid" th:src="${equipo.foto}" alt="card image" /></p>
+                      <h4 class="card-title" th:text="${equipo.nombre}+' '+${equipo.apellidos}"></h4>
+                      <p class="card-text" th:text="${equipo.cargo.cargo}"></p>
                       <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i
                           class="fa fa-plus"></i></a>
                     </div>
@@ -102,10 +96,8 @@
                 <div class="backside">
                   <div class="card">
                     <div class="card-body text-center mt-4">
-                      <h4 class="card-title">Gintare</h4>
-                      <p class="card-text">This is basic card with image on top, title, description and button.This is
-                        basic card with image on top, title, description and button.This is basic card with image on
-                        top, title, description and button.</p>
+                      <h4 class="card-title" th:text="${equipo.nombre}+' '+${equipo.apellidos}"></h4>
+                      <p class="card-text" th:text="${equipo.resumen}"></p>
                       <ul class="list-inline">
                         <li class="list-inline-item">
                           <a class="social-icon text-xs-center" target="_blank"
@@ -139,282 +131,6 @@
             </div>
           </div>
           <!-- ./Team member -->
-          <!-- Team member -->
-          <div class="col-xs-12 col-sm-6 col-md-4">
-            <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-              <div class="mainflip">
-                <div class="frontside">
-                  <div class="card">
-                    <div class="card-body text-center">
-                      <p><img class=" img-fluid" src="../static/Imagenes/antonio.jpg" alt="card image"></p>
-                      <h4 class="card-title">Antonio</h4>
-                      <p class="card-text">Product Owner</p>
-                      <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i
-                          class="fa fa-plus"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="backside">
-                  <div class="card">
-                    <div class="card-body text-center mt-4">
-                      <h4 class="card-title">Antonio</h4>
-                      <p class="card-text">This is basic card with image on top, title, description and button.This is
-                        basic card with image on top, title, description and button.This is basic card with image on
-                        top, title, description and button.</p>
-                      <ul class="list-inline">
-                        <li class="list-inline-item">
-                          <a class="social-icon text-xs-center" target="_blank"
-                            href="https://www.fiverr.com/share/qb8D02">
-                            <i class="fa fa-facebook"></i>
-                          </a>
-                        </li>
-                        <li class="list-inline-item">
-                          <a class="social-icon text-xs-center" target="_blank"
-                            href="https://www.fiverr.com/share/qb8D02">
-                            <i class="fa fa-twitter"></i>
-                          </a>
-                        </li>
-                        <li class="list-inline-item">
-                          <a class="social-icon text-xs-center" target="_blank"
-                            href="https://www.fiverr.com/share/qb8D02">
-                            <i class="fa fa-skype"></i>
-                          </a>
-                        </li>
-                        <li class="list-inline-item">
-                          <a class="social-icon text-xs-center" target="_blank"
-                            href="https://www.fiverr.com/share/qb8D02">
-                            <i class="fa fa-google"></i>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- ./Team member -->
-          <!-- Team member -->
-          <div class="col-xs-12 col-sm-6 col-md-4">
-            <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-              <div class="mainflip">
-                <div class="frontside">
-                  <div class="card">
-                    <div class="card-body text-center">
-                      <p><img class=" img-fluid" src="../static/Imagenes/antonia.jpg" alt="card image"></p>
-                      <h4 class="card-title">Antonia</h4>
-                      <p class="card-text">Industrial Engineer and Renewable Energies Expert</p>
-                      <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i
-                          class="fa fa-plus"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="backside">
-                  <div class="card">
-                    <div class="card-body text-center mt-4">
-                      <h4 class="card-title">Antonia</h4>
-                      <p class="card-text">This is basic card with image on top, title, description and button.This is
-                        basic card with image on top, title, description and button.This is basic card with image on
-                        top, title, description and button.</p>
-                      <ul class="list-inline">
-                        <li class="list-inline-item">
-                          <a class="social-icon text-xs-center" target="_blank"
-                            href="https://www.fiverr.com/share/qb8D02">
-                            <i class="fa fa-facebook"></i>
-                          </a>
-                        </li>
-                        <li class="list-inline-item">
-                          <a class="social-icon text-xs-center" target="_blank"
-                            href="https://www.fiverr.com/share/qb8D02">
-                            <i class="fa fa-twitter"></i>
-                          </a>
-                        </li>
-                        <li class="list-inline-item">
-                          <a class="social-icon text-xs-center" target="_blank"
-                            href="https://www.fiverr.com/share/qb8D02">
-                            <i class="fa fa-skype"></i>
-                          </a>
-                        </li>
-                        <li class="list-inline-item">
-                          <a class="social-icon text-xs-center" target="_blank"
-                            href="https://www.fiverr.com/share/qb8D02">
-                            <i class="fa fa-google"></i>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- ./Team member -->
-          <!-- Team member -->
-          <div class="col-xs-12 col-sm-6 col-md-4">
-            <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-              <div class="mainflip">
-                <div class="frontside">
-                  <div class="card">
-                    <div class="card-body text-center">
-                      <p><img class=" img-fluid" src="../static/Imagenes/dario.png" alt="card image"></p>
-                      <h4 class="card-title">Dario</h4>
-                      <p class="card-text">CEO</p>
-                      <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i
-                          class="fa fa-plus"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="backside">
-                  <div class="card">
-                    <div class="card-body text-center mt-4">
-                      <h4 class="card-title">Dario</h4>
-                      <p class="card-text">This is basic card with image on top, title, description and button.This is
-                        basic card with image on top, title, description and button.This is basic card with image on
-                        top, title, description and button.</p>
-                      <ul class="list-inline">
-                        <li class="list-inline-item">
-                          <a class="social-icon text-xs-center" target="_blank"
-                            href="https://www.fiverr.com/share/qb8D02">
-                            <i class="fa fa-facebook"></i>
-                          </a>
-                        </li>
-                        <li class="list-inline-item">
-                          <a class="social-icon text-xs-center" target="_blank"
-                            href="https://www.fiverr.com/share/qb8D02">
-                            <i class="fa fa-twitter"></i>
-                          </a>
-                        </li>
-                        <li class="list-inline-item">
-                          <a class="social-icon text-xs-center" target="_blank"
-                            href="https://www.fiverr.com/share/qb8D02">
-                            <i class="fa fa-skype"></i>
-                          </a>
-                        </li>
-                        <li class="list-inline-item">
-                          <a class="social-icon text-xs-center" target="_blank"
-                            href="https://www.fiverr.com/share/qb8D02">
-                            <i class="fa fa-google"></i>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- ./Team member -->
-          <!-- Team member -->
-          <div class="col-xs-12 col-sm-6 col-md-4">
-            <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-              <div class="mainflip">
-                <div class="frontside">
-                  <div class="card">
-                    <div class="card-body text-center">
-                      <p><img class=" img-fluid" src="../static/Imagenes/yelder.jpg" alt="card image"></p>
-                      <h4 class="card-title">Yelder</h4>
-                      <p class="card-text">Frontend Developer</p>
-                      <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i
-                          class="fa fa-plus"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="backside">
-                  <div class="card">
-                    <div class="card-body text-center mt-4">
-                      <h4 class="card-title">Yelder</h4>
-                      <p class="card-text">This is basic card with image on top, title, description and button.This is
-                        basic card with image on top, title, description and button.This is basic card with image on
-                        top, title, description and button.</p>
-                      <ul class="list-inline">
-                        <li class="list-inline-item">
-                          <a class="social-icon text-xs-center" target="_blank"
-                            href="https://www.fiverr.com/share/qb8D02">
-                            <i class="fa fa-facebook"></i>
-                          </a>
-                        </li>
-                        <li class="list-inline-item">
-                          <a class="social-icon text-xs-center" target="_blank"
-                            href="https://www.fiverr.com/share/qb8D02">
-                            <i class="fa fa-twitter"></i>
-                          </a>
-                        </li>
-                        <li class="list-inline-item">
-                          <a class="social-icon text-xs-center" target="_blank"
-                            href="https://www.fiverr.com/share/qb8D02">
-                            <i class="fa fa-skype"></i>
-                          </a>
-                        </li>
-                        <li class="list-inline-item">
-                          <a class="social-icon text-xs-center" target="_blank"
-                            href="https://www.fiverr.com/share/qb8D02">
-                            <i class="fa fa-google"></i>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- ./Team member -->
-          <!-- Team member -->
-          <div class="col-xs-12 col-sm-6 col-md-4">
-            <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-              <div class="mainflip">
-                <div class="frontside">
-                  <div class="card">
-                    <div class="card-body text-center">
-                      <p><img class=" img-fluid" src="../static/Imagenes/toni.jpg" alt="card image"></p>
-                      <h4 class="card-title">Toni</h4>
-                      <p class="card-text">Backend Developer</p>
-                      <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i
-                          class="fa fa-plus"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="backside">
-                  <div class="card">
-                    <div class="card-body text-center mt-4">
-                      <h4 class="card-title">Toni</h4>
-                      <p class="card-text">This is basic card with image on top, title, description and button.This is
-                        basic card with image on top, title, description and button.This is basic card with image on
-                        top, title, description and button.</p>
-                      <ul class="list-inline">
-                        <li class="list-inline-item">
-                          <a class="social-icon text-xs-center" target="_blank"
-                            href="https://www.fiverr.com/share/qb8D02">
-                            <i class="fa fa-facebook"></i>
-                          </a>
-                        </li>
-                        <li class="list-inline-item">
-                          <a class="social-icon text-xs-center" target="_blank"
-                            href="https://www.fiverr.com/share/qb8D02">
-                            <i class="fa fa-twitter"></i>
-                          </a>
-                        </li>
-                        <li class="list-inline-item">
-                          <a class="social-icon text-xs-center" target="_blank"
-                            href="https://www.fiverr.com/share/qb8D02">
-                            <i class="fa fa-skype"></i>
-                          </a>
-                        </li>
-                        <li class="list-inline-item">
-                          <a class="social-icon text-xs-center" target="_blank"
-                            href="https://www.fiverr.com/share/qb8D02">
-                            <i class="fa fa-google"></i>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- ./Team member -->
-
         </div>
       </div>
     </section>
@@ -457,7 +173,7 @@
         </div>
       </div>
       <div class="row" id="footer_logo">
-      <img id="logo_pie" src="../static/imagenes/logo_trans.png" alt="logo" />
+      <img id="logo_pie" th:src="@{/imagenes/logo_trans.png}" alt="logo" />
     </div>
       <hr>
     </div>

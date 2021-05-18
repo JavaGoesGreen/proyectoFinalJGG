@@ -56,7 +56,7 @@ public class Cliente {
 
 	@Override
 	public String toString() {
-		return "Cliente [idcliente=" + idcliente + ", nombre=" + nombre + ", descripcion=" + descripcion + ", logo="
+		return "MODELCLIENTEMVC Cliente [idcliente=" + idcliente + ", nombre=" + nombre + ", descripcion=" + descripcion + ", logo="
 				+ logo + "]";
 	}
 	

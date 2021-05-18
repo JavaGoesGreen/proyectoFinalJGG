@@ -54,7 +54,7 @@ CREATE TABLE IF NOT EXISTS `jgg`.`equipo` (
   `foto` VARCHAR(128) NULL DEFAULT NULL,
   `cargo` INT NULL DEFAULT NULL,
   PRIMARY KEY (`idpersona`),
-  INDEX `cargo_fk` (`cargo` ASC) VISIBLE,
+  INDEX `cargo_fk` (`cargo` ASC),
   CONSTRAINT `cargo`
     FOREIGN KEY (`cargo`)
     REFERENCES `jgg`.`cargos` (`idcargo`)
@@ -70,7 +70,8 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `jgg`.`mensajes` (
   `idmensaje` INT NOT NULL AUTO_INCREMENT,
-  `from` VARCHAR(100) NULL DEFAULT NULL,
+  `nombre` VARCHAR(100) NULL DEFAULT NULL,
+  `correo` VARCHAR(100) NULL DEFAULT NULL,
   `fecha` TIMESTAMP NULL DEFAULT NULL,
   `subject` VARCHAR(100) NULL DEFAULT NULL,
   `mensaje` VARCHAR(512) NULL DEFAULT NULL,

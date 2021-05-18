@@ -75,34 +75,18 @@
   <main>
     <!-- ----------------------- Sección: Proyectos ----------------------------- -->
     <section id="proyectos">
-
-    	<h1>PROYECTOS</h1>
-    	<div class="row" style="display:flex; justify-content:center">
-	    	<form method="get" th:action="@{/proyectos/empresa}" th:object="${cliente}">
-		    	<label for="cliente">Empresa cliente:</label>
-				<select name="cliente" class="form-control" th:field="*{idcliente}">
-				<option		th:value="0"
-							th:text="Todas">
-					<option th:each="c:${listaClientes}"
-							th:value="${c.idcliente}"
-							th:text="${c.nombre}">
-					</option>
-				</select>
-				<input type="submit" class="btn btn-primary" value="Filtrar">
-	    	</form>
-    	</div><br>
-     	<div class="row">
-        	<div class="col-lg-4" th:each="proyecto : ${proyectoslista}">
-        		<div class="jumbotron proyecto" th:style="'background-image: url('+${proyecto.imagen}+');'">
-        			<div class="testfondoproyecto">
-            			<h2 class="display-3 proyectotitulo" th:text="${proyecto.proyecto}"> </h2>
-            			<p class="lead proyectotexto" th:text="${proyecto.resumen}"></p><br>
-            			<a class="btn btn-primary btn-lg" th:href="@{/proyectos/detalle/(id=${proyecto.idproyecto})}" role="button">Descúbrelo</a>
-          			</div>
-          		</div>
-        	</div>
-
-      </div>
+        <div th:object="${proyecto}">
+			<h1 th:text="${proyecto.proyecto}"></h1>
+			<img th:src="${proyecto.imagen}" class="imagendetalle" /><br><br>
+			<p class="textosdetalle"> Resumen del proyecto: </p>
+	            <p class="lead proyectotexto" th:text="${proyecto.resumen}"></p><br>
+	        <p class="textosdetalle"> Fecha de finalización: </p>
+	        	<p class="lead proyectotexto" th:text="${proyecto.fechafin}"></p><br>
+	        <p class="textosdetalle"> Descripción del proyecto: </p>
+	        	<p class="lead proyectotexto" th:text="${proyecto.descripcion}"></p><br>
+	        <p class="textosdetalle"> Empresa cliente: </p>
+	        	<p class="lead proyectotexto" th:text="${proyecto.cliente!=null}?${proyecto.cliente.nombre}:'Cliente no asignado todavía'"></p>
+        </div>
     </section>
   </main>
   <!-- ----------------------- Sección: Footer ----------------------------- -->
