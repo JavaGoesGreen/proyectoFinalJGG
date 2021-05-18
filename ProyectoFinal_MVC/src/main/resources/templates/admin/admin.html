@@ -14,7 +14,13 @@
 	</div>
 	<div id="add">
 		<button class="add"><a th:href="@{/equipo/admin/list}">Gestion de Equipo</a></button>
-	</div>
+	</div> 
+	<div id="add">
+	<form  id="add" th:action="@{/logout}" method="post">
+            <input id="cerrarsesion" type="submit" value="Cerrar sesión Admin"/>
+        </form>
+	</div> 
+	
 
 </body>
 </html>

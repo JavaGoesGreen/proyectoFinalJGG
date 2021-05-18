@@ -41,6 +41,20 @@ tr, th {
     font-size: 1.20em;
 }
 
+#cerrarsesion {
+	font-family: 'Open Sans', sans-serif;
+	text-decoration: none;
+	text-align:left;
+	color: white;
+	width: 50%;
+	height: 50%;
+	padding: 10px;
+	background-color:  #323C50;
+	font-weight: normal;
+    line-height: 1.42em;
+    font-size: 1.05em;
+}
+
 #add {
 	align-items: center;
 	justify-content: center;
@@ -62,6 +76,15 @@ tr, th {
 }
 
 .add a:hover{
+	color: #403E10;
+}
+
+#cerrarsesion:hover{
+	background-color: white;
+	
+}
+
+#cerrarsesion:hover{
 	color: #403E10;
 }
 
@@ -166,6 +189,11 @@ img {
 	background-color: #dc2a2a!important;
 	color:white;
 }
+
+.logadmin {
+	color:black;
+}
+
 td:hover > .edit, td:hover > .delete {
 	background-color: white;
 }

@@ -42,10 +42,7 @@ public class EquipoController {
 		for(int i=0; i<=15;i++) {
 			equipos.add(serviceEquipo.newFakeMember());
 		}
-	
 		m.addAttribute("equipolista", equipos);
-	
-	
 		return "equipo";
 	}
 
