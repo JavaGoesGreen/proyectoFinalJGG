@@ -17,9 +17,9 @@ import org.springframework.web.servlet.ModelAndView;
 import com.mvc.spring.model.Mensaje;
 import com.mvc.spring.service.MensajesServiceImpl;
 /**
- * <p><b> Nombre </b> ProyectoController</p>
+ * <p><b> Nombre </b> MensajeController</p>
  * 
- * <p><strong>Descripcion </strong> controlador del proyecto MVC que recibe json</p>
+ * <p><strong>Descripcion </strong> endpoints del proyecto MVC para objetos mensaje</p>
  * 
  * @author	Toni Blanche
  * 
