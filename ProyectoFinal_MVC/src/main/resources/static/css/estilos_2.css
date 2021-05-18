@@ -93,6 +93,7 @@ header a {
 .my-2 {
 	border-top: 1px solid green;
 }
+
 .testfondoproyecto {
 	display: flex;
 	flex-direction: column;
@@ -100,7 +101,8 @@ header a {
 	height: 350px;
 	padding: 20px;
 	justify-content: center;
-	backdrop-filter: blur(5px) brightness(60%);
+	backdrop-filter:  blur(5px) brightness(60%);
+	-moz-backdrop-filter:  blur(5px) brightness(60%);
 }
 .imagendetalle {
 	max-width: 500px;

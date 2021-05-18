@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+	    <meta charset="UTF-8">
+		<link rel="stylesheet" href="/css_admin/estilos.css">
+        <title>Formulario de perfil administrador </title>
+    </head>
+    <body>
+        <div class="logadmin" th:if="${param.error}">
+            Usuario y/o contraseña invalido.
+        </div>
+        <div class="logadmin" id="add" th:if="${param.logout}">
+           Has cerrado sesión de administrador.
+        </div>
+        <div id="add">
+        <form id=login th:action="@{/login}" method="post">
+            <div class="logadmin" id="add"><label> Nombre de usuario : <input id="cerrarsesion" type="text" name="username"/> </label></div>
+            <div class="logadmin" id="add"><label> Contraseña: <input id="cerrarsesion" type="password" name="password"/> </label></div>
+            <div  id="add"><input id="cerrarsesion" type="submit" value="Entrar sesión Admin"/></div>
+        </form>
+        </div>
+        <div id="add">
+		<button class="add"><a th:href="@{/}">Volver a página principal</a></button>
+	</div>
+    </body>
+</html>
