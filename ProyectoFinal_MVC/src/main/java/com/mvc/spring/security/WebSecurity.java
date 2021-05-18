@@ -24,7 +24,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
                 .withUser("Dario").password("dario").roles("ADMIN")
                 .and().withUser("Yelder").password("yelder").roles("ADMIN")
                 .and().withUser("Antonia").password("antonia").roles("ADMIN")
-                .and().withUser("Toni").password("oni").roles("ADMIN");
+                .and().withUser("Toni").password("toni").roles("ADMIN");
     }
 
     @Bean

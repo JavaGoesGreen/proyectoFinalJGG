@@ -51,8 +51,26 @@ public class MensajeController {
 		LocalDate l = LocalDate.now();
 		mensaje.setFecha(l.toString());
 		log.info("IMPRIMIENDO MENSAJE-------" + mensaje);
-		Mensaje m = service.addMensajes(mensaje);
-		return new ModelAndView("redirect:/contacto");
+
+		List<Mensaje> mensajesAntes = new ArrayList<>();
+		mensajesAntes.addAll(service.getMensajes());
+		
+		service.addMensajes(mensaje);
+		
+		List<Mensaje> mensajesDespues = new ArrayList<>();
+		mensajesDespues.addAll(service.getMensajes());
+		String alert;
+		if(mensajesAntes.size() == mensajesDespues.size() ) {
+			alert="Ha ocurrido un error. Mensaje no enviado";
+			
+		} else {
+			alert="Mensaje enviado correctamente";
+		}
+		
+		
+		ModelAndView m = new ModelAndView("redirect:/contacto");
+		m.addObject("alert",alert);
+		return m;
 	}
 	
 	// --------------------------------------------------------------------
