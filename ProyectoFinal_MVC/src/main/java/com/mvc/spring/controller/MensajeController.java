@@ -51,6 +51,7 @@ public class MensajeController {
 		LocalDate l = LocalDate.now();
 		mensaje.setFecha(l.toString());
 		log.info("IMPRIMIENDO MENSAJE-------" + mensaje);
+
 		List<Mensaje> mensajesAntes = new ArrayList<>();
 		mensajesAntes.addAll(service.getMensajes());
 		
@@ -82,5 +83,4 @@ public class MensajeController {
 		m.addAttribute("mensajeslista", mensajes);
 		return "admin/mensajesadmin";
 	}
-
 }
