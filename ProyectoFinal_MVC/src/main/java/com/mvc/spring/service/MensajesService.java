@@ -8,6 +8,6 @@ public interface MensajesService {
   
 	public Collection<Mensaje>getMensajes();
 	
-	public void addMensajes(Mensaje mensaje);
+	public Mensaje addMensajes(Mensaje mensaje);
 	
 }

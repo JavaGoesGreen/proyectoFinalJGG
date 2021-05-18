@@ -51,7 +51,7 @@ public class MensajeController {
 		LocalDate l = LocalDate.now();
 		mensaje.setFecha(l.toString());
 		log.info("IMPRIMIENDO MENSAJE-------" + mensaje);
-		service.addMensajes(mensaje);
+		Mensaje m = service.addMensajes(mensaje);
 		return new ModelAndView("redirect:/contacto");
 	}
 	
@@ -65,5 +65,4 @@ public class MensajeController {
 		m.addAttribute("mensajeslista", mensajes);
 		return "admin/mensajesadmin";
 	}
-
 }
