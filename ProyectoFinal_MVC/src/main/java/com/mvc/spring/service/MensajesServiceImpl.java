@@ -27,10 +27,10 @@ public class MensajesServiceImpl implements MensajesService{
 	}
 	
 	@Override
-	public void addMensajes(Mensaje mensaje) {
+	public Mensaje addMensajes(Mensaje mensaje) {
 		log.info("------------------------------Rest Template addMensajes");
 		RestTemplate restTemplate = new RestTemplate();
-		restTemplate.postForObject("http://localhost:5000/mensaje/admin/post", mensaje, Mensaje.class);
+		return restTemplate.postForObject("http://localhost:5000/mensaje/admin/post", mensaje, Mensaje.class);
 	}
 	
 }

@@ -94,7 +94,7 @@
                 <label for="nombre"> Nombre </label>
                 <div class="input-group">
                   <input th:field="*{nombre}" type="text" class="form-control" id="inlineFormInputGroupUsername"
-                    placeholder="Nombre" >
+                    placeholder="Nombre" maxlength="100">
                 </div>
               </div>
 			  <!-- CORREO --> 
@@ -102,24 +102,24 @@
                 <label>Correo</label>
                 <div class="input-group mb-2 mb-sm-0">
                   <input th:field="*{correo}" type="email" value="" class="form-control" id="inlineFormInputGroupMail"
-                    placeholder="Email">
+                    placeholder="Email" maxlength="100">
                 </div>
               </div>
 			  <!-- FECHA -->              
-              <input type="hidden" class="form-control" th:field="*{fecha}">
+              <input type="hidden" class="form-control" th:field="*{fecha}" maxlength="100">
 			  <!-- ASUNTO --> 
               <div class="form-group">
                 <label>Tema</label>
                 <div class="input-group mb-2 mb-sm-0">
 					<input th:field="*{subject}" type="text" value="" class="form-control" id="inlineFormInputGroupMail"
-                    placeholder="Asunto">
+                    placeholder="Asunto" maxlength="100">
                 </div>
               </div>
 			  <!-- MENSAJE -->              
               <div class="form-group">
                 <label>Mensaje</label>
                 <div class="input-group mb-2 mb-sm-0">
-                  <textarea th:field="*{mensaje}" type="text" class="form-control"></textarea>
+                  <textarea th:field="*{mensaje}" type="text" class="form-control" maxlength="512"></textarea>
                 </div>
               </div>
 			  <!-- BOTON -->
