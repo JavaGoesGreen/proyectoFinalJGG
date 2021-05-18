@@ -34,19 +34,27 @@ public class EquipoController {
 	
 	@Autowired
 	CargosServiceImpl serviceCargo;
+	
+	// --------------------------------------------------------------------
+	// FRONT OFFICE
 
 	@GetMapping("/equipo")
 	public String listaEquipo(Model m) {
 		List<Equipo> equipos = new ArrayList<>();
 		equipos.addAll(serviceEquipo.getEquipo());
+		Integer id=(int)((Math.random()*400)+100);
 		for(int i=0; i<=15;i++) {
-			equipos.add(serviceEquipo.newFakeMember());
+			equipos.add(serviceEquipo.newFakeMember(id));
+			id++;
 		}
 		m.addAttribute("equipolista", equipos);
 		return "equipo";
 	}
+	
+	// --------------------------------------------------------------------
+	// BACK OFFICE
 
-	@GetMapping("/equipo/admin/list")
+	@GetMapping("/admin/equipo/list")
 	public String listaEquipoAdmin(Model m) {
 		List<Equipo> equipos = new ArrayList<>();
 		equipos.addAll(serviceEquipo.getEquipo());
@@ -56,7 +64,7 @@ public class EquipoController {
 		return "admin/equipoadmin";
 	}
 	
-	@GetMapping("equipo/admin/add")
+	@GetMapping("admin/equipo/add")
 	public ModelAndView newEquipo() {
 		log.info("AGREGANDO EQUIPO-------");
 		ModelAndView m = new ModelAndView("/admin/addEquipo");
@@ -65,14 +73,14 @@ public class EquipoController {
 		return m;
 	}
 
-	@PostMapping("equipo/admin/post")
+	@PostMapping("admin/equipo/post")
 	public ModelAndView addProyecto(@ModelAttribute Equipo equipo) {
 		log.info("IMPRIMIENDO EQUIPO-------" + equipo);
 		serviceEquipo.addEquipo(equipo);
-		return new ModelAndView("redirect:/equipo/admin/list");
+		return new ModelAndView("redirect:/admin/equipo/list");
 	}
 	
-	@GetMapping("equipo/admin/select")
+	@GetMapping("admin/equipo/select")
 	public ModelAndView selectEquipo(@RequestParam Integer id) {
 		log.info("--------------------------------------EquipoControllerMVC" + id);
 		ModelAndView m = new ModelAndView("/admin/updateEquipo");
@@ -81,19 +89,18 @@ public class EquipoController {
 		return m;
 	}
 	
-	@PostMapping("equipo/admin/update")
+	@PostMapping("admin/equipo/update")
 	public ModelAndView updateEquipo(@ModelAttribute Equipo equipo) {
 		log.info("IMPRIMIENDO EQUIPO-------" + equipo);
 		serviceEquipo.updateEquipo(equipo);
-		return new ModelAndView("redirect:/equipo/admin/list");
+		return new ModelAndView("redirect:/admin/equipo/list");
 	}
 	
-	@GetMapping(value="/equipo/admin/delete")
+	@GetMapping(value="admin/equipo/delete")
 	public ModelAndView deleteEquipo(@RequestParam Integer id) {
 		log.info("ELIMINANDO EQUIPO-------ID:" + id);
 		serviceEquipo.deleteEquipo(id);
-		
-		return new ModelAndView("redirect:/equipo/admin/list");
+		return new ModelAndView("redirect:/admin/equipo/list");
 	}
 	
 

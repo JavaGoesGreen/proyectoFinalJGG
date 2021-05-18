@@ -10,8 +10,10 @@
 </head>
 <body>
 	<div id="contenedor">
-		<h1><span>Gestión de equipo</span></h1>
-		
+		<div id="add">
+			<a class="btn btn-success" th:href="@{/admin}" role="button">👈 Volver</a>
+			<h1><span>Gestión de equipo</span></h1>
+		</div>
 		<table  class="container">
 			<thead>
 				<tr>
@@ -33,15 +35,15 @@
 				<td class="td-img"><img th:src="${equipo.foto}" th:title=${equipo.foto}></img></td>
 				<td th:text="${equipo.cargo!=null}?${equipo.cargo.cargo}:'Cargo no asignado todavía'" />
 				<td class="td-actions">
-					<a class="btn btn-outline-primary" th:href="@{/equipo/admin/select/(id=${equipo.idpersona})}" role="button">Editar</a>
-					<a class="btn btn-outline-danger" th:href="@{/equipo/admin/delete/(id=${equipo.idpersona})}" role="button">Eliminar</a>		 
+					<a class="btn btn-outline-primary" th:href="@{/admin/equipo/select/(id=${equipo.idpersona})}" role="button">Editar</a>
+					<a class="btn btn-outline-danger" th:href="@{/admin/equipo/delete/(id=${equipo.idpersona})}" role="button">Eliminar</a>		 
      			</td>						
 			</tr>
 			</tbody>
 		</table>
 	</div>
 	<div id="add">
-		<a class="btn btn-success" th:href="@{/equipo/admin/add}" role="button">Añadir nuevo teammate</a>
+		<a class="btn btn-success" th:href="@{/admin/equipo/add}" role="button">Añadir nuevo teammate</a>
 	</div>
 	<div id="add">
 		<a class="btn btn-success" th:href="@{/admin}" role="button">Volver al menú Admin</a>

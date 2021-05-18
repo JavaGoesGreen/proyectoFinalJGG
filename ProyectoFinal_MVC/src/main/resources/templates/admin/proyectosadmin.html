@@ -10,8 +10,10 @@
 </head>
 <body>
 	<div id="contenedor">
-	<h1><span>Gestión de Proyectos</span></h1>
-	
+		<div id="add">
+			<a class="btn btn-success" th:href="@{/admin}" role="button">👈 Volver</a>
+			<h1> Gestión de Proyectos</h1>
+		</div>
 	<table class="container">
 		<thead>
 			<tr>
@@ -26,7 +28,6 @@
 			</tr>
 		</thead>
 			<tbody>
-	
 				<tr th:each="proyecto: ${proyectoslista}">
 					<td th:text="${proyecto.idproyecto}" />
 					<td class="td-name" th:text="${proyecto.proyecto}" />
@@ -36,17 +37,15 @@
 					<td class="td-img"><img th:src="${proyecto.imagen}" th:title=${proyecto.imagen} onclick="window.open(this.src)"></img></td>
 					<td th:text="${proyecto.cliente!=null}?${proyecto.cliente.nombre}:'Cliente no asignado todavía'"/>
 					<td class="td-actions">
-							<a class="btn btn-outline-primary" th:href="@{/proyectos/admin/select/(id=${proyecto.idproyecto})}" role="button">Editar</a>
-							<a class="btn btn-outline-danger"  th:href="@{/proyectos/admin/delete/(id=${proyecto.idproyecto})}" role="button">Eliminar</a>
-							
+							<a class="btn btn-outline-primary" th:href="@{/admin/proyectos/select/(id=${proyecto.idproyecto})}" role="button">Editar</a>
+							<a class="btn btn-outline-danger"  th:href="@{/admin/proyectos/delete/(id=${proyecto.idproyecto})}" role="button">Eliminar</a>			
      				</td>
-
 				</tr>
 			</tbody>
 	</table>		
 	</div>
 	<div id="add">
-		<a class="btn btn-success" th:href="@{/proyectos/admin/add}" role="button">Añadir nuevo proyecto</a>
+		<a class="btn btn-success" th:href="@{/admin/proyectos/add}" role="button">Añadir nuevo proyecto</a>
 	</div>
 	
 	</div>

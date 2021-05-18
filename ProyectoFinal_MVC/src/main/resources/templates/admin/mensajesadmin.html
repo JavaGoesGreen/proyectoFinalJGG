@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="/css_admin/estilos.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" >
+    <style>body {background-color:yellowgreen}</style>
+	<title>Gestión de Mensajes</title>
+</head>
+<body>
+	<div id="contenedor">
+		<div id="add">
+			<a class="btn btn-success" th:href="@{/admin}" role="button">👈 Volver</a>
+			<h1><span>Gestión de Mensajes</span></h1>
+		</div>	
+	<table class="container">
+		<thead>
+			<tr>
+				<th><h1>Nº</h1></th>
+				<th><h1>Nombre</h1></th>
+				<th><h1>Correo</h1></th>
+				<th><h1>Fecha</h1></th>
+				<th><h1>Asunto</h1></th>
+				<th><h1>Mensaje</h1></th>
+				<th><h1>Respondido</h1></th>
+				<th><h1>Respuesta</h1></th>
+			</tr>
+		</thead>
+			<tbody>
+	
+				<tr th:each="mensaje: ${mensajeslista}">
+					<td th:text="${mensaje.idmensaje}" />
+					<td th:text="${mensaje.nombre}" />
+					<td th:text="${mensaje.correo}" />
+					<td th:text="${mensaje.fecha}" />
+					<td th:text="${mensaje.subject}" />
+					<td th:text="${mensaje.mensaje}" />
+					<td th:text="${mensaje.respuesta!=null}?'✅':'❌'"/>
+					<td th:text="${mensaje.respuesta}" />
+				</tr>
+			</tbody>
+	</table>		
+	</div>
+</body>
+</html>

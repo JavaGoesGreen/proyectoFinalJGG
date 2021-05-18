@@ -18,7 +18,7 @@
         <br>
         <h2>Añadir nuevo integrante del equipo</h2>
         <br>
-		<form method="post" th:action="@{/equipo/admin/post}" th:object="${equipo}">
+		<form method="post" th:action="@{/admin/equipo/post}" th:object="${equipo}">
 	        <div class="form-group">
 	            <label for="nombre">Nombre:</label>
 	            <input type="text" class="form-control" th:field="*{nombre}">
