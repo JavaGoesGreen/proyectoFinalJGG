@@ -28,7 +28,7 @@ public class CargosController {
 	}
 	
 	@PostMapping("/cargos/admin/post")
-	public Cargo addCliente(@RequestBody Cargo cargo) {
+	public Cargo addCargo(@RequestBody Cargo cargo) {
 		log.info("----Entrando en método add cargo REST --------");
 		return service.addCargo(cargo);
 	}	

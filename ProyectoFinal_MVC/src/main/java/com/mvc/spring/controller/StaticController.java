@@ -4,9 +4,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 /**
- * <p><b> Nombre </b> ProyectoController</p>
+ * <p><b> Nombre </b> StaticController</p>
  * 
- * <p><strong>Descripcion </strong> controlador del proyecto MVC que recibe json</p>
+ * <p><strong>Descripcion </strong> endpoints para pagina principal del proyecto MVC </p>
  * 
  * @author	Toni Blanche
  * 

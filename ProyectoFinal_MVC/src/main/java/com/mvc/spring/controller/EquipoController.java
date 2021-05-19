@@ -17,8 +17,8 @@ import com.mvc.spring.model.Equipo;
 import com.mvc.spring.service.CargosServiceImpl;
 import com.mvc.spring.service.EquipoServiceImpl;
 /**
- * <p><b> Nombre </b> ProyectoController</p>
- * <p><strong>Descripcion </strong> controlador del proyecto MVC que recibe json</p>
+ * <p><b> Nombre </b> EquipoController</p>
+ * <p><strong>Descripcion </strong>endpoints del proyecto MVC para objetos equipo</p>
  * @author	Toni Blanche
  * @version	v1
  * @since	13/05/2021
