@@ -25,6 +25,7 @@
 				<th><h1>Mensaje</h1></th>
 				<th><h1>Respondido</h1></th>
 				<th><h1>Respuesta</h1></th>
+				<th><h1>Acciones</h1></th>
 			</tr>
 		</thead>
 			<tbody>
@@ -38,6 +39,10 @@
 					<td th:text="${mensaje.mensaje}" />
 					<td th:text="${mensaje.respuesta!=null}?'✅':'❌'"/>
 					<td th:text="${mensaje.respuesta}" />
+					<td class="td-actions">
+							<a class="btn btn-outline-primary" th:href="@{/admin/mensajes/select/(id=${mensaje.idmensaje})}" role="button">Responder</a>
+							<a class="btn btn-outline-danger"  th:href="@{/admin/mensajes/delete/(id=${mensaje.idmensaje})}" role="button">Eliminar</a>			
+     				</td>
 				</tr>
 			</tbody>
 	</table>		
