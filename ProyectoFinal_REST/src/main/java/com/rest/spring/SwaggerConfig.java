@@ -40,13 +40,13 @@ public class SwaggerConfig extends WebMvcConfigurerAdapter {
    
    private ApiInfo getApiInfo() {
        return new ApiInfoBuilder()
-               .title("Servicio REST del Proyecto Final JavaGoesGreen®")
+               .title("Servicio REST del Proyecto Final JavaGoesGreen©")
                .version("1.0")
-               .license("Apache License Version 2.0")
+               .license("Spain Generation License 2.0")
                .description("Aplicación del Proyecto Final encargada de consultar la BBDD y enviar información en JSON")
                .build();
    }
 }
-//http://localhost:8080/swagger-ui.html#/ DOCUMENTACION UI
+//http://localhost:5000/swagger-ui.html#/ DOCUMENTACION UI
 //http://localhost:5000/v2/api-docs   DOCUMENTACION JSON
 
