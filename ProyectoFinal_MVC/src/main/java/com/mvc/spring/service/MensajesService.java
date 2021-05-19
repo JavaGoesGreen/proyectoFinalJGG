@@ -20,4 +20,10 @@ public interface MensajesService {
 	
 	public Mensaje addMensajes(Mensaje mensaje);
 	
+	public Mensaje selectMensaje(Integer id);
+	
+	public void updateMensajes(Mensaje mensaje);
+	
+	public void deleteMensaje(Integer id);
+	
 }

@@ -22,4 +22,27 @@ public class MensajeServiceImpl implements MensajeService {
 		return mensajeDao.save(mensaje);
 	}
 	
+
+	@Override
+	public Mensaje updateMensajes(Mensaje mensaje) {
+		return mensajeDao.save(mensaje);
+	}
+	
+	
+	@Override
+	public Mensaje getMensajeById(Integer id) {
+		List<Mensaje> listaMensajes = this.getMensajes();
+		for(Mensaje p:listaMensajes) {
+			if(p.getIdmensaje() == id) {
+				return p;
+			}
+		} return null;
+	}
+
+	@Override
+	public void deleteMensaje(Integer id) {
+		
+		mensajeDao.deleteById(id);
+		
+	}
 }

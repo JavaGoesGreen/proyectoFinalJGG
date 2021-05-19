@@ -59,6 +59,9 @@
               <a class="nav-link" href="/equipo">Equipo<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="/ofertas">Ofertas</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="/contacto">Contacto</a>
             </li>
             <li class="nav-item">
@@ -126,9 +129,11 @@
               <div class="text-center">
                 <input type="submit" name="submit" value="ENVIAR" class="btn btn-success btn-block rounded-0 py-2">
               </div>
+              <label th:object="${alert}" th:text="${alert!=null}?${alert}:''" style="color:lightslategray"></label>
             </div>
+          </form>
           </div>
-        
+        	
         <!--Grid column-->
         <div class="col-sm-12 col-md-7">
           <!--Google map-->
@@ -230,6 +235,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
     integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous">
   </script>
+
 
 </body>
 
