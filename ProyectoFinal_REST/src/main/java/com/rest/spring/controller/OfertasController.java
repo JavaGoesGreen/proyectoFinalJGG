@@ -17,38 +17,38 @@ import com.rest.spring.service.OfertasServiceImpl;
 
 @RestController
 public class OfertasController {
-	
+
 	private final Logger log = LoggerFactory.getLogger(OfertasController.class);
-	
+
 	@Autowired
 	OfertasServiceImpl service;
-	
+
 	@GetMapping("/ofertas")
 	public List<Oferta> getOfertas() {
 		log.info("----Entrando en método listar proyectos REST --------");
-		return service.getOfertas();	
+		return service.getOfertas();
 	}
-	
-	@PostMapping("/ofertas/admin/post") 
+
+	@PostMapping("/ofertas/admin/post")
 	public Oferta addProyecto(@RequestBody Oferta oferta) {
-		log.info("---- Entrando en método guardar oferta REST ------- "+oferta.getIdoferta()+" -------");
+		log.info("---- Entrando en método guardar oferta REST ------- " + oferta.getIdoferta() + " -------");
 		Oferta p = service.addOfertas(oferta);
-		log.info("Proyecto a añadir: "+p);
+		log.info("Proyecto a añadir: " + p);
 		return p;
 	}
-	
+
 	@GetMapping("/ofertas/admin/select/{id}")
 	public Oferta selectProyecto(@PathVariable Integer id) {
-		log.info("---- Entrando en método seleccionar oferta "+id+" REST -------");
+		log.info("---- Entrando en método seleccionar oferta " + id + " REST -------");
 		return service.getOfertaById(id);
 	}
-	
+
 	@PutMapping("/ofertas/admin/update/{oferta.getIdoferta()}")
 	public Oferta updateProyecto(@RequestBody Oferta oferta) {
-		log.info("---- Entrando en método modificar oferta REST ------- "+oferta.getIdoferta()+" -------");
+		log.info("---- Entrando en método modificar oferta REST ------- " + oferta.getIdoferta() + " -------");
 		return service.updateOfertas(oferta);
 	}
-	
+
 	@DeleteMapping("/ofertas/admin/delete/{id}")
 	public void deleteProyecto(@PathVariable Integer id) {
 		service.deleteOferta(id);

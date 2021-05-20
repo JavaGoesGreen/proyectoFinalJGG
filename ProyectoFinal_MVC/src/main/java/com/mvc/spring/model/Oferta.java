@@ -1,14 +1,20 @@
 package com.mvc.spring.model;
+
 /**
- * <p><b> Nombre </b> Clase Proyecto</p>
+ * <p>
+ * <b> Nombre </b> Clase Proyecto
+ * </p>
  * 
- * <p><strong>Descripcion </strong> Recoge todos los campos de información de un proyecto</p>
+ * <p>
+ * <strong>Descripcion </strong> Recoge todos los campos de información de un
+ * proyecto
+ * </p>
  * 
- * @author	Toni Blanche
+ * @author Toni Blanche
  * 
- * @version	v1
+ * @version v1
  * 
- * @since	19/05/2021
+ * @since 19/05/2021
  */
 
 public class Oferta {
@@ -20,8 +26,8 @@ public class Oferta {
 	private String descripcion;
 	private String aptitudes;
 	private String fecha;
-	
-	//Constructores 
+
+	// Constructores
 	public Oferta() {
 		super();
 	}
@@ -94,7 +100,7 @@ public class Oferta {
 	public void setFecha(String fecha) {
 		this.fecha = fecha;
 	}
-	
+
 	// toString
 	@Override
 	public String toString() {

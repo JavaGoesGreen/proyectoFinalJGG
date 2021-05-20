@@ -19,29 +19,34 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import com.mvc.spring.model.Mensaje;
 import com.mvc.spring.service.MensajesServiceImpl;
+
 /**
- * <p><b> Nombre </b> MensajeController</p>
+ * <p>
+ * <b> Nombre </b> MensajeController
+ * </p>
  * 
- * <p><strong>Descripcion </strong> endpoints del proyecto MVC para objetos mensaje</p>
+ * <p>
+ * <strong>Descripcion </strong> endpoints del proyecto MVC para objetos mensaje
+ * </p>
  * 
- * @author	Toni Blanche
+ * @author Toni Blanche
  * 
- * @version	v1
+ * @version v1
  * 
- * @since	13/05/2021
+ * @since 13/05/2021
  */
 
 @Controller
 public class MensajeController {
-	
+
 	private final Logger log = LoggerFactory.getLogger(MensajeController.class);
-	
+
 	@Autowired
 	MensajesServiceImpl service;
-	
+
 	// --------------------------------------------------------------------
 	// FRONT OFFICE
-	
+
 	@GetMapping("contacto")
 	public ModelAndView newContacto(String alert) {
 		ModelAndView m = new ModelAndView("/contacto");
@@ -49,7 +54,7 @@ public class MensajeController {
 		m.addObject("alert", alert);
 		return m;
 	}
-	
+
 	@PostMapping("mensajes/post")
 	public ModelAndView addmensaje(@ModelAttribute Mensaje mensaje) {
 		LocalDate l = LocalDate.now();
@@ -58,28 +63,27 @@ public class MensajeController {
 
 		List<Mensaje> mensajesAntes = new ArrayList<>();
 		mensajesAntes.addAll(service.getMensajes());
-		
+
 		service.addMensajes(mensaje);
-		
+
 		List<Mensaje> mensajesDespues = new ArrayList<>();
 		mensajesDespues.addAll(service.getMensajes());
 		String alert;
-		if(mensajesAntes.size() == mensajesDespues.size() ) {
-			alert="Ha ocurrido un error. Mensaje no enviado";
-			
+		if (mensajesAntes.size() == mensajesDespues.size()) {
+			alert = "Ha ocurrido un error. Mensaje no enviado";
+
 		} else {
-			alert="Mensaje enviado correctamente";
+			alert = "Mensaje enviado correctamente";
 		}
-		
-		
+
 		ModelAndView m = new ModelAndView("redirect:/contacto");
 		m.addObject("alert", alert);
 		return m;
 	}
-	
+
 	// --------------------------------------------------------------------
 	// BACK OFFICE
-	
+
 	@GetMapping("admin/mensajes/list")
 	public String listaProyectosAdmin(Model m) {
 		List<Mensaje> mensajes = new ArrayList<>();
@@ -94,7 +98,7 @@ public class MensajeController {
 		service.addMensajes(mensaje);
 		return new ModelAndView("redirect:/admin/mensajes/list");
 	}
-	
+
 	@GetMapping("admin/mensajes/select")
 	public ModelAndView selectMensaje(@RequestParam Integer id) {
 		log.info("--------------------------------------MensajeControllerMVC" + id);
@@ -102,19 +106,19 @@ public class MensajeController {
 		m.addObject("mensaje", service.selectMensaje(id));
 		return m;
 	}
-	
-	@RequestMapping(value="admin/mensajes/update", method = { RequestMethod.POST})
+
+	@RequestMapping(value = "admin/mensajes/update", method = { RequestMethod.POST })
 	public ModelAndView updateMensaje(@ModelAttribute Mensaje mensaje) {
 		log.info("IMPRIMIENDO PROYECTO-------" + mensaje);
 		service.updateMensajes(mensaje);
 		return new ModelAndView("redirect:/admin/mensajes/list");
 	}
-	
-	@GetMapping(value="/admin/mensajes/delete")
+
+	@GetMapping(value = "/admin/mensajes/delete")
 	public ModelAndView deleteMensaje(@RequestParam Integer id) {
 		log.info("ELIMINANDO PROYECTO-------ID:" + id);
 		service.deleteMensaje(id);
 		return new ModelAndView("redirect:/admin/mensajes/list");
 	}
-	
+
 }

@@ -18,12 +18,6 @@ import com.rest.spring.dao.EquipoDao;
 import com.rest.spring.dao.MensajeDao;
 import com.rest.spring.dao.OfertasDao;
 import com.rest.spring.dao.ProyectosDao;
-import com.rest.spring.model.Cargo;
-import com.rest.spring.model.Cliente;
-import com.rest.spring.model.Equipo;
-import com.rest.spring.model.Mensaje;
-import com.rest.spring.model.Oferta;
-import com.rest.spring.model.Proyecto;
 import com.rest.spring.service.CargosService;
 import com.rest.spring.service.CargosServiceImpl;
 import com.rest.spring.service.ClientesService;
@@ -38,17 +32,6 @@ import com.rest.spring.service.ProyectosService;
 import com.rest.spring.service.ProyectosServiceImpl;
 
 
-/**
- * <p><b> Nombre </b> ProyectoFinal REST Test </p>
- * 
- * <p><strong>Descripcion </strong> pruebas unitarias de estructuras Proyectos</p>
- * 
- * @author	Yelder Da Silva y Dario Denche
- * 
- * @version	v1
- * 
- * @since	13/05/2021
- */
 
 @SpringBootTest
 public class ProyectoFinal_REST_Estructura {

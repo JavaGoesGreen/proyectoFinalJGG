@@ -20,35 +20,39 @@ import com.mvc.spring.model.Oferta;
 import com.mvc.spring.service.OfertasServiceImpl;
 
 /**
- * <p><b> Nombre </b> ProyectoController</p>
+ * <p>
+ * <b> Nombre </b> ProyectoController
+ * </p>
  * 
- * <p><strong>Descripcion </strong> endpoints del proyecto MVC para objetos proyecto</p>
+ * <p>
+ * <strong>Descripcion </strong> endpoints del proyecto MVC para objetos
+ * proyecto
+ * </p>
  * 
- * @author	Toni Blanche
+ * @author Toni Blanche
  * 
- * @version	v1
+ * @version v1
  * 
- * @since	19/05/2021
+ * @since 19/05/2021
  */
 
 @Controller
 public class OfertaController {
-	
+
 	private final Logger log = LoggerFactory.getLogger(OfertaController.class);
-	
+
 	@Autowired
 	OfertasServiceImpl serviceOferta;
-	
 
 	// --------------------------------------------------------------------
 	// FRONT OFFICE
-	
+
 	@GetMapping("ofertas")
 	public String listaOfertas(Model m) {
 		m.addAttribute("ofertaslista", serviceOferta.getOfertas());
 		return "ofertas";
 	}
-	
+
 	@GetMapping("ofertas/detalle")
 	public ModelAndView selectOfertaDetalle(@RequestParam Integer id) {
 		log.info("--------------------------------------OfertaControllerMVC" + id);
@@ -59,7 +63,7 @@ public class OfertaController {
 
 	// --------------------------------------------------------------------
 	// BACK OFFICE
-	
+
 	@GetMapping("admin/ofertas/list")
 	public String listaOfertasAdmin(Model m) {
 		List<Oferta> ofertas = new ArrayList<>();
@@ -67,7 +71,7 @@ public class OfertaController {
 		m.addAttribute("ofertaslista", ofertas);
 		return "admin/ofertasadmin";
 	}
-	
+
 	@GetMapping("admin/ofertas/add")
 	public ModelAndView newOferta() {
 		ModelAndView m = new ModelAndView("/admin/addOferta");
@@ -81,7 +85,7 @@ public class OfertaController {
 		serviceOferta.addOfertas(oferta);
 		return new ModelAndView("redirect:/admin/ofertas/list");
 	}
-	
+
 	@GetMapping("admin/ofertas/select")
 	public ModelAndView selectOferta(@RequestParam Integer id) {
 		log.info("--------------------------------------OfertaControllerMVC" + id);
@@ -89,15 +93,15 @@ public class OfertaController {
 		m.addObject("oferta", serviceOferta.selectOferta(id));
 		return m;
 	}
-	
-	@RequestMapping(value="admin/ofertas/update", method = { RequestMethod.POST})
+
+	@RequestMapping(value = "admin/ofertas/update", method = { RequestMethod.POST })
 	public ModelAndView updateOferta(@ModelAttribute Oferta oferta) {
 		log.info("IMPRIMIENDO OFERTA-------" + oferta);
 		serviceOferta.updateOfertas(oferta);
 		return new ModelAndView("redirect:/admin/ofertas/list");
 	}
-	
-	@GetMapping(value="/admin/ofertas/delete")
+
+	@GetMapping(value = "/admin/ofertas/delete")
 	public ModelAndView deleteOferta(@RequestParam Integer id) {
 		log.info("ELIMINANDO OFERTA-------ID:" + id);
 		serviceOferta.deleteOferta(id);

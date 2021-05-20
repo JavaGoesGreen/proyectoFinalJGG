@@ -22,9 +22,8 @@ public class Equipo {
 	private String resumen;
 	private String foto;
 
-	
 	@ManyToOne
-	@JoinColumn(name="cargo")
+	@JoinColumn(name = "cargo")
 	private Cargo cargo;
 
 	// Constructor

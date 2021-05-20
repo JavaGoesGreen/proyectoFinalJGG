@@ -16,25 +16,31 @@ import org.springframework.web.servlet.ModelAndView;
 import com.mvc.spring.model.Equipo;
 import com.mvc.spring.service.CargosServiceImpl;
 import com.mvc.spring.service.EquipoServiceImpl;
+
 /**
- * <p><b> Nombre </b> EquipoController</p>
- * <p><strong>Descripcion </strong>endpoints del proyecto MVC para objetos equipo</p>
- * @author	Toni Blanche
- * @version	v1
- * @since	13/05/2021
+ * <p>
+ * <b> Nombre </b> EquipoController
+ * </p>
+ * <p>
+ * <strong>Descripcion </strong>endpoints del proyecto MVC para objetos equipo
+ * </p>
+ * 
+ * @author Toni Blanche
+ * @version v1
+ * @since 13/05/2021
  */
 
 @Controller
 public class EquipoController {
-	
+
 	private final Logger log = LoggerFactory.getLogger(ProyectoController.class);
-	
+
 	@Autowired
 	EquipoServiceImpl serviceEquipo;
-	
+
 	@Autowired
 	CargosServiceImpl serviceCargo;
-	
+
 	// --------------------------------------------------------------------
 	// FRONT OFFICE
 
@@ -42,15 +48,15 @@ public class EquipoController {
 	public String listaEquipo(Model m) {
 		List<Equipo> equipos = new ArrayList<>();
 		equipos.addAll(serviceEquipo.getEquipo());
-		Integer id=(int)((Math.random()*400)+100);
-		for(int i=0; i<=15;i++) {
+		Integer id = (int) ((Math.random() * 400) + 100);
+		for (int i = 0; i <= 15; i++) {
 			equipos.add(serviceEquipo.newFakeMember(id));
 			id++;
 		}
 		m.addAttribute("equipolista", equipos);
 		return "equipo";
 	}
-	
+
 	// --------------------------------------------------------------------
 	// BACK OFFICE
 
@@ -60,10 +66,10 @@ public class EquipoController {
 		equipos.addAll(serviceEquipo.getEquipo());
 
 		m.addAttribute("equipoLista", equipos);
-		log.info("Lista en Equipo controller: "+equipos);
+		log.info("Lista en Equipo controller: " + equipos);
 		return "admin/equipoadmin";
 	}
-	
+
 	@GetMapping("admin/equipo/add")
 	public ModelAndView newEquipo() {
 		log.info("AGREGANDO EQUIPO-------");
@@ -79,7 +85,7 @@ public class EquipoController {
 		serviceEquipo.addEquipo(equipo);
 		return new ModelAndView("redirect:/admin/equipo/list");
 	}
-	
+
 	@GetMapping("admin/equipo/select")
 	public ModelAndView selectEquipo(@RequestParam Integer id) {
 		log.info("--------------------------------------EquipoControllerMVC" + id);
@@ -88,21 +94,19 @@ public class EquipoController {
 		m.addObject("listaCargos", serviceCargo.getCargos());
 		return m;
 	}
-	
+
 	@PostMapping("admin/equipo/update")
 	public ModelAndView updateEquipo(@ModelAttribute Equipo equipo) {
 		log.info("IMPRIMIENDO EQUIPO-------" + equipo);
 		serviceEquipo.updateEquipo(equipo);
 		return new ModelAndView("redirect:/admin/equipo/list");
 	}
-	
-	@GetMapping(value="admin/equipo/delete")
+
+	@GetMapping(value = "admin/equipo/delete")
 	public ModelAndView deleteEquipo(@RequestParam Integer id) {
 		log.info("ELIMINANDO EQUIPO-------ID:" + id);
 		serviceEquipo.deleteEquipo(id);
 		return new ModelAndView("redirect:/admin/equipo/list");
 	}
-	
 
-	
 }
