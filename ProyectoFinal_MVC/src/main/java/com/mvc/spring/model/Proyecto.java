@@ -1,5 +1,15 @@
 package com.mvc.spring.model;
-
+/**
+ * <p><b> Nombre </b> Clase Proyecto</p>
+ * 
+ * <p><strong>Descripcion </strong> Recoge todos los campos de información de un proyecto</p>
+ * 
+ * @author	Toni Blanche
+ * 
+ * @version	v1
+ * 
+ * @since	12/05/2021
+ */
 
 
 public class Proyecto {

@@ -1,5 +1,16 @@
 package com.mvc.spring.model;
 
+/**
+ * <p><b> Nombre </b> Clase Equipo</p>
+ * 
+ * <p><strong>Descripcion </strong> integrantes de la empresa</p>
+ * 
+ * @author	Antonia Hidalgo
+ * 
+ * @version	v1
+ * 
+ * @since	15/05/2021
+ */
 public class Equipo {
 
 	private int idpersona;

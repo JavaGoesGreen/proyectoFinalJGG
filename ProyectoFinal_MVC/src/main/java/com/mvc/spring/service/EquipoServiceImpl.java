@@ -12,7 +12,17 @@ import org.springframework.web.client.RestTemplate;
 import com.github.javafaker.Faker;
 import com.mvc.spring.model.Cargo;
 import com.mvc.spring.model.Equipo;
-
+/**
+ * <p><b> Nombre </b> Clase Servicios de Equipo</p>
+ * 
+ * <p><strong>Descripcion </strong> Bussines logic de equipo, recoge formatos JSON y devuelve objetos java</p>
+ * 
+ * @author	Toni Blanche
+ * 
+ * @version	v1
+ * 
+ * @since	15/05/2021
+ */
 
 
 @Service

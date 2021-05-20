@@ -8,7 +8,7 @@
 
 .lead {
 
-  HelveticaNeue-Thin;
+  font-family: HelveticaNeue-Thin;
   font-size: 23px;
   color: #eceeef;
 }
@@ -16,7 +16,7 @@
 .empresa {
   font-family: HelveticaNeue-Thin;
   box-sizing: border-box;
-  font-weight:bolder;
+  font-weight: bolder;
   margin: 0;
   padding: 0;
 
@@ -25,19 +25,20 @@
 p {
   font-family: HelveticaNeue-Thin;
   font-size: 15px;
-  padding:30;
+  padding: 30;
   color: #010101;
 }
-.textomvv{
+
+.textomvv {
   font-size: 18px;
-  color:#445b33;
+  color: #445b33;
 
 }
 
 .subtitulos {
   font-size: x-large;
   font-family: "HelveticaNeue-Light", sans-serif;
-  color:#90a080;
+  color: #90a080;
 
 }
 
@@ -61,12 +62,12 @@ h1 {
 .cover-heading {
   font-family: HelveticaNeue-Thin;
   font-size: 60px;
-  font-weight:bolder;
-  color:#ffffffaf ;
- box-sizing: border-box;
+  font-weight: bolder;
+  color: #ffffffaf;
+  box-sizing: border-box;
 
 
-  
+
 }
 
 html {
@@ -89,11 +90,13 @@ header img {
 .navbar {
   background-color: black;
 }
+
 .navbar-brand {
   margin-left: 20px;
   font-size: 20px;
   font-family: HelveticaNeue-Thin;
 }
+
 .nav-link {
   animation-duration: 10s;
   font-family: "HelveticaNeue-Light", sans-serif;
@@ -109,7 +112,7 @@ header img {
   font-size: 18px;
   border: none;
   outline: none;
-  background-color:#5c8140;
+  background-color: #5c8140;
   color: white;
   cursor: pointer;
 
@@ -127,10 +130,11 @@ header a {
   padding: 50px;
   color: black;
 }
+
 .intro {
   font-size: 17px;
   color: #445b33;
-  text-align:center;
+  text-align: center;
 
 
 }
@@ -138,9 +142,10 @@ header a {
 .border-success {
   border-color: #90a080 !important;
 }
+
 .bg-success {
   background-color: #5c8140 !important;
- 
+
 }
 
 /*----------------------- Sección: Proyectos -----------------------------*/
@@ -656,8 +661,8 @@ section .section-title {
 
 .site-footer {
   background-color: #5c8140;
- padding: 0;
- margin: 0;
+  padding: 0;
+  margin: 0;
 
 }
 
@@ -682,6 +687,7 @@ section .section-title {
 .site-footer a {
   color: #010101;
 }
+
 .site-footer a:hover {
   color: #3366cc;
   text-decoration: none;
@@ -692,7 +698,6 @@ section .section-title {
   color: #ffffffbb;
   padding-left: 0;
   list-style: none
-  
 }
 
 .footer-links li {
@@ -703,11 +708,13 @@ section .section-title {
   font-size: 14px;
   padding: 0;
   width: 0;
-  color: #ffffffbb;;
-  
+  color: #ffffffbb;
+  ;
+
 }
+
 .a {
-  color:#427314 !important ;
+  color: #427314 !important;
 }
 
 .footer-links a:active,
@@ -845,6 +852,5 @@ section .section-title {
 
 .text-justify {
   color: #ffffffbb;
-  
-}
 
+}

@@ -13,13 +13,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import com.mvc.spring.model.Mensaje;
 import com.mvc.spring.service.MensajesServiceImpl;
 /**
- * <p><b> Nombre </b> ProyectoController</p>
+ * <p><b> Nombre </b> MensajeController</p>
  * 
- * <p><strong>Descripcion </strong> controlador del proyecto MVC que recibe json</p>
+ * <p><strong>Descripcion </strong> endpoints del proyecto MVC para objetos mensaje</p>
  * 
  * @author	Toni Blanche
  * 
@@ -40,9 +43,10 @@ public class MensajeController {
 	// FRONT OFFICE
 	
 	@GetMapping("contacto")
-	public ModelAndView newContacto() {
+	public ModelAndView newContacto(String alert) {
 		ModelAndView m = new ModelAndView("/contacto");
 		m.addObject("mensaje", new Mensaje());
+		m.addObject("alert", alert);
 		return m;
 	}
 	
@@ -51,6 +55,7 @@ public class MensajeController {
 		LocalDate l = LocalDate.now();
 		mensaje.setFecha(l.toString());
 		log.info("IMPRIMIENDO MENSAJE-------" + mensaje);
+
 		List<Mensaje> mensajesAntes = new ArrayList<>();
 		mensajesAntes.addAll(service.getMensajes());
 		
@@ -68,7 +73,7 @@ public class MensajeController {
 		
 		
 		ModelAndView m = new ModelAndView("redirect:/contacto");
-		m.addObject("alert",alert);
+		m.addObject("alert", alert);
 		return m;
 	}
 	
@@ -83,4 +88,33 @@ public class MensajeController {
 		return "admin/mensajesadmin";
 	}
 
+	@PostMapping("admin/mensajes/post")
+	public ModelAndView addMensaje(@ModelAttribute Mensaje mensaje) {
+		log.info("IMPRIMIENDO MENSAJE-------" + mensaje);
+		service.addMensajes(mensaje);
+		return new ModelAndView("redirect:/admin/mensajes/list");
+	}
+	
+	@GetMapping("admin/mensajes/select")
+	public ModelAndView selectMensaje(@RequestParam Integer id) {
+		log.info("--------------------------------------MensajeControllerMVC" + id);
+		ModelAndView m = new ModelAndView("/admin/responderMensaje");
+		m.addObject("mensaje", service.selectMensaje(id));
+		return m;
+	}
+	
+	@RequestMapping(value="admin/mensajes/update", method = { RequestMethod.POST})
+	public ModelAndView updateMensaje(@ModelAttribute Mensaje mensaje) {
+		log.info("IMPRIMIENDO PROYECTO-------" + mensaje);
+		service.updateMensajes(mensaje);
+		return new ModelAndView("redirect:/admin/mensajes/list");
+	}
+	
+	@GetMapping(value="/admin/mensajes/delete")
+	public ModelAndView deleteMensaje(@RequestParam Integer id) {
+		log.info("ELIMINANDO PROYECTO-------ID:" + id);
+		service.deleteMensaje(id);
+		return new ModelAndView("redirect:/admin/mensajes/list");
+	}
+	
 }

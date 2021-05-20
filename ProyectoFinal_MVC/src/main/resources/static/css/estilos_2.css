@@ -289,6 +289,9 @@ section .section-title {
   border-radius: 50%;
 }
 
+.jumbotron{
+	margin-top: 20px;
+}
 /*----------------------- Sección: Contacto     -----------------------------*/
 #contacto {
   background-color: #ffffff;
@@ -476,6 +479,13 @@ section .section-title {
     margin-right: 0;
     font-weight: 600
   }
+}
+
+
+#logo_error {
+  margin-bottom: 20px;
+  width: 150px;
+  height:170px;
 }
 
 #logo_pie {

@@ -23,7 +23,7 @@ import com.mvc.spring.service.ProyectosServiceImpl;
 /**
  * <p><b> Nombre </b> ProyectoController</p>
  * 
- * <p><strong>Descripcion </strong> controlador del proyecto MVC que recibe json</p>
+ * <p><strong>Descripcion </strong> endpoints del proyecto MVC para objetos proyecto</p>
  * 
  * @author	Toni Blanche
  * 

@@ -1,27 +1,47 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
-      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
-    <head>
-	    <meta charset="UTF-8">
-		<link rel="stylesheet" href="/css_admin/estilos.css">
-        <title>Formulario de perfil administrador </title>
-    </head>
-    <body>
-        <div class="logadmin" th:if="${param.error}">
-            Usuario y/o contraseña invalido.
-        </div>
-        <div class="logadmin" id="add" th:if="${param.logout}">
-           Has cerrado sesión de administrador
-        </div>
-        <div id="add">
-        <form id=login th:action="@{/login}" method="post">
-            <div class="logadmin" id="add"><label> Nombre de usuario : <input id="cerrarsesion" type="text" name="username"/> </label></div>
-            <div class="logadmin" id="add"><label> Contraseña: <input id="cerrarsesion" type="password" name="password"/> </label></div>
-            <div  id="add"><input id="cerrarsesion" type="submit" value="Entrar sesión Admin"/></div>
-        </form>
-        </div>
-        <div id="add">
-		<button class="add"><a th:href="@{/}">Volver a página principal</a></button>
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css_admin/estilos.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+		integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+	<style>
+		body {
+			background-color: yellowgreen
+		}
+	</style>
+	<title>Formulario de perfil administrador </title>
+</head>
+
+<body>
+	<div class="container altoforzao2" id="contenedor">
+		<div class="logadmin" th:if="${param.error}">Usuario y/o contraseña invalido.
+		</div>
+		<div class="logadmin" th:if="${param.logout}">Has cerrado sesión de administrador.
+		</div>
+		<form th:action="@{/login}" method="post">
+			<div class="logadmin">
+				<label> Nombre de usuario :</label>
+			</div>
+			<div class="logadmin">
+				<input id="cerrarsesion" type="text" name="username" />
+			</div>
+			<div class="logadmin">
+				<label> Contraseña: </label>
+			</div>
+			<div class="logadmin">
+				<input id="cerrarsesion" type="password" name="password" />
+			</div>
+			<div id="add"><input class="btn btn-success" type="submit" value="Entrar sesión Admin" /></div>
+		</form>
+		<div id="add">
+			<a class="btn btn-success" th:href="@{/}">Volver a página principal</a>
+		</div>
 	</div>
-    </body>
+</body>
+
 </html>

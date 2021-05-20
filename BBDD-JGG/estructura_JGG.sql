@@ -64,6 +64,21 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
+-- -----------------------------------------------------
+-- Table `jgg`.`ofertas`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `jgg`.`ofertas` (
+  `idoferta` INT NOT NULL AUTO_INCREMENT,
+  `puesto` VARCHAR(45) NULL DEFAULT NULL,
+  `empresa` VARCHAR(45) NULL DEFAULT NULL,
+  `conocimientos` VARCHAR(512) NULL DEFAULT NULL,
+  `descripcion` VARCHAR(1024) NULL DEFAULT NULL,
+  `aptitudes` VARCHAR(128) NULL DEFAULT NULL,
+  `fecha` VARCHAR(45) NULL DEFAULT NULL,
+  PRIMARY KEY (`idoferta`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
 
 -- -----------------------------------------------------
 -- Table `jgg`.`mensajes`
