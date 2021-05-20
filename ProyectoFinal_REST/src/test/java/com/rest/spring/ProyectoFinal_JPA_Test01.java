@@ -4,14 +4,9 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
-import com.rest.spring.dao.CargosDao;
-import com.rest.spring.dao.ClientesDao;
-import com.rest.spring.dao.EquipoDao;
-import com.rest.spring.dao.MensajeDao;
-import com.rest.spring.dao.ProyectosDao;
+
 import com.rest.spring.model.Cargo;
 import com.rest.spring.model.Cliente;
 import com.rest.spring.model.Equipo;
@@ -21,22 +16,7 @@ import com.rest.spring.model.Proyecto;
 @DataJpaTest
 public class ProyectoFinal_JPA_Test01 {
 	
-	@Autowired
-	private ProyectosDao proyectosDao;
-	
-	@Autowired
-	private ClientesDao clientesDao;
-	
-	@Autowired
-	private EquipoDao equipoDao;
-	
 
-	@Autowired
-	private MensajeDao mensajeDao;
-	
-
-	@Autowired
-	private CargosDao cargosDao;
 	
 	@Test
 	public void testCreateProyecto() {

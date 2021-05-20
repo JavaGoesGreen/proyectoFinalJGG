@@ -20,32 +20,38 @@ import com.mvc.spring.model.Cliente;
 import com.mvc.spring.model.Proyecto;
 import com.mvc.spring.service.ClientesServiceImpl;
 import com.mvc.spring.service.ProyectosServiceImpl;
+
 /**
- * <p><b> Nombre </b> ProyectoController</p>
+ * <p>
+ * <b> Nombre </b> ProyectoController
+ * </p>
  * 
- * <p><strong>Descripcion </strong> endpoints del proyecto MVC para objetos proyecto</p>
+ * <p>
+ * <strong>Descripcion </strong> endpoints del proyecto MVC para objetos
+ * proyecto
+ * </p>
  * 
- * @author	Toni Blanche
+ * @author Toni Blanche
  * 
- * @version	v1
+ * @version v1
  * 
- * @since	13/05/2021
+ * @since 13/05/2021
  */
 
 @Controller
 public class ProyectoController {
-	
+
 	private final Logger log = LoggerFactory.getLogger(ProyectoController.class);
-	
+
 	@Autowired
 	ProyectosServiceImpl serviceProyecto;
-	
+
 	@Autowired
 	ClientesServiceImpl serviceCliente;
 
 	// --------------------------------------------------------------------
 	// FRONT OFFICE
-	
+
 	@GetMapping("proyectos")
 	public String listaProyectos(Model m) {
 		m.addAttribute("proyectoslista", serviceProyecto.getProyectos());
@@ -53,7 +59,7 @@ public class ProyectoController {
 		m.addAttribute("cliente", new Cliente());
 		return "proyectos";
 	}
-	
+
 	@GetMapping("proyectos/detalle")
 	public ModelAndView selectProyectoDetalle(@RequestParam Integer id) {
 		log.info("--------------------------------------ProyectoControllerMVC" + id);
@@ -62,17 +68,16 @@ public class ProyectoController {
 		m.addObject("listaClientes", serviceCliente.getClientes());
 		return m;
 	}
-	
+
 	@GetMapping("proyectos/empresa")
 	public String selectProyectoEmpresa(@RequestParam Integer idcliente, Model m) {
 		List<Proyecto> todosproyectos = new ArrayList<>();
 		List<Proyecto> proyectos = new ArrayList<>();
 		todosproyectos.addAll(serviceProyecto.getProyectos());
-		for (Proyecto p: todosproyectos) {
-			if (idcliente == 0){
+		for (Proyecto p : todosproyectos) {
+			if (idcliente == 0) {
 				proyectos = todosproyectos;
-			}
-			else if (p.getCliente().getIdcliente() == idcliente) {
+			} else if (p.getCliente().getIdcliente() == idcliente) {
 				proyectos.add(p);
 			}
 		}
@@ -84,7 +89,7 @@ public class ProyectoController {
 
 	// --------------------------------------------------------------------
 	// BACK OFFICE
-	
+
 	@GetMapping("admin/proyectos/list")
 	public String listaProyectosAdmin(Model m) {
 		List<Proyecto> proyectos = new ArrayList<>();
@@ -92,7 +97,7 @@ public class ProyectoController {
 		m.addAttribute("proyectoslista", proyectos);
 		return "admin/proyectosadmin";
 	}
-	
+
 	@GetMapping("admin/proyectos/add")
 	public ModelAndView newProyecto() {
 		ModelAndView m = new ModelAndView("/admin/addProyecto");
@@ -107,7 +112,7 @@ public class ProyectoController {
 		serviceProyecto.addProyectos(proyecto);
 		return new ModelAndView("redirect:/admin/proyectos/list");
 	}
-	
+
 	@GetMapping("admin/proyectos/select")
 	public ModelAndView selectProyecto(@RequestParam Integer id) {
 		log.info("--------------------------------------ProyectoControllerMVC" + id);
@@ -116,15 +121,15 @@ public class ProyectoController {
 		m.addObject("listaClientes", serviceCliente.getClientes());
 		return m;
 	}
-	
-	@RequestMapping(value="admin/proyectos/update", method = { RequestMethod.POST})
+
+	@RequestMapping(value = "admin/proyectos/update", method = { RequestMethod.POST })
 	public ModelAndView updateProyecto(@ModelAttribute Proyecto proyecto) {
 		log.info("IMPRIMIENDO PROYECTO-------" + proyecto);
 		serviceProyecto.updateProyectos(proyecto);
 		return new ModelAndView("redirect:/admin/proyectos/list");
 	}
-	
-	@GetMapping(value="/admin/proyectos/delete")
+
+	@GetMapping(value = "/admin/proyectos/delete")
 	public ModelAndView deleteProyecto(@RequestParam Integer id) {
 		log.info("ELIMINANDO PROYECTO-------ID:" + id);
 		serviceProyecto.deleteProyecto(id);

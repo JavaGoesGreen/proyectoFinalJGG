@@ -22,21 +22,21 @@ public class OfertasServiceImpl implements OfertasService {
 	public Oferta addOfertas(Oferta oferta) {
 		return ofertaDao.save(oferta);
 	}
-	
+
 	@Override
 	public Oferta updateOfertas(Oferta oferta) {
 		return ofertaDao.save(oferta);
 	}
-	
-	
+
 	@Override
 	public Oferta getOfertaById(Integer id) {
 		List<Oferta> listaProyectos = this.getOfertas();
-		for(Oferta p:listaProyectos) {
-			if(p.getIdoferta() == id) {
+		for (Oferta p : listaProyectos) {
+			if (p.getIdoferta() == id) {
 				return p;
 			}
-		} return null;
+		}
+		return null;
 	}
 
 	@Override

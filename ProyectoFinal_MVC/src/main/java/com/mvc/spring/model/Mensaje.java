@@ -1,14 +1,20 @@
 package com.mvc.spring.model;
+
 /**
- * <p><b> Nombre </b> Clase Mensaje</p>
+ * <p>
+ * <b> Nombre </b> Clase Mensaje
+ * </p>
  * 
- * <p><strong>Descripcion </strong> Estructura la información que se recoge del formulario de contacto</p>
+ * <p>
+ * <strong>Descripcion </strong> Estructura la información que se recoge del
+ * formulario de contacto
+ * </p>
  * 
- * @author	Dario Denche
+ * @author Dario Denche
  * 
- * @version	v1
+ * @version v1
  * 
- * @since	16/05/2021
+ * @since 16/05/2021
  */
 public class Mensaje {
 
@@ -98,5 +104,5 @@ public class Mensaje {
 		return "Mensaje [idmensaje=" + idmensaje + ", nombre=" + nombre + ", correo=" + correo + ", fecha=" + fecha
 				+ ", subject=" + subject + ", mensaje=" + mensaje + ", respuesta=" + respuesta + "]";
 	}
-	
+
 }

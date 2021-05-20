@@ -13,7 +13,7 @@ public class Oferta {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="idoferta")
+	@Column(name = "idoferta")
 	private int idoferta;
 	private String puesto;
 	private String empresa;
@@ -21,7 +21,7 @@ public class Oferta {
 	private String descripcion;
 	private String aptitudes;
 	private String fecha;
-	
+
 	// constructors
 	public Oferta() {
 		super();
@@ -95,7 +95,7 @@ public class Oferta {
 	public void setFecha(String fecha) {
 		this.fecha = fecha;
 	}
-	
+
 	// toString
 	@Override
 	public String toString() {

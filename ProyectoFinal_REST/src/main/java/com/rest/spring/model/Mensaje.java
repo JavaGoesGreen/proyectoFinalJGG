@@ -100,5 +100,5 @@ public class Mensaje {
 		return "Mensaje [idmensaje=" + idmensaje + ", nombre=" + nombre + ", correo=" + correo + ", fecha=" + fecha
 				+ ", subject=" + subject + ", mensaje=" + mensaje + ", respuesta=" + respuesta + "]";
 	}
-	
+
 }

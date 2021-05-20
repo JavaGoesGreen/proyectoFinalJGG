@@ -21,27 +21,27 @@ public class ProyectosServiceImpl implements ProyectosService {
 	public Proyecto addProyectos(Proyecto proyecto) {
 		return proyectoDao.save(proyecto);
 	}
-	
+
 	@Override
 	public Proyecto updateProyectos(Proyecto proyecto) {
 		return proyectoDao.save(proyecto);
 	}
-	
-	
+
 	@Override
 	public Proyecto getProyectoById(Integer id) {
 		List<Proyecto> listaProyectos = this.getProyectos();
-		for(Proyecto p:listaProyectos) {
-			if(p.getIdproyecto() == id) {
+		for (Proyecto p : listaProyectos) {
+			if (p.getIdproyecto() == id) {
 				return p;
 			}
-		} return null;
+		}
+		return null;
 	}
 
 	@Override
 	public void deleteProyecto(Integer id) {
-		
+
 		proyectoDao.deleteById(id);
-		
+
 	}
 }

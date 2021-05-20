@@ -6,13 +6,13 @@ import com.rest.spring.model.Proyecto;
 public interface ProyectosService {
 
 	public List<Proyecto> getProyectos();
-	
+
 	public Proyecto addProyectos(Proyecto proyecto);
-	
+
 	public Proyecto updateProyectos(Proyecto proyecto);
-	
+
 	public Proyecto getProyectoById(Integer id);
-	
+
 	public void deleteProyecto(Integer id);
-	
+
 }

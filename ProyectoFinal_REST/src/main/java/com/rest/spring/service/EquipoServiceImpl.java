@@ -25,26 +25,26 @@ public class EquipoServiceImpl implements EquipoService {
 
 	@Override
 	public Equipo updateEquipos(Equipo equipo) {
-		
+
 		return equipoDao.save(equipo);
 	}
 
 	@Override
 	public Equipo getEquipoById(Integer id) {
 		List<Equipo> listaEquipos = this.getEquipo();
-		for(Equipo e:listaEquipos) {
-			if(e.getIdpersona() == id) {
+		for (Equipo e : listaEquipos) {
+			if (e.getIdpersona() == id) {
 				return e;
 			}
-		} return null;
+		}
+		return null;
 	}
 
 	@Override
 	public void deleteEquipo(Integer id) {
-			
+
 		equipoDao.deleteById(id);
-		
-		
+
 	}
 
 }

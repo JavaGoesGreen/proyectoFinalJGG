@@ -1,18 +1,22 @@
 package com.mvc.spring.model;
 
 /**
- * <p><b> Nombre </b> Clase Cliente</p>
+ * <p>
+ * <b> Nombre </b> Clase Cliente
+ * </p>
  * 
- * <p><strong>Descripcion </strong> empresas con las que trabajamos en nuestros proyectos</p>
+ * <p>
+ * <strong>Descripcion </strong> empresas con las que trabajamos en nuestros
+ * proyectos
+ * </p>
  * 
- * @author	Yelder Da Silva
+ * @author Yelder Da Silva
  * 
- * @version	v1
+ * @version v1
  * 
- * @since	15/05/2021
+ * @since 15/05/2021
  */
 public class Cliente {
-
 
 	private int idcliente;
 	private String nombre;
@@ -66,8 +70,8 @@ public class Cliente {
 
 	@Override
 	public String toString() {
-		return "MODELCLIENTEMVC Cliente [idcliente=" + idcliente + ", nombre=" + nombre + ", descripcion=" + descripcion + ", logo="
-				+ logo + "]";
+		return "MODELCLIENTEMVC Cliente [idcliente=" + idcliente + ", nombre=" + nombre + ", descripcion=" + descripcion
+				+ ", logo=" + logo + "]";
 	}
-	
+
 }

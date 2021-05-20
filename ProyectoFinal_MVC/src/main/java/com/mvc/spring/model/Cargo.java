@@ -1,16 +1,21 @@
 package com.mvc.spring.model;
 
 import java.util.List;
+
 /**
- * <p><b> Nombre </b> Clase Cargo</p>
+ * <p>
+ * <b> Nombre </b> Clase Cargo
+ * </p>
  * 
- * <p><strong>Descripcion </strong> puesto laboral de integrantes de la empresa</p>
+ * <p>
+ * <strong>Descripcion </strong> puesto laboral de integrantes de la empresa
+ * </p>
  * 
- * @author	Dario Denche
+ * @author Dario Denche
  * 
- * @version	v1
+ * @version v1
  * 
- * @since	15/05/2021
+ * @since 15/05/2021
  */
 public class Cargo {
 
