@@ -3,193 +3,196 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="es">
 
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+		integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
-  <!-- Font-->
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500&display=swap" rel="stylesheet">
+	<!-- Font-->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500&display=swap" rel="stylesheet">
 
 
-  <!-- Font awesome -->
-  <link th:href="@{/assets/fontawesome-5.15.2/css/all.min.css}" rel="stylesheet">
-  <!--load all styles -->
+	<!-- Font awesome -->
+	<link th:href="@{/assets/fontawesome-5.15.2/css/all.min.css}" rel="stylesheet">
+	<!--load all styles -->
 
-  <link rel="stylesheet" th:href="@{/css/estilos_2.css}">
-  <link rel="stylesheet" th:href="@{/css/cover.css}">
+	<link rel="stylesheet" th:href="@{/css/estilos_2.css}">
+	<link rel="stylesheet" th:href="@{/css/cover.css}">
 
-   <title>Java Goes Green</title>
-  <link rel="icon" th:href="@{/Imagenes/logojava.png}">
+	<title>Java Goes Green</title>
+	<link rel="icon" th:href="@{/Imagenes/logojava.png}">
 
-  <!-- Fuentes -->
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Oxygen:wght@700&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Montserrat:wght@600&family=Oxygen:wght@700&display=swap" rel="stylesheet">
+	<!-- Fuentes -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Oxygen:wght@700&display=swap"
+		rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Montserrat:wght@600&family=Oxygen:wght@700&display=swap"
+		rel="stylesheet">
 
 </head>
 
 <body>
-  <!-- ----------------------- Sección: Encabezado ----------------------------- -->
-  <header id="top">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+	<!-- ----------------------- Sección: Encabezado ----------------------------- -->
+	<header id="top">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
 
-      <a class="navbar-brand" href="#"><img alt="logo" th:src="@{/Imagenes/logojava.png}"/> Java Goes Green</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+			<a class="navbar-brand" href="/"><img alt="logo" th:src="@{/Imagenes/logojava.png}" /> Java Goes Green</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="/">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/proyectos">Proyectos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/equipo">Equipo<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/ofertas">Ofertas</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/contacto">Contacto</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/admin">Admin</a>
-            </li>            
-          </ul>
-      </div>
-    </nav>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="/">Inicio</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/proyectos">Proyectos</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/equipo">Equipo<span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/ofertas">Ofertas</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/contacto">Contacto</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/admin">Admin</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
 
-    <button id="arriba" type="button" class="btn btn-success" onclick="window.location.href='#top'">
-      <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="31" viewBox="0 0 172 172"
-        style=" fill:#000000;">
-        <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter"
-          stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-size="none"
-          style="mix-blend-mode: normal">
-          <path d="M0,172v-172h172v172z"></path>
-          <g>
-            <path
-              d="M2.65391,86c0,-46.02344 37.32266,-83.34609 83.34609,-83.34609c46.02344,0 83.34609,37.32266 83.34609,83.34609c0,46.02344 -37.32266,83.34609 -83.34609,83.34609c-46.02344,0 -83.34609,-37.32266 -83.34609,-83.34609z">
-            </path>
-            <path
-              d="M131.65391,86.70547c-12.63125,-12.63125 -25.2625,-25.2625 -37.89375,-37.89375c-3.82969,-3.82969 -10.17891,-3.69531 -13.94141,0.06719c-12.63125,12.63125 -25.2625,25.2625 -37.89375,37.89375c-9.00312,9.00313 5.00547,22.91094 14.04219,13.87422c10.27969,-10.27969 20.55937,-20.55938 30.87266,-30.87266c10.31328,10.31328 20.62656,20.62656 30.93984,30.93984c8.96953,9.03672 22.87734,-4.97187 13.87422,-14.00859z"
-              fill="#ffffff"></path>
-          </g>
-        </g>
-      </svg></button>
+		<button id="arriba" type="button" class="btn btn-success" onclick="window.location.href='#top'">
+			<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="31" viewBox="0 0 172 172"
+				style=" fill:#000000;">
+				<g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+					stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+					font-family="none" font-size="none" style="mix-blend-mode: normal">
+					<path d="M0,172v-172h172v172z"></path>
+					<g>
+						<path
+							d="M2.65391,86c0,-46.02344 37.32266,-83.34609 83.34609,-83.34609c46.02344,0 83.34609,37.32266 83.34609,83.34609c0,46.02344 -37.32266,83.34609 -83.34609,83.34609c-46.02344,0 -83.34609,-37.32266 -83.34609,-83.34609z">
+						</path>
+						<path
+							d="M131.65391,86.70547c-12.63125,-12.63125 -25.2625,-25.2625 -37.89375,-37.89375c-3.82969,-3.82969 -10.17891,-3.69531 -13.94141,0.06719c-12.63125,12.63125 -25.2625,25.2625 -37.89375,37.89375c-9.00312,9.00313 5.00547,22.91094 14.04219,13.87422c10.27969,-10.27969 20.55937,-20.55938 30.87266,-30.87266c10.31328,10.31328 20.62656,20.62656 30.93984,30.93984c8.96953,9.03672 22.87734,-4.97187 13.87422,-14.00859z"
+							fill="#ffffff"></path>
+					</g>
+				</g>
+			</svg></button>
 
-  </header>
-  <main>
-    <!-- ----------------------- Sección: Proyectos ----------------------------- -->
-    <section id="proyectos">
+	</header>
+	<main>
+		<!-- ----------------------- Sección: Proyectos ----------------------------- -->
+		<section id="proyectos">
 
-    	<h1 class="proyecto">PROYECTOS</h1>
-    	<div class="row" style="display:flex; justify-content:center">
-	    	<form method="get" th:action="@{/proyectos/empresa}" th:object="${cliente}">
-		    	<label for="cliente">Empresa cliente:</label>
-				<select name="cliente" class="form-control" th:field="*{idcliente}">
-				<option		th:value="0"
-							th:text="Todas">
-					<option th:each="c:${listaClientes}"
-							th:value="${c.idcliente}"
-							th:text="${c.nombre}">
-					</option>
-				</select>
-				<input type="submit" class="btn btn-primary" value="Filtrar">
-	    	</form>
-    	</div><br>
-     	<div class="row">
-        	<div class="col-lg-4" th:each="proyecto : ${proyectoslista}">
-        		<div class="jumbotron proyecto" th:style="'background-image: url('+${proyecto.imagen}+');'">
-        			<div class="testfondoproyecto">
-            			<h2 class="display-4 proyectotitulo" th:text="${proyecto.proyecto}"> </h2>
-            			<p class="lead proyectotexto resumenproyecto" th:text="${proyecto.resumen}"></p><br>
-            			<a class="btn btn-primary btn-lg" th:href="@{/proyectos/detalle/(id=${proyecto.idproyecto})}" role="button">Descúbrelo</a>
-          			</div>
-          		</div>
-        	</div>
+			<h1 class="proyecto">PROYECTOS</h1>
+			<div class="row" style="display:flex; justify-content:center">
+				<form method="get" th:action="@{/proyectos/empresa}" th:object="${cliente}">
+					<label for="cliente">Empresa cliente:</label>
+					<select name="cliente" class="form-control" th:field="*{idcliente}">
+						<option th:value="0" th:text="Todas">
+						<option th:each="c:${listaClientes}" th:value="${c.idcliente}" th:text="${c.nombre}">
+						</option>
+					</select>
+					<input type="submit" class="btn btn-primary" value="Filtrar">
+				</form>
+			</div><br>
+			<div class="row">
+				<div class="col-lg-4" th:each="proyecto : ${proyectoslista}">
+					<div class="jumbotron proyecto" th:style="'background-image: url('+${proyecto.imagen}+');'">
+						<div class="testfondoproyecto">
+							<h2 class="display-4 proyectotitulo" th:text="${proyecto.proyecto}"> </h2>
+							<p class="lead proyectotexto resumenproyecto" th:text="${proyecto.resumen}"></p><br>
+							<a class="btn btn-primary btn-lg"
+								th:href="@{/proyectos/detalle/(id=${proyecto.idproyecto})}" role="button">Descúbrelo</a>
+						</div>
+					</div>
+				</div>
 
-      </div>
-    </section>
-  </main>
-  <!-- ----------------------- Sección: Footer ----------------------------- -->
-  <footer class="site-footer">
+			</div>
+		</section>
+	</main>
+	<!-- ----------------------- Sección: Footer ----------------------------- -->
+	<footer class="site-footer">
 
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12 col-md-6">
-          <h6>Sobre Nosotros</h6>
-          <p class="text-justify"> JavaGoesGreen se basa en los principios de la economía circular. Buscamos la
-            reducción del consumo de recursos a la vez que intentamos maximizar el rendimiento de la producción.
-            Hemos sido galardonados con el Premio Start-Up Revelación 2020 por nuestro compromiso
-            con el planeta</p>
-        </div>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 col-md-6">
+					<h6>Sobre Nosotros</h6>
+					<p class="text-justify"> JavaGoesGreen se basa en los principios de la economía circular. Buscamos
+						la
+						reducción del consumo de recursos a la vez que intentamos maximizar el rendimiento de la
+						producción.
+						Hemos sido galardonados con el Premio Start-Up Revelación 2020 por nuestro compromiso
+						con el planeta</p>
+				</div>
 
-        <div class="col-xs-6 col-md-3">
-          <h6>Herramientas</h6>
-          <ul class="footer-links">
-            <li><a href="http://scanfcode.com/category/front-end-development/">UI Design</a></li>
-            <li><a href="http://scanfcode.com/category/back-end-development/">PHP</a></li>
-            <li><a href="http://scanfcode.com/category/java-programming-language/">Java</a></li>
-            <li><a href="http://scanfcode.com/category/android/">Android</a></li>
-            <li><a href="http://scanfcode.com/category/templates/">Templates</a></li>
+				<div class="col-xs-6 col-md-3">
+					<h6>Herramientas</h6>
+					<ul class="footer-links">
+						<li><a href="http://scanfcode.com/category/front-end-development/">UI Design</a></li>
+						<li><a href="http://scanfcode.com/category/back-end-development/">PHP</a></li>
+						<li><a href="http://scanfcode.com/category/java-programming-language/">Java</a></li>
+						<li><a href="http://scanfcode.com/category/android/">Android</a></li>
+						<li><a href="http://scanfcode.com/category/templates/">Templates</a></li>
 
-          </ul>
-        </div>
+					</ul>
+				</div>
+				<div class="col-xs-6 col-md-3">
+					<h6>Apartados</h6>
+					<ul class="footer-links">
+						<li><a href="/">Inicio</a></li>
+						<li><a href="/proyectos">Proyectos</a></li>
+						<li><a href="/equipo">Equipo</a></li>
+						<li><a href="/ofertas">Ofertas</a></li>
+						<li><a href="/contacto">Contacto</a></li>
+						<li><a href="/admin">Admin</a></li>
+					</ul>
+				</div>
+			</div>
+			<hr>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-sm-6 col-xs-12">
+					<p class="copyright-text">Copyright &copy; 2021 All Rights Reserved by
+						<a href="#">Java Goes Green</a>.
+					</p>
+				</div>
 
-        <div class="col-xs-6 col-md-3">
-          <h6>Apartados</h6>
-          <ul class="footer-links">
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#proyectos">Proyectos</a></li>
-            <li><a href="#equipo">Equipo</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-            <li><a href="#admin">Admin</a></li>
-          </ul>
-        </div>
-      </div>
-      <hr>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8 col-sm-6 col-xs-12">
-          <p class="copyright-text">Copyright &copy; 2021 All Rights Reserved by
-            <a href="#">Java Goes Green</a>.
-          </p>
-        </div>
-
-        <div class="col-md-4 col-sm-6 col-xs-12">
-          <ul class="social-icons">
-            <li><a class="facebook" href="#"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a class="twitter" href="#"><i class="fab fa-twitter"></i></a></li>
-            <li><a class="instagram" href="#"><i class="fab fa-instagram"></i></a></li>
-            <li><a class="linkedin" href="#"><i class="fab fa-linkedin-in"></i></a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <!-- ----------------------- Scripts ----------------------------- -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
-    integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous">
-  </script>
+				<div class="col-md-4 col-sm-6 col-xs-12">
+					<ul class="social-icons">
+						<li><a class="facebook" href="#"><i class="fab fa-facebook-f"></i></a></li>
+						<li><a class="twitter" href="#"><i class="fab fa-twitter"></i></a></li>
+						<li><a class="instagram" href="#"><i class="fab fa-instagram"></i></a></li>
+						<li><a class="linkedin" href="#"><i class="fab fa-linkedin-in"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- ----------------------- Scripts ----------------------------- -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+		</script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+		integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+		</script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+		integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous">
+		</script>
 
 </body>
 

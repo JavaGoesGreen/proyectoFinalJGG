@@ -2,363 +2,389 @@
 <html lang="es">
 
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+		integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
-  <!-- Font-->
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500&display=swap" rel="stylesheet">
-  
+	<!-- Font-->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500&display=swap" rel="stylesheet">
 
 
-  <!-- Font awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!--load all styles -->
 
-  <link rel="stylesheet" href="/css/estilos.css">
-  <link rel="stylesheet" href="/css/cover.css">
+	<!-- Font awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!--load all styles -->
 
-   <title>Java Goes Green</title>
-  <link rel="icon" th:href="@{/Imagenes/logojava.png}">
+	<link rel="stylesheet" href="/css/estilos.css">
+	<link rel="stylesheet" href="/css/cover.css">
 
-  <!-- Fuentes -->
-  <!--link rel="preconnect" href="https://fonts.gstatic.com">
+	<title>Java Goes Green</title>
+	<link rel="icon" th:href="@{/Imagenes/logojava.png}">
+
+	<!-- Fuentes -->
+	<!--link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Oxygen:wght@700&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Montserrat:wght@600&family=Oxygen:wght@700&display=swap" rel="stylesheet"-->
 	<!-- Fuentes -->
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,900&family=PT+Sans:ital,wght@1,700&display=swap"
-    rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,900&family=PT+Sans:ital,wght@1,700&display=swap"
+		rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
-  <!-- ----------------------- Sección: Encabezado ----------------------------- -->
-  <header id="top">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+	<!-- ----------------------- Sección: Encabezado ----------------------------- -->
+	<header id="top">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
 
-      <a class="navbar-brand" href="#"><img alt="logo" th:src="@{/Imagenes/logojava.png}"/> Java Goes Green</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+			<a class="navbar-brand" href="/"><img alt="logo" th:src="@{/Imagenes/logojava.png}" /> Java Goes Green</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="/">Inicio<span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/proyectos">Proyectos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/equipo">Equipo</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/ofertas">Ofertas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/contacto">Contacto</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/admin">Admin</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="/">Inicio<span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/proyectos">Proyectos</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/equipo">Equipo</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/ofertas">Ofertas</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/contacto">Contacto</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/admin">Admin</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
 
-    <section id="encabezado">
-      <div class="site-wrapper">
+		<section id="encabezado">
+			<div class="site-wrapper">
 
-        <div class="site-wrapper-inner">
+				<div class="site-wrapper-inner">
 
-          <div class="container">
-
-
-            <div class="inner cover">
-              <h1 class="cover-heading">EL FUTURO ES VERDE</h1>
-              <p class="lead">Industria y medio ambiente son compatibles</p>
-              <p class="lead">
-                <a href="#contacto" class="btn btn-lg btn-default">Más información</a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+					<div class="container">
 
 
-    <button id="arriba" type="button" class="btn btn-success" onclick="window.location.href='#top'">
-      <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="31" viewBox="0 0 172 172"
-        style=" fill:#000000;">
-        <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter"
-          stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-size="none"
-          style="mix-blend-mode: normal">
-          <path d="M0,172v-172h172v172z"></path>
-          <g>
-            <path
-              d="M2.65391,86c0,-46.02344 37.32266,-83.34609 83.34609,-83.34609c46.02344,0 83.34609,37.32266 83.34609,83.34609c0,46.02344 -37.32266,83.34609 -83.34609,83.34609c-46.02344,0 -83.34609,-37.32266 -83.34609,-83.34609z">
-            </path>
-            <path
-              d="M131.65391,86.70547c-12.63125,-12.63125 -25.2625,-25.2625 -37.89375,-37.89375c-3.82969,-3.82969 -10.17891,-3.69531 -13.94141,0.06719c-12.63125,12.63125 -25.2625,25.2625 -37.89375,37.89375c-9.00312,9.00313 5.00547,22.91094 14.04219,13.87422c10.27969,-10.27969 20.55937,-20.55938 30.87266,-30.87266c10.31328,10.31328 20.62656,20.62656 30.93984,30.93984c8.96953,9.03672 22.87734,-4.97187 13.87422,-14.00859z"
-              fill="#ffffff"></path>
-          </g>
-        </g>
-      </svg></button>
+						<div class="inner cover">
+							<h1 class="cover-heading">EL FUTURO ES VERDE</h1>
+							<p class="lead">Industria y medio ambiente son compatibles</p>
+							<p class="lead">
+								<a href="/contacto" class="btn btn-lg btn-default">Más información</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
 
-  </header>
-  <main>
-    <!-- ----------------------- Sección: Servicios ----------------------------- -->
-    <section id="servicios">
-      <div class="row">
-        <div class="col-lg-4">
-          <img class="bd-placeholder-img rounded-circle" width="140" height="140" alt="servicio"
-            src="/Imagenes/parametro.png" role="img" aria-label="Placeholder: 140x140" />
-          <!--preserveAspectRatio="xMidYMid slice" focusable="false"-->
-          <!--title>Placeholder</title-->
-          <h3 class="subtitulos">PARAMETRIZACIÓN</h3>
-          <p class="intro">Desarrollamos la arquitectura de servidores de plantas fotovoltaicas para un seguimiento de
-            su estado en
-            tiempo real, si quieres saber más, ¡contáctanos!</p>
-          <p><a class="btn btn-secondary bg-success border-success" href="#contacto">Más detalles &raquo;</a></p>
-        </div>
-
-        <div class="col-lg-4">
-
-          <img width="140" height="140" alt="servicio" src="/Imagenes/1055683.png" role="img"
-            aria-label="Placeholder: 140x140" />
-          <!--preserveAspectRatio="xMidYMid slice" focusable="false"-->
-          <!--title>Placeholder</title-->
-          <h3 class="subtitulos">SOLUCIONES INFORMÁTICAS</h3>
-          <p class="intro"> Generamos aplicaciones web personalizadas para que los clientes puedan monitorizar su
-            producción de manera
-            sencilla ¡Con un sólo click!
-          </p>
-          <p><a class="btn btn-secondary bg-success border-success" href="#contacto">Más detalles &raquo;</a></p>
-        </div>
-
-        <div class="col-lg-4">
-          <img width="140" height="140" alt="servicio" src="/Imagenes/performance-review-generator.png" role="img"
-            aria-label="Placeholder: 140x140" />
-          <!--preserveAspectRatio="xMidYMid slice" focusable="false"-->
-          <!--title>Placeholder</title-->
-          <h3 class="subtitulos">OPTIMIZACIÓN</h3>
-          <p class="intro"> Software de optimización de microrredes que ofrece múltiples recursos energéticos,
-            con herramientas de simulación, optimización y análisis de sensibilidad.</p>
-          <p><a class="btn btn-secondary bg-success border-success" href="#contacto">Más detalles &raquo;</a></p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ----------------------- Sección: Clientes ----------------------------- -->
-    <section id="clientes" class="testimonial text-center">
-      <div class="container">
-        <div class="heading white-heading">
-          Nuestros clientes opinan
-        </div>
-        <div id="testimonial4"
-          class="carousel slide testimonial4_indicators testimonial4_control_button thumb_scroll_x swipe_x"
-          data-ride="carousel" data-pause="hover" data-interval="5000" data-duration="2000">
-
-          <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active">
-              <div class="testimonial4_slide">
-                <img alt="cliente"
-                  src="https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTY2MzU3Nzk2OTM2MjMwNTkx/elon_musk_royal_society.jpg"
-                  class="img-circle img-responsive" />
-                <p>"En JGG la atención es excelente y las instalaciones son sumamente vanguardistas. Los integrantes del
-                  team son muy responsables y profesionales, siempre están en constante innovación para dar el mejor
-                  servicio a sus clientes y solucionar los imprevistos de una manera ágil y eficiente"</p>
-                <h4>Elon Musk</h4>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="testimonial4_slide">
-                <img alt="cliente" src="https://en.unesco.org/sites/default/files/esperanza_martinez-romero.png"
-                  class="img-circle img-responsive" />
-                <p>"Java Goes Green es una compañía tecnológica de innovación constante que ofrece distintos servicios
-                  de software y consultoría digital así como soluciones informáticas de almacenamiento en nube y mucho
-                  más, cuenta con una trayectoria corta pero intensa trabajando en el sector y ayudando a otras
-                  empresas"
-                </p>
-                <h4>Ana Botín</h4>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="testimonial4_slide">
-                <img alt="cliente" src="https://i.ibb.co/8x9xK4H/team.jpg" class="img-circle img-responsive" />
-                <p>"Esta Empresa tiene como mision contribuir con la mejor tecnologia disponible en el mercado mundial
-                  con el fin de incrementar la calidad de los productos y la productividad. Llevo trabajando con ellos
-                  desde sus inicios y me siento muy orgulloso de la calidad de sus servicios"
-                </p>
-                <h4>Andy Warhol</h4>
-              </div>
-            </div>
-          </div>
-          <a class="carousel-control-prev" href="#testimonial4" data-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-          </a>
-          <a class="carousel-control-next" href="#testimonial4" data-slide="next">
-            <span class="carousel-control-next-icon"></span>
-          </a>
-        </div>
-      </div>
-    </section>
-    <!-- ----------------------- Sección: Mision Vision Valores ----------------------------- -->
-    <section id="precios">
-      <h2>Nuestra filosofía</h2>
-      <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-        <div class="col">
-          <div class="card mb-4 rounded-3 shadow-sm border-success">
-            <div class="card-header py-3">
-              <h4 class="my-0 fw-normal">Misión</h4>
-            </div>
-            <div class="card-body">
-              <p class="textomvv">Somos una empresa conciente de la actual emergencia climática que nos concierne y por
-                eso
-                decidimos tomar las riendas y encaminarnos hacia las energías renovables para reducir la
-                dependencia de las fósiles y así ser parte un futuro VERDE.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card mb-4 rounded-3 shadow-sm border-success">
-            <div class="card-header py-3">
-              <h4 class="my-0 fw-normal">Visión</h4>
-            </div>
-            <div class="card-body">
-              <p class="textomvv">Persistir a lo largo de nuestro camino con la misma esencia sin dejar atrás la
-                innovación,
-                que nos guiará a ser un referente tecnológico que aportará herramientas orientadas al
+		<button id="arriba" type="button" class="btn btn-success" onclick="window.location.href='#top'">
+			<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="31" viewBox="0 0 172 172"
+				style=" fill:#000000;">
+				<g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+					stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+					font-family="none" font-size="none" style="mix-blend-mode: normal">
+					<path d="M0,172v-172h172v172z"></path>
+					<g>
+						<path
+							d="M2.65391,86c0,-46.02344 37.32266,-83.34609 83.34609,-83.34609c46.02344,0 83.34609,37.32266 83.34609,83.34609c0,46.02344 -37.32266,83.34609 -83.34609,83.34609c-46.02344,0 -83.34609,-37.32266 -83.34609,-83.34609z">
+						</path>
+						<path
+							d="M131.65391,86.70547c-12.63125,-12.63125 -25.2625,-25.2625 -37.89375,-37.89375c-3.82969,-3.82969 -10.17891,-3.69531 -13.94141,0.06719c-12.63125,12.63125 -25.2625,25.2625 -37.89375,37.89375c-9.00312,9.00313 5.00547,22.91094 14.04219,13.87422c10.27969,-10.27969 20.55937,-20.55938 30.87266,-30.87266c10.31328,10.31328 20.62656,20.62656 30.93984,30.93984c8.96953,9.03672 22.87734,-4.97187 13.87422,-14.00859z"
+							fill="#ffffff"></path>
+					</g>
+				</g>
+			</svg></button>
 
 
+	</header>
+	<main>
+		<!-- ----------------------- Sección: Servicios ----------------------------- -->
+		<section id="servicios">
+			<div class="row">
+				<div class="col-lg-4">
+					<img class="bd-placeholder-img rounded-circle" width="140" height="140" alt="servicio"
+						src="/Imagenes/parametro.png" role="img" aria-label="Placeholder: 140x140" />
+					<!--preserveAspectRatio="xMidYMid slice" focusable="false"-->
+					<!--title>Placeholder</title-->
+					<h3 class="subtitulos">PARAMETRIZACIÓN</h3>
+					<p class="intro">Desarrollamos la arquitectura de servidores de plantas fotovoltaicas para un
+						seguimiento de
+						su estado en
+						tiempo real, si quieres saber más, ¡contáctanos!</p>
+					<p><a class="btn btn-secondary bg-success border-success" href="/contacto">Más detalles &raquo;</a>
+					</p>
+				</div>
 
-                desarrollo de servicios como soluciones a las necesidades en el mundo actual. </p>
+				<div class="col-lg-4">
 
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card mb-4 rounded-3 shadow-sm border-success">
-            <div class="card-header py-3">
-              <h4 class="my-0 fw-normal">Valores</h4>
-            </div>
-            <div class="card-body">
-              <p class="textomvv">Nuestros valores como empresa son: Sostenibilidad, Eficiencia, Innovación,
-                Proactividad.
+					<img width="140" height="140" alt="servicio" src="/Imagenes/1055683.png" role="img"
+						aria-label="Placeholder: 140x140" />
+					<!--preserveAspectRatio="xMidYMid slice" focusable="false"-->
+					<!--title>Placeholder</title-->
+					<h3 class="subtitulos">SOLUCIONES INFORMÁTICAS</h3>
+					<p class="intro"> Generamos aplicaciones web personalizadas para que los clientes puedan monitorizar
+						su
+						producción de manera
+						sencilla ¡Con un sólo click!
+					</p>
+					<p><a class="btn btn-secondary bg-success border-success" href="/contacto">Más detalles &raquo;</a>
+					</p>
+				</div>
 
-                Nuestros valores como miembros del equipo son: Comunicación, Orientación al detalle,
-                Persisténcia, Trabajo en equipo y Gestión del tiempo</p>
+				<div class="col-lg-4">
+					<img width="140" height="140" alt="servicio" src="/Imagenes/performance-review-generator.png"
+						role="img" aria-label="Placeholder: 140x140" />
+					<!--preserveAspectRatio="xMidYMid slice" focusable="false"-->
+					<!--title>Placeholder</title-->
+					<h3 class="subtitulos">OPTIMIZACIÓN</h3>
+					<p class="intro"> Software de optimización de microrredes que ofrece múltiples recursos energéticos,
+						con herramientas de simulación, optimización y análisis de sensibilidad.</p>
+					<p><a class="btn btn-secondary bg-success border-success" href="/contacto">Más detalles &raquo;</a>
+					</p>
+				</div>
+			</div>
+		</section>
 
-            </div>
-          </div>
-        </div>
+		<!-- ----------------------- Sección: Clientes ----------------------------- -->
+		<section id="clientes" class="testimonial text-center">
+			<div class="container">
+				<div class="heading white-heading">
+					Nuestros clientes opinan
+				</div>
+				<div id="testimonial4"
+					class="carousel slide testimonial4_indicators testimonial4_control_button thumb_scroll_x swipe_x"
+					data-ride="carousel" data-pause="hover" data-interval="5000" data-duration="2000">
 
-      </div>
-    </section>
-    <!-- ----------------------- Sección: Empresas ----------------------------- -->
-    <section id="empresas" class="empresas">
-      <h2 class="empresa">EMPRESAS QUE CONFIAN EN NOSOTROS</h2>
-      <div class="row">
-        <div class="container-fluid">
-          <div class="row justify-content-center">
-            <div class="col-xl-12">
-              <img src="https://www.homerenergy.com/img/logos/homer-pro-logo.png" alt="logohomenergy">
-              <img src="/Imagenes/Solargis-logo-RGB-3000x750px.png" alt="logosolaris">
-              <img src="/Imagenes/Logo-PVsyst.png" alt="logopvsyst">
-              <img src="/Imagenes/Solartec-Logo-1-5095.png" alt="logosolartec">
+					<div class="carousel-inner" role="listbox">
+						<div class="carousel-item active">
+							<div class="testimonial4_slide">
+								<img alt="cliente"
+									src="https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTY2MzU3Nzk2OTM2MjMwNTkx/elon_musk_royal_society.jpg"
+									class="img-circle img-responsive" />
+								<p>"En JGG la atención es excelente y las instalaciones son sumamente vanguardistas. Los
+									integrantes del
+									team son muy responsables y profesionales, siempre están en constante innovación
+									para dar el mejor
+									servicio a sus clientes y solucionar los imprevistos de una manera ágil y eficiente"
+								</p>
+								<h4>Elon Musk</h4>
+							</div>
+						</div>
+						<div class="carousel-item">
+							<div class="testimonial4_slide">
+								<img alt="cliente"
+									src="https://en.unesco.org/sites/default/files/esperanza_martinez-romero.png"
+									class="img-circle img-responsive" />
+								<p>"Java Goes Green es una compañía tecnológica de innovación constante que ofrece
+									distintos servicios
+									de software y consultoría digital así como soluciones informáticas de almacenamiento
+									en nube y mucho
+									más, cuenta con una trayectoria corta pero intensa trabajando en el sector y
+									ayudando a otras
+									empresas"
+								</p>
+								<h4>Ana Botín</h4>
+							</div>
+						</div>
+						<div class="carousel-item">
+							<div class="testimonial4_slide">
+								<img alt="cliente" src="https://i.ibb.co/8x9xK4H/team.jpg"
+									class="img-circle img-responsive" />
+								<p>"Esta Empresa tiene como mision contribuir con la mejor tecnologia disponible en el
+									mercado mundial
+									con el fin de incrementar la calidad de los productos y la productividad. Llevo
+									trabajando con ellos
+									desde sus inicios y me siento muy orgulloso de la calidad de sus servicios"
+								</p>
+								<h4>Andy Warhol</h4>
+							</div>
+						</div>
+					</div>
+					<a class="carousel-control-prev" href="#testimonial4" data-slide="prev">
+						<span class="carousel-control-prev-icon"></span>
+					</a>
+					<a class="carousel-control-next" href="#testimonial4" data-slide="next">
+						<span class="carousel-control-next-icon"></span>
+					</a>
+				</div>
+			</div>
+		</section>
+		<!-- ----------------------- Sección: Mision Vision Valores ----------------------------- -->
+		<section id="precios">
+			<h2>NUESTRA FILOSOFÍA</h2>
+			<div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+				<div class="col">
+					<div class="card card-soft mb-4 rounded-3 shadow-sm border-success">
+						<div class="card-header py-3">
+							<h4 class="my-0 fw-normal">Misión</h4>
+						</div>
+						<div class="card-body">
+							<p class="textomvv">Somos una empresa conciente de la actual emergencia climática que nos
+								concierne y por
+								eso
+								decidimos tomar las riendas y encaminarnos hacia las energías renovables para reducir la
+								dependencia de las fósiles y así ser parte un futuro VERDE.
+								<br>
+								¡Nuestro compromiso con el planeta es REAL!.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="card card-soft mb-4 rounded-3 shadow-sm border-success">
+						<div class="card-header py-3">
+							<h4 class="my-0 fw-normal">Visión</h4>
+						</div>
+						<div class="card-body">
+							<p class="textomvv">Persistir a lo largo de nuestro camino con la misma esencia sin dejar
+								atrás la
+								innovación,
+								que nos guiará a ser un referente tecnológico que aportará herramientas orientadas al
+								desarrollo de servicios como soluciones a las necesidades en el mundo actual.
+								<br>
+								Nos definimos por ser unos visionarios. </p>
 
-              <img src="/Imagenes/logo-iberdrola.png" alt="logoiberdrola">
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="card card-soft mb-4 rounded-3 shadow-sm border-success">
+						<div class="card-header py-3">
+							<h4 class="my-0 fw-normal">Valores</h4>
+						</div>
+						<div class="card-body">
+							<p class="textomvv">Nuestros valores como empresa son: Sostenibilidad, Eficiencia,
+								Innovación,
+								Proactividad.
+								En JGG valoramos la sinergia entre las personas, la comunicación,el respeto y el trabajo
+								en equipo ,
+								buscando una relación laboral y personal sana. Y la autonomía nos define:
+								confiamos en tu capacidad para persistir, gestionar el tiempo y tomar decisiones
+								responsables.
+							</p>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</section>
+		<!-- ----------------------- Sección: Empresas ----------------------------- -->
+		<section id="empresas" class="empresas">
+			<h2 class="empresa">EMPRESAS QUE CONFIAN EN NOSOTROS</h2>
+			<div class="row">
+				<div class="container-fluid">
+					<div class="row justify-content-center">
+						<div class="col-xl-12">
+							<img src="https://www.homerenergy.com/img/logos/homer-pro-logo.png" alt="logohomenergy">
+							<img src="/Imagenes/Solargis-logo-RGB-3000x750px.png" alt="logosolaris">
+							<img src="/Imagenes/Logo-PVsyst.png" alt="logopvsyst">
+							<img src="/Imagenes/Solartec-Logo-1-5095.png" alt="logosolartec">
+
+							<img src="/Imagenes/logo-iberdrola.png" alt="logoiberdrola">
 
 
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-  <!-- ----------------------- Sección: Footer ----------------------------- -->
-  <footer class="site-footer">
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<!-- ----------------------- Sección: Footer ----------------------------- -->
+	<footer class="site-footer">
 
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12 col-md-6">
-          <h6>Sobre Nosotros</h6>
-          <p class="text-justify"> JavaGoesGreen se basa en los principios de la economía circular. Buscamos la
-            reducción del consumo de recursos a la vez que intentamos maximizar el rendimiento de la producción.
-            Hemos sido galardonados con el Premio Start-Up Revelación 2020 por nuestro compromiso
-            con el planeta</p>
-        </div>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 col-md-6">
+					<h6>Sobre Nosotros</h6>
+					<p class="text-justify"> JavaGoesGreen se basa en los principios de la economía circular. Buscamos
+						la
+						reducción del consumo de recursos a la vez que intentamos maximizar el rendimiento de la
+						producción.
+						Hemos sido galardonados con el Premio Start-Up Revelación 2020 por nuestro compromiso
+						con el planeta</p>
+				</div>
 
-        <div class="col-xs-6 col-md-3">
-          <h6>Herramientas</h6>
-          <ul class="footer-links">
-            <li><a href="http://scanfcode.com/category/front-end-development/">UI Design</a></li>
-            <li><a href="http://scanfcode.com/category/back-end-development/">PHP</a></li>
-            <li><a href="http://scanfcode.com/category/java-programming-language/">Java</a></li>
-            <li><a href="http://scanfcode.com/category/android/">Android</a></li>
-            <li><a href="http://scanfcode.com/category/templates/">Templates</a></li>
+				<div class="col-xs-6 col-md-3">
+					<h6>Herramientas</h6>
+					<ul class="footer-links">
+						<li><a href="http://scanfcode.com/category/front-end-development/">UI Design</a></li>
+						<li><a href="http://scanfcode.com/category/back-end-development/">PHP</a></li>
+						<li><a href="http://scanfcode.com/category/java-programming-language/">Java</a></li>
+						<li><a href="http://scanfcode.com/category/android/">Android</a></li>
+						<li><a href="http://scanfcode.com/category/templates/">Templates</a></li>
 
-          </ul>
-        </div>
+					</ul>
+				</div>
 
-        <div class="col-xs-6 col-md-3">
-          <h6>Apartados</h6>
-          <ul class="footer-links">
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#proyectos">Proyectos</a></li>
-            <li><a href="#equipo">Equipo</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-            <li><a href="#admin">Admin</a></li>
-          </ul>
-        </div>
-      </div>
+				<div class="col-xs-6 col-md-3">
+					<h6>Apartados</h6>
+					<ul class="footer-links">
+						<li><a href="/">Inicio</a></li>
+						<li><a href="/proyectos">Proyectos</a></li>
+						<li><a href="/equipo">Equipo</a></li>
+						<li><a href="/ofertas">Ofertas</a></li>
+						<li><a href="/contacto">Contacto</a></li>
+						<li><a href="/admin">Admin</a></li>
+					</ul>
+				</div>
+			</div>
 
-      <hr>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8 col-sm-6 col-xs-12">
-          <p class="copyright-text">Copyright &copy; 2021 All Rights Reserved by
-            <a href="#">Java Goes Green</a>.
-          </p>
-        </div>
+			<hr>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-sm-6 col-xs-12">
+					<p class="copyright-text">Copyright &copy; 2021 All Rights Reserved by
+						<a href="#">Java Goes Green</a>.
+					</p>
+				</div>
 
-        <div class="col-md-4 col-sm-6 col-xs-12">
-          <ul class="social-icons">
-            <li><a class="facebook" href="#"><i class="fa fa-facebook-f"></i></a></li>
-            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-            <li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
-            <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <!-- ---------------------- Scripts ----------------------------- -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
-    integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous">
-  </script>
+				<div class="col-md-4 col-sm-6 col-xs-12">
+					<ul class="social-icons">
+						<li><a class="facebook" href="#"><i class="fa fa-facebook-f"></i></a></li>
+						<li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+						<li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
+						<li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- ---------------------- Scripts ----------------------------- -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+		</script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+		integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+		</script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+		integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous">
+		</script>
 
 </body>
 
