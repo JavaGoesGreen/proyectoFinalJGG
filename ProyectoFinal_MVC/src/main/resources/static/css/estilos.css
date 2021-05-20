@@ -14,8 +14,7 @@
 }
 
 .empresa {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
-;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   box-sizing: border-box;
   font-weight: bolder;
   margin: 0;
@@ -192,7 +191,7 @@ header a {
 
 #clientes {
   padding: 50px;
-  height: 600px;
+  height: 20%;
 }
 
 #clientes h2 {
@@ -454,6 +453,9 @@ header a {
 }
 
 /*----------------------- Sección Mision Vision -----------------------------*/
+.card-soft{
+	height: 94%;
+}
 
 .card-body {
   flex: 1 auto;
@@ -489,6 +491,11 @@ header a {
 #precio {
   justify-content: center;
   align-items: baseline;
+}
+#precios h2{
+	color:#5c8140;
+	font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: bold;
 }
 
 /*----------------------- Sección: Equipo       -----------------------------*/

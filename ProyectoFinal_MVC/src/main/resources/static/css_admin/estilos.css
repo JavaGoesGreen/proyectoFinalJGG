@@ -221,3 +221,7 @@ td:hover > .edit, td:hover > .delete {
 	padding-right: 0!important;
 	text-align: center;
 }
+.btn-success{
+	background-color: rgb(197, 219, 181) !important;
+	color:#5C8140 !important;
+}
