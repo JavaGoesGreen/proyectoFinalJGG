@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="/css/cover.css">
 
   <title>Java Goes Green</title>
-  <link rel="icon" href="/Iconos/logo.ico">
+  <link rel="icon" th:href="@{/Iconos/logo2.png}">
 
   <!-- Fuentes -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -42,7 +42,7 @@
   <header id="top">
     <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
 
-
+      <a class="navbar-brand" href="#"><img alt="logo" th:src="@{/Imagenes/logojava.png}"/> Java Goes Green</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"> </span>
@@ -119,9 +119,9 @@
             src="/Imagenes/parametro.png" role="img" aria-label="Placeholder: 140x140" />
           <!--preserveAspectRatio="xMidYMid slice" focusable="false"-->
           <!--title>Placeholder</title-->
-          <h3 class="subtitulos">Parametrización de calidad y producción</h3>
-          <p>Desarrollamos la arquitectura de servidores de plantas fotovoltaicas para un seguimiento de su estado en
-            tiempo real. Si quieres saber más, ¡contáctanos!</p>
+          <h3 class="subtitulos">PARAMETRIZACIÓN</h3>
+          <p class="intro">Desarrollamos la arquitectura de servidores de plantas fotovoltaicas para un seguimiento de su estado en
+            tiempo real, si quieres saber más, ¡contáctanos!</p>
           <p><a class="btn btn-secondary bg-success border-success" href="#contacto">Más detalles &raquo;</a></p>
         </div>
 
@@ -131,8 +131,8 @@
             aria-label="Placeholder: 140x140" />
           <!--preserveAspectRatio="xMidYMid slice" focusable="false"-->
           <!--title>Placeholder</title-->
-          <h3 class="subtitulos">Soluciones informáticas</h3>
-          <p>Generamos aplicaciones web personalizadas para que los clientes puedan monitorizar su producción de manera
+          <h3 class="subtitulos">SOLUCIONES INFORMÁTICAS</h3>
+          <p class="intro"> Generamos aplicaciones web personalizadas para que los clientes puedan monitorizar su producción de manera
             sencilla ¡Con un sólo click!
           </p>
           <p><a class="btn btn-secondary bg-success border-success" href="#contacto">Más detalles &raquo;</a></p>
@@ -143,8 +143,8 @@
             aria-label="Placeholder: 140x140" />
           <!--preserveAspectRatio="xMidYMid slice" focusable="false"-->
           <!--title>Placeholder</title-->
-          <h3 class="subtitulos">Optimización</h3>
-          <p>Software de optimización de microrredes que ofrece múltiples recursos energéticos y viene
+          <h3 class="subtitulos">OPTIMIZACIÓN</h3>
+          <p class="intro"> Software de optimización de microrredes que ofrece múltiples recursos energéticos,
             con herramientas de simulación, optimización y análisis de sensibilidad.</p>
           <p><a class="btn btn-secondary bg-success border-success" href="#contacto">Más detalles &raquo;</a></p>
         </div>
@@ -215,7 +215,7 @@
               <h4 class="my-0 fw-normal">Misión</h4>
             </div>
             <div class="card-body">
-              <p>Somos una empresa conciente de la actual emergencia climática que nos concierne y por eso
+              <p class="textomvv">Somos una empresa conciente de la actual emergencia climática que nos concierne y por eso
                 decidimos tomar las riendas y encaminarnos hacia las energías renovables para reducir la
                 dependencia de las fósiles y así ser parte un futuro VERDE.
               </p>
@@ -228,10 +228,10 @@
               <h4 class="my-0 fw-normal">Visión</h4>
             </div>
             <div class="card-body">
-              <p>Persistir a lo largo de nuestro camino con la misma esencia sin dejar atrás la
+              <p class="textomvv">Persistir a lo largo de nuestro camino con la misma esencia sin dejar atrás la
                 innovación,
                 que nos guiará a ser un referente tecnológico que aportará herramientas orientadas al
-                desarrollo de servicios como soluciones a las necesidades </p>
+                desarrollo de servicios como soluciones a las necesidades de nuestros clientes </p>
             </div>
           </div>
         </div>
@@ -241,10 +241,10 @@
               <h4 class="my-0 fw-normal">Valores</h4>
             </div>
             <div class="card-body">
-              <p>Nuestros valores como empresa son: Sostenibilidad, Eficiencia, Innovación, Proactividad.
+              <p class="textomvv">Nuestros valores como empresa son: Sostenibilidad, Eficiencia, Innovación, Proactividad.
 
                 Nuestros valores como miembros del equipo son: Comunicación, Orientación al detalle,
-                Persisténcia, Trabajo en equipo, Gestión del tiempo</p>
+                Persisténcia, Trabajo en equipo y Gestión del tiempo</p>
             </div>
           </div>
         </div>
@@ -283,39 +283,32 @@
             reducción del consumo de recursos a la vez que intentamos maximizar el rendimiento de la producción.
             Hemos sido galardonados con el Premio Start-Up Revelación 2020 por nuestro compromiso
             con el planeta</p>
-          <!-- <p class="text-justify">Hemos sido galardonados con el Premio Start-Up Revelación 2020 por nuestro compromiso -->
-          <!-- con el planeta.</p> -->
         </div>
 
         <div class="col-xs-6 col-md-3">
           <h6>Herramientas</h6>
           <ul class="footer-links">
-            <!-- <li><a href="http://scanfcode.com/category/c-language/">C</a></li> -->
             <li><a href="http://scanfcode.com/category/front-end-development/">UI Design</a></li>
             <li><a href="http://scanfcode.com/category/back-end-development/">PHP</a></li>
             <li><a href="http://scanfcode.com/category/java-programming-language/">Java</a></li>
             <li><a href="http://scanfcode.com/category/android/">Android</a></li>
             <li><a href="http://scanfcode.com/category/templates/">Templates</a></li>
-            <!-- <li><a href="http://scanfcode.com/category/templates/">Extras</a></li> -->
+
           </ul>
         </div>
 
         <div class="col-xs-6 col-md-3">
           <h6>Apartados</h6>
           <ul class="footer-links">
-            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#inicio">Inicio</a></li>
             <li><a href="#proyectos">Proyectos</a></li>
-            <li><a href="#empresas">Empresas</a></li>
-            <li><a href="#clientes">Clientes</a></li>
-            <li><a href="#precios">Precios</a></li>
             <li><a href="#equipo">Equipo</a></li>
             <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#admin">Admin</a></li>
           </ul>
         </div>
       </div>
-      <div class="row" id="footer_logo">
-        <img alt="logo" id="logo_pie" src="/imagenes/logo_trans.png" />
-      </div>
+
       <hr>
     </div>
     <div class="container">

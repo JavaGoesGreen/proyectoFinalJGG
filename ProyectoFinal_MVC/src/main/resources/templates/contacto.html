@@ -30,9 +30,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Oxygen:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Oxygen:wght@700&display=swap"
+    rel="stylesheet">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Montserrat:wght@600&family=Oxygen:wght@700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Montserrat:wght@600&family=Oxygen:wght@700&display=swap"
+    rel="stylesheet">
 
 </head>
 
@@ -41,35 +44,47 @@
   <header id="top">
     <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
 
-      <a class="navbar-brand" href="#"><img src="/Imagenes/logo_trans.png" alt="logo" /> Java Goes Green</a>
+      <a class="navbar-brand"> Java Goes Green</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="/">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/proyectos">Proyectos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/equipo">Equipo<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/contacto">Contacto</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/admin">Admin</a>
-            </li>
-          </ul>
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/proyectos">Proyectos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/equipo">Equipo<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contacto">Contacto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin">Admin</a>
+          </li>
+        </ul>
       </div>
     </nav>
 
     <button id="arriba" type="button" class="btn btn-success" onclick="window.location.href='#top'">
-        &#9757;</button>
+      <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="31" viewBox="0 0 172 172"
+        style=" fill:#000000;">
+        <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter"
+          stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-size="none"
+          style="mix-blend-mode: normal">
+          <path d="M0,172v-172h172v172z"></path>
+          <g>
+            <path
+              d="M2.65391,86c0,-46.02344 37.32266,-83.34609 83.34609,-83.34609c46.02344,0 83.34609,37.32266 83.34609,83.34609c0,46.02344 -37.32266,83.34609 -83.34609,83.34609c-46.02344,0 -83.34609,-37.32266 -83.34609,-83.34609z">
+            </path>
+            <path
+              d="M131.65391,86.70547c-12.63125,-12.63125 -25.2625,-25.2625 -37.89375,-37.89375c-3.82969,-3.82969 -10.17891,-3.69531 -13.94141,0.06719c-12.63125,12.63125 -25.2625,25.2625 -37.89375,37.89375c-9.00312,9.00313 5.00547,22.91094 14.04219,13.87422c10.27969,-10.27969 20.55937,-20.55938 30.87266,-30.87266c10.31328,10.31328 20.62656,20.62656 30.93984,30.93984c8.96953,9.03672 22.87734,-4.97187 13.87422,-14.00859z"
+              fill="#ffffff"></path>
 
   </header>
   <main>
@@ -81,7 +96,8 @@
         <!--Grid column-->
         <div class="col-sm-12 mb-4 col-md-5">
           <!--Form with header-->
-          <form class="card border-success rounded-0" method="post" th:action="@{/mensajes/post}" th:object="${mensaje}">
+          <form class="card border-success rounded-0" method="post" th:action="@{/mensajes/post}"
+            th:object="${mensaje}">
             <div class="card-header p-0">
               <div class="bg-success text-white text-center py-2">
                 <h3><i class="fa fa-envelope"></i> ¡Escríbenos!</h3>
@@ -89,15 +105,15 @@
               </div>
             </div>
             <div class="card-body p-3">
-			<!-- NOMBRE --> 
+              <!-- NOMBRE -->
               <div class="form-group">
                 <label for="nombre"> Nombre </label>
                 <div class="input-group">
                   <input th:field="*{nombre}" type="text" class="form-control" id="inlineFormInputGroupUsername"
-                    placeholder="Nombre" >
+                    placeholder="Nombre">
                 </div>
               </div>
-			  <!-- CORREO --> 
+              <!-- CORREO -->
               <div class="form-group">
                 <label>Correo</label>
                 <div class="input-group mb-2 mb-sm-0">
@@ -105,30 +121,30 @@
                     placeholder="Email">
                 </div>
               </div>
-			  <!-- FECHA -->              
+              <!-- FECHA -->
               <input type="hidden" class="form-control" th:field="*{fecha}">
-			  <!-- ASUNTO --> 
+              <!-- ASUNTO -->
               <div class="form-group">
                 <label>Tema</label>
                 <div class="input-group mb-2 mb-sm-0">
-					<input th:field="*{subject}" type="text" value="" class="form-control" id="inlineFormInputGroupMail"
+                  <input th:field="*{subject}" type="text" value="" class="form-control" id="inlineFormInputGroupMail"
                     placeholder="Asunto">
                 </div>
               </div>
-			  <!-- MENSAJE -->              
+              <!-- MENSAJE -->
               <div class="form-group">
                 <label>Mensaje</label>
                 <div class="input-group mb-2 mb-sm-0">
                   <textarea th:field="*{mensaje}" type="text" class="form-control"></textarea>
                 </div>
               </div>
-			  <!-- BOTON -->
+              <!-- BOTON -->
               <div class="text-center">
                 <input type="submit" name="submit" value="ENVIAR" class="btn btn-success btn-block rounded-0 py-2">
               </div>
             </div>
-          </div>
-        
+        </div>
+
         <!--Grid column-->
         <div class="col-sm-12 col-md-7">
           <!--Google map-->
@@ -136,8 +152,7 @@
 
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d666.3023948079502!2d25.279536288295727!3d54.677310110925006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dd946b30cb55ab%3A0x462b7dec09163fc9!2sSKYTECH.LT!5e0!3m2!1sca!2ses!4v1616747142513!5m2!1sca!2ses"
-              width="100%" height="450" style="border:0;" allowfullscreen="" aria-hidden="false"
-              tabindex="0"></iframe>
+              width="100%" height="450" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
           </div>
           <!--Buttons-->
           <div class="row text-center">
@@ -166,39 +181,35 @@
       <div class="row">
         <div class="col-sm-12 col-md-6">
           <h6>Sobre Nosotros</h6>
-          <p class="text-justify"> JavaGoesGreen se basa en los principios de la economía circular. Buscamos la reducción del consumo de recursos a la vez que intentamos maximizar el rendimiento de la producción.</p>
-          <p class="text-justify">Hemos sido galardonados con el Premio Start-Up Revelación 2020 por nuestro compromiso con el planeta.</p>
+          <p class="text-justify"> JavaGoesGreen se basa en los principios de la economía circular. Buscamos la
+            reducción del consumo de recursos a la vez que intentamos maximizar el rendimiento de la producción.
+            Hemos sido galardonados con el Premio Start-Up Revelación 2020 por nuestro compromiso
+            con el planeta</p>
         </div>
 
         <div class="col-xs-6 col-md-3">
           <h6>Herramientas</h6>
           <ul class="footer-links">
-            <li><a href="http://scanfcode.com/category/c-language/">C</a></li>
             <li><a href="http://scanfcode.com/category/front-end-development/">UI Design</a></li>
             <li><a href="http://scanfcode.com/category/back-end-development/">PHP</a></li>
             <li><a href="http://scanfcode.com/category/java-programming-language/">Java</a></li>
             <li><a href="http://scanfcode.com/category/android/">Android</a></li>
             <li><a href="http://scanfcode.com/category/templates/">Templates</a></li>
-            <li><a href="http://scanfcode.com/category/templates/">Extras</a></li>
+
           </ul>
         </div>
 
         <div class="col-xs-6 col-md-3">
           <h6>Apartados</h6>
           <ul class="footer-links">
-            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#inicio">Inicio</a></li>
             <li><a href="#proyectos">Proyectos</a></li>
-            <li><a href="#empresas">Empresas</a></li>
-            <li><a href="#clientes">Clientes</a></li>
-            <li><a href="#precios">Precios</a></li>
             <li><a href="#equipo">Equipo</a></li>
             <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#admin">Admin</a></li>
           </ul>
         </div>
       </div>
-      <div class="row" id="footer_logo">
-      <img id="logo_pie" src="/imagenes/logo_trans.png" alt="logo" />
-    </div>
       <hr>
     </div>
     <div class="container">
