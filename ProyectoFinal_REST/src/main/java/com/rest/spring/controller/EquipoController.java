@@ -38,7 +38,7 @@ public class EquipoController {
 		}
 		
 		@GetMapping("/equipo/admin/select/{id}")
-		public Equipo selectProyecto(@PathVariable Integer id) {
+		public Equipo selectEquipo(@PathVariable Integer id) {
 			log.info("---- Entrando en método seleccionar proyecto "+id+" REST -------");
 			return service.getEquipoById(id);
 		}

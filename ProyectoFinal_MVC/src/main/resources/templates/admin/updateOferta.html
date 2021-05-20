@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <style>body {background-color:yellowgreen}</style>
+    <title>Editar Oferta</title>
+</head>
+
+<body>
+    <div class="container" id="contenedor">
+    	<br>
+        <h1>FORMULARIO DE OFERTAS</h1>
+        <br>
+        <h2>Editar oferta</h2>
+        <br>
+        <form method="post" th:object="${oferta}"  th:action="@{/admin/ofertas/update}">
+         <input type="hidden" class="form-control" th:field="*{idoferta}">
+        	<div class="form-group">
+            	<label for="puesto">Nombre del oferta:</label>
+                <input type="text" class="form-control" th:field="*{puesto}" maxlength="45">
+			</div>
+	  		<div class="form-group">
+            	<label for="puesto">Empresa:</label>
+                <input type="text" class="form-control" th:field="*{empresa}" maxlength="45">
+			</div>
+			<div class="form-group">
+            	<label for="puesto">Conocimientos:</label>
+                <textarea type="text" class="form-control" th:field="*{conocimientos}" maxlength="512"></textarea>
+			</div>
+			<div class="form-group">
+            	<label for="puesto">Descripcion:</label>
+                <textarea type="text" class="form-control" th:field="*{descripcion}" maxlength="1024"></textarea>
+			</div>
+			<div class="form-group">
+            	<label for="puesto">Aptitudes:</label>
+                <textarea type="text" class="form-control" th:field="*{aptitudes}" maxlength="128"></textarea>
+			</div>
+			<div class="form-group">
+            	<label for="puesto">Fecha:</label>
+                <input type="text" class="form-control" th:field="*{fecha}" maxlength="45">
+			</div>
+            <input type="submit" class="btn btn-primary" value="Salvar Registro">
+        </form>
+    </div>
+</body>
+
+</html>

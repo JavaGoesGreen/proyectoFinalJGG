@@ -8,7 +8,7 @@
 
 .lead {
 
-  HelveticaNeue-Thin;
+ font-family: HelveticaNeue-Thin;
   font-size: 23px;
   color: #eceeef;
 }
@@ -113,7 +113,7 @@ header a {
   padding: 50px;
   color: black;
 }
-}
+
 
 .border-success {}
 

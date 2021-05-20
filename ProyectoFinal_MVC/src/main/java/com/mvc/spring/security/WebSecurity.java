@@ -7,7 +7,13 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-
+/**
+ * <p><b> Nombre </b> Configuración de Spring Security</p>
+ * <p><strong>Descripcion </strong> Configuración del proyecto MVC para añadir cuentas de admin para login</p>
+ * @author	Toni Blanche y Dario Denche
+ * @version	v1
+ * @since	18/05/2021
+ */
 @EnableWebSecurity
 public class WebSecurity extends WebSecurityConfigurerAdapter {
 
