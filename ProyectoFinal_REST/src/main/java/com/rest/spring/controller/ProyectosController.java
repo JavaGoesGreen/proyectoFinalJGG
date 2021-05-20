@@ -43,16 +43,20 @@ public class ProyectosController {
 	}
 	
 	@PutMapping("/proyectos/admin/update/{proyecto.getIdproyecto()}")
-	public Proyecto updateProyecto(@RequestBody Proyecto proyecto) {
+	public String updateProyecto(@RequestBody Proyecto proyecto) {
 		log.info("---- Entrando en método modificar proyecto REST ------- "+proyecto.getIdproyecto()+" -------");
-		return service.updateProyectos(proyecto);
+		service.updateProyectos(proyecto);
+		String mensaje ="Proyecto actualizado"; 
+		return mensaje;
 	}
 	
 	
 	@DeleteMapping("/proyectos/admin/delete/{id}")
-	public void deleteProyecto(@PathVariable Integer id) {
+	public String deleteProyecto(@PathVariable Integer id) {
 		
 		service.deleteProyecto(id);
+		 String mensaje =("Proyecto eliminado");
+	return mensaje;
 	}
 	
 	
