@@ -60,7 +60,7 @@ public class ProyectosControllerTest extends AbstractTest {
 		
 		//guardar en una variable el contenido que devuelve el mock
 		String content = mvcResult.getResponse().getContentAsString();
-
+		//recoger el objeto json y convertirlo a objeto java
 		Proyecto[] listaproyecto = super.mapFromJson(content, Proyecto[].class);
 		assertTrue(listaproyecto.length > 0);
 

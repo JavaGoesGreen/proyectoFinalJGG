@@ -14,7 +14,8 @@
 }
 
 .empresa {
-  font-family: HelveticaNeue-Thin;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+;
   box-sizing: border-box;
   font-weight: bolder;
   margin: 0;
@@ -23,7 +24,7 @@
 }
 
 p {
-  font-family: HelveticaNeue-Thin;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 15px;
   padding: 30;
   color: #010101;
