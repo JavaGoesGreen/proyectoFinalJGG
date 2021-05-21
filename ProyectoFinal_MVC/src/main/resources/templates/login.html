@@ -20,25 +20,23 @@
 
 <body>
 	<div class="container altoforzao2" id="contenedor">
-		<div class="logadmin" th:if="${param.error}">Usuario y/o contraseña invalido.
-		</div>
-		<div class="logadmin" th:if="${param.logout}">Has cerrado sesión de administrador.
-		</div>
-		<form th:action="@{/login}" method="post">
+		<form th:action="@{/login}" method="post" style="display:flex; flex-direction:column; margin-top:200px;">
 			<div class="logadmin">
-				<label> Nombre de usuario :</label>
+				<label style="color:white"> Nombre de usuario :</label>
 			</div>
 			<div class="logadmin">
 				<input id="cerrarsesion" type="text" name="username" />
 			</div>
 			<div class="logadmin">
-				<label> Contraseña: </label>
+				<label style="color:white"> Contraseña: </label>
 			</div>
 			<div class="logadmin">
 				<input id="cerrarsesion" type="password" name="password" />
 			</div>
 			<div id="add"><input class="btn btn-success" type="submit" value="Entrar sesión Admin" /></div>
 		</form>
+		<div class="logadmin" th:if="${param.error}" style="color:gold">Usuario y/o contraseña invalido.</div>
+		<div class="logadmin" th:if="${param.logout}" style="color:yellowgreen">Has cerrado sesión de administrador.</div>
 		<div id="add">
 			<a class="btn btn-success" th:href="@{/}">Volver a página principal</a>
 		</div>
