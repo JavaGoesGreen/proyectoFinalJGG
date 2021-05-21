@@ -92,7 +92,7 @@
   </header>
   <main>
     <!-- ----------------------- Sección: Proyectos ----------------------------- -->
-    <section id="proyectos">
+    <section id="proyectos" style="background-image:url('http://www.xitouya.com/uFile/100276/image/201912216815511.png'); background-repeat: no-repeat; background-size:cover; background-position:center">
         <div th:object="${oferta}">
 			<h1 th:text="${oferta.puesto}" class="titulodetalle"></h1>
 			<p class="textosdetalle"> Empresa: </p>
@@ -104,7 +104,9 @@
 	        <p class="textosdetalle"> Conocimientos: </p>
 	        	<p class="lead proyectotexto" th:text="${oferta.conocimientos}"></p><br>
 	        <p class="textosdetalle"> Aptitudes: </p>
-	        	<p class="lead proyectotexto" th:text="${oferta.aptitudes}"></p><br>	        
+	        	<p class="lead proyectotexto" th:text="${oferta.aptitudes}"></p><br>
+	        <a class="btn btn-primary btn-lg"
+								th:href="@{/contacto}" role="button">Aplica</a>	        
         </div>
     </section>
   </main>
